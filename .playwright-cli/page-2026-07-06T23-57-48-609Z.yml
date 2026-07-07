@@ -1,0 +1,194 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۱,۵۰۰,۰۰۰ تومان
+      - generic [ref=e6]: پشتیبانی ۷/۲۴ | ۰۲۱-۹۱۰۹۰۹۰۹
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - link "سبد خرید" [ref=e9] [cursor=pointer]:
+          - /url: /cart
+          - text: کیف خرید
+          - generic [ref=e10]: ۲
+        - link "علاقه‌مندی" [ref=e11] [cursor=pointer]:
+          - /url: /wishlist
+        - link "ورود / ثبت‌نام" [ref=e12] [cursor=pointer]:
+          - /url: /auth/login
+      - link "◆ memostyles ACCESSORIES" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - text: ◆
+        - generic [ref=e14]: memostyles
+        - generic [ref=e15]: ACCESSORIES
+      - generic [ref=e16]:
+        - textbox "جستجو در محصولات..." [ref=e17]
+        - button "جستجو" [ref=e18]
+    - navigation "ناوبری فروشگاه" [ref=e19]:
+      - link "جدیدترین‌ها" [ref=e20] [cursor=pointer]:
+        - /url: /products
+      - link "گردنبند" [ref=e21] [cursor=pointer]:
+        - /url: /categories/necklaces
+      - link "گوشواره" [ref=e22] [cursor=pointer]:
+        - /url: /categories/earrings
+      - link "دستبند" [ref=e23] [cursor=pointer]:
+        - /url: /categories/bracelets
+      - link "کیف" [ref=e24] [cursor=pointer]:
+        - /url: /categories/bags
+      - link "هدیه" [ref=e25] [cursor=pointer]:
+        - /url: /categories/gifts
+      - link "کالکشن‌ها" [ref=e26] [cursor=pointer]:
+        - /url: /products
+      - link "مجله" [ref=e27] [cursor=pointer]:
+        - /url: /blog
+  - main [ref=e28]:
+    - generic [ref=e29]: خانه / گردنبند / گردنبند قلب مینیمال
+    - generic [ref=e43]:
+      - heading "گردنبند قلب مینیمال" [level=1] [ref=e44]
+      - generic [ref=e45]:
+        - generic [ref=e46]: ★★★★★
+        - generic [ref=e47]: 89 نظر مشتری
+        - generic [ref=e48]: "کد محصول: v-1"
+      - generic [ref=e49]:
+        - strong [ref=e50]: ۱٬۳۹۰٬۰۰۰ تومان
+        - deletion [ref=e51]: ۱٬۶۴۰٬۰۰۰ تومان
+        - generic [ref=e52]: "-۱۵٪"
+      - paragraph [ref=e53]: گردنبند قلب مینیمال با طراحی ظریف و مینیمال، نمادی از عشق و لطافت است. این گردنبند از متریال ضدحساسیت ساخته شده و انتخابی ایده‌آل برای استفاده روزمره و هدیه‌های ماندگار است.
+      - generic [ref=e54]:
+        - generic [ref=e55]: "رنگ:"
+        - generic [ref=e56]:
+          - generic [ref=e57]: طلایی
+          - generic [ref=e58]: نقره‌ای
+          - generic [ref=e59]: رزگلد
+      - generic [ref=e60]:
+        - generic [ref=e61]: "طول زنجیر:"
+        - generic [ref=e62]:
+          - generic [ref=e63]: ۴۰ سانتی‌متر
+          - generic [ref=e64]: ۴۵ سانتی‌متر
+          - generic [ref=e65]: ۵۰ سانتی‌متر
+      - generic [ref=e66]:
+        - button "افزودن به سبد" [ref=e67] [cursor=pointer]
+        - button "افزودن به علاقه‌مندی‌ها ♡" [ref=e68]
+      - generic [ref=e69]:
+        - generic [ref=e70]: ضمانت اصالت
+        - generic [ref=e71]: بسته‌بندی هدیه
+        - generic [ref=e72]: ارسال سریع
+        - generic [ref=e73]: ۷ روز ضمانت بازگشت
+      - generic [ref=e74]:
+        - generic [ref=e75]:
+          - text: موجود در انبار
+          - text: آماده ارسال
+        - generic [ref=e76]:
+          - text: پرداخت امن
+          - text: پرداخت آنلاین امن
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - generic [ref=e79]: توضیحات محصول
+        - generic [ref=e80]: مشخصات
+        - generic [ref=e81]: نحوه نگهداری
+        - generic [ref=e82]: نظرات کاربران (89)
+      - list [ref=e84]:
+        - listitem [ref=e85]: گردنبند قلب مینیمال با طراحی ظریف و مینیمال، نمادی از عشق و لطافت است.
+        - listitem [ref=e86]: طراحی مینیمال و ظریف مناسب استفاده روزمره و مهمانی
+        - listitem [ref=e87]: آبکاری طلا با کیفیت بالا و مقاومت در برابر رطوبت
+        - listitem [ref=e88]: قفل محکم و ایمن برای اطمینان بیشتر
+    - generic [ref=e89]:
+      - complementary [ref=e90]:
+        - heading "نظرات کاربران" [level=2] [ref=e91]
+        - strong [ref=e92]: ۴٫۸
+        - generic [ref=e93]: از ۵ (89 نظر)
+        - generic [ref=e94]: ★★★★★
+      - generic [ref=e95]:
+        - article [ref=e96]:
+          - generic [ref=e99]:
+            - text: نرگس محمدی★★★★★
+            - paragraph [ref=e100]: خیلی ظریف و خوش‌رنگه، دقیقاً همون چیزی بود که می‌خواستم. بسته‌بندی هم تمیز و شیک بود.
+        - article [ref=e101]:
+          - generic [ref=e104]:
+            - text: سارا رحیمی★★★★★
+            - paragraph [ref=e105]: خیلی ظریف و خوش‌رنگه، دقیقاً همون چیزی بود که می‌خواستم. بسته‌بندی هم تمیز و شیک بود.
+    - generic [ref=e106]:
+      - generic [ref=e107]:
+        - generic [ref=e108]: مشاهده همه
+        - heading "محصولات مرتبط" [level=2] [ref=e109]
+      - generic [ref=e110]:
+        - article [ref=e111]:
+          - link "-۱۰٪ افزودن به علاقه‌مندی گردنبند مروارید اشکی ۱٬۲۳۲٬۰۰۰ تومان ۱٬۴۵۰٬۰۰۰ تومان ★★★★★ (31)" [ref=e112] [cursor=pointer]:
+            - /url: /products/pearl-drop-necklace
+            - generic [ref=e113]: "-۱۰٪"
+            - button "افزودن به علاقه‌مندی" [ref=e114]: ♡
+            - generic [ref=e117]:
+              - heading "گردنبند مروارید اشکی" [level=3] [ref=e118]
+              - paragraph [ref=e119]: ۱٬۲۳۲٬۰۰۰ تومان
+              - deletion [ref=e120]: ۱٬۴۵۰٬۰۰۰ تومان
+              - generic [ref=e121]:
+                - text: ★★★★★
+                - generic [ref=e122]: (31)
+          - button "▢ کیف خرید" [ref=e123] [cursor=pointer]
+        - article [ref=e124]:
+          - link "جدید افزودن به علاقه‌مندی گردنبند سکه‌ای مینیمال ۸۹۰٬۰۰۰ تومان ★★★★★ (33)" [ref=e125] [cursor=pointer]:
+            - /url: /products/coin-necklace
+            - generic [ref=e126]: جدید
+            - button "افزودن به علاقه‌مندی" [ref=e127]: ♡
+            - generic [ref=e130]:
+              - heading "گردنبند سکه‌ای مینیمال" [level=3] [ref=e131]
+              - paragraph [ref=e132]: ۸۹۰٬۰۰۰ تومان
+              - generic [ref=e133]:
+                - text: ★★★★★
+                - generic [ref=e134]: (33)
+          - button "▢ کیف خرید" [ref=e135] [cursor=pointer]
+        - article [ref=e136]:
+          - link "افزودن به علاقه‌مندی ★ گردنبند دو لایه ماه و ستاره ۱٬۱۹۰٬۰۰۰ تومان ★★★★★ (56)" [ref=e137] [cursor=pointer]:
+            - /url: /products/moon-star-necklace
+            - button "افزودن به علاقه‌مندی" [ref=e138]: ♡
+            - generic [ref=e139]: ★
+            - generic [ref=e141]:
+              - heading "گردنبند دو لایه ماه و ستاره" [level=3] [ref=e142]
+              - paragraph [ref=e143]: ۱٬۱۹۰٬۰۰۰ تومان
+              - generic [ref=e144]:
+                - text: ★★★★★
+                - generic [ref=e145]: (56)
+          - button "▢ کیف خرید" [ref=e146] [cursor=pointer]
+        - article [ref=e147]:
+          - link "افزودن به علاقه‌مندی گردنبند حلقه و مروارید ۹۹۹٬۰۰۰ تومان ★★★★★ (18)" [ref=e148] [cursor=pointer]:
+            - /url: /products/pearl-ring-necklace
+            - button "افزودن به علاقه‌مندی" [ref=e149]: ♡
+            - generic [ref=e152]:
+              - heading "گردنبند حلقه و مروارید" [level=3] [ref=e153]
+              - paragraph [ref=e154]: ۹۹۹٬۰۰۰ تومان
+              - generic [ref=e155]:
+                - text: ★★★★★
+                - generic [ref=e156]: (18)
+          - button "▢ کیف خرید" [ref=e157] [cursor=pointer]
+  - contentinfo [ref=e158]:
+    - generic [ref=e159]:
+      - generic [ref=e160]:
+        - heading "از جدیدترین کالکشن‌ها و تخفیف‌ها باخبر شو!" [level=3] [ref=e161]
+        - paragraph [ref=e162]: ایمیل خود را وارد کنید و ۱۰٪ تخفیف اولین خرید را دریافت کنید.
+      - generic [ref=e163]:
+        - textbox "ایمیل خود را وارد کنید" [ref=e164]
+        - button "ثبت نام" [ref=e165]
+    - generic [ref=e167]:
+      - generic [ref=e168]:
+        - heading "memostyles" [level=3] [ref=e169]
+        - paragraph [ref=e170]: میمو استایل، انتخابی برای خاص پسندها که به جزئیات اهمیت می‌دهند.
+        - generic [ref=e171]:
+          - generic [ref=e172]: IG
+          - generic [ref=e173]: TG
+          - generic [ref=e174]: PI
+          - generic [ref=e175]: TT
+      - generic [ref=e176]:
+        - heading "راهنمای مشتریان" [level=4] [ref=e177]
+        - paragraph [ref=e178]: سوالات متداول
+        - paragraph [ref=e179]: راهنمای خرید
+        - paragraph [ref=e180]: شرایط بازگشت کالا
+        - paragraph [ref=e181]: حریم خصوصی
+      - generic [ref=e182]:
+        - heading "دسترسی سریع" [level=4] [ref=e183]
+        - paragraph [ref=e184]: جدیدترین‌ها
+        - paragraph [ref=e185]: گردنبند
+        - paragraph [ref=e186]: گوشواره
+        - paragraph [ref=e187]: دستبند
+      - generic [ref=e188]:
+        - heading "اطلاعات تماس" [level=4] [ref=e189]
+        - paragraph [ref=e190]: ۰۲۱-۹۱۰۹۰۹۰۹
+        - paragraph [ref=e191]: info@memostyles.com
+        - paragraph [ref=e192]: تهران، خیابان ولیعصر، مجتمع تجاری نور
+    - paragraph [ref=e193]: تمامی حقوق برای memostyles محفوظ است.

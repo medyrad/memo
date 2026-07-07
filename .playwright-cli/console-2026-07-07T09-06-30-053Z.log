@@ -1,0 +1,319 @@
+[    1024ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[  453297ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  456102ms] [LOG] [Fast Refresh] done in 2806ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  525590ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  527216ms] [LOG] [Fast Refresh] done in 1626ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[  702501ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[  704851ms] [LOG] [Fast Refresh] done in 2350ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1158301ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1161355ms] [LOG] [Fast Refresh] done in 3055ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1164292ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF&_rsc=1e1mm:0
+[ 1164564ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF&_rsc=1e1mm:0
+[ 1165498ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF:0
+[ 1167884ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:29889
+[ 1168329ms] Error: Cannot find module './685.js'
+Require stack:
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/pages/_document.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/utils.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:55:36)
+    at Module._load (node:internal/modules/cjs/loader:922:27)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at __webpack_require__.f.require (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:198:28)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:162:22)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10743)
+    at Object.<anonymous> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10796)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at requirePage (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js:109:84)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:84)
+    at async loadComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:816:17)
+    at async (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:339:20)
+    at async Span.traceAsyncFn (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js:141:13)
+[ 1168194ms] [LOG] [HMR] connected @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:45
+[ 1168362ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0
+[ 1247645ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF:0
+[ 1250670ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:29889
+[ 1250734ms] Error: Cannot find module './685.js'
+Require stack:
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/about/page.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/utils.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:55:36)
+    at Module._load (node:internal/modules/cjs/loader:922:27)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at __webpack_require__.f.require (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:198:28)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:162:22)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10743)
+    at Object.<anonymous> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10796)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at requirePage (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js:109:84)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:84)
+    at async loadComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:816:17)
+    at async (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:339:20)
+    at async Span.traceAsyncFn (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js:141:13)
+[ 1250839ms] [LOG] [HMR] connected @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:45
+[ 1251889ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF:0
+[ 1253503ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:29889
+[ 1253551ms] Error: Cannot find module './685.js'
+Require stack:
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/contact/page.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/utils.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:55:36)
+    at Module._load (node:internal/modules/cjs/loader:922:27)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at __webpack_require__.f.require (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:198:28)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:162:22)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10743)
+    at Object.<anonymous> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10796)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at requirePage (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js:109:84)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:84)
+    at async loadComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:816:17)
+    at async (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:339:20)
+    at async Span.traceAsyncFn (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js:141:13)
+[ 1253658ms] [LOG] [HMR] connected @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:45
+[ 1254120ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[ 1254326ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:349
+[ 1255660ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF:0
+[ 1257096ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:29889
+[ 1257119ms] Error: Cannot find module './685.js'
+Require stack:
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/faq/page.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/utils.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:55:36)
+    at Module._load (node:internal/modules/cjs/loader:922:27)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at __webpack_require__.f.require (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:198:28)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:162:22)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10743)
+    at Object.<anonymous> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10796)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at requirePage (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js:109:84)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:84)
+    at async loadComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:816:17)
+    at async (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:339:20)
+    at async Span.traceAsyncFn (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js:141:13)
+[ 1257164ms] [LOG] [HMR] connected @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:45
+[ 1257548ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:221
+[ 1258036ms] [WARNING] [Fast Refresh] performing full reload because your application had an unrecoverable error @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/hot-reloader-client.js:349
+[ 1258422ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/search?q=%DA%AF%D8%B1%D8%AF%D9%86%D8%A8%D9%86%D8%AF:0
+[ 1259381ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///../../node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/cjs/react-dom.development.js:29889
+[ 1259475ms] Error: Cannot find module './685.js'
+Require stack:
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js
+- /Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/wishlist/page.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/utils.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-middleware.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/hot-reloader-webpack.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-utils/setup-dev-bundler.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js
+- /Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1077:15)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:55:36)
+    at Module._load (node:internal/modules/cjs/loader:922:27)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at __webpack_require__.f.require (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:198:28)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:111:40)
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:110:67)
+    at Array.map (<anonymous>)
+    at __webpack_require__.X (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/webpack-runtime.js:162:22)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10743)
+    at Object.<anonymous> (file:///Users/mehdi/Projex/memostyles/apps/storefront/.next/server/app/search/page.js:1:10796)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Module.require (node:internal/modules/cjs/loader:1143:19)
+    at mod.require (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require-hook.js:65:28)
+    at require (node:internal/modules/cjs/helpers:121:18)
+    at requirePage (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/require.js:109:84)
+    at <unknown> (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:84)
+    at async loadComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/load-components.js:98:26)
+    at async DevServer.findPageComponentsImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:710:36)
+    at async DevServer.findPageComponents (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:577:20)
+    at async DevServer.renderPageComponent (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1917:24)
+    at async DevServer.renderToResponseImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:1969:32)
+    at async DevServer.pipeImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:920:25)
+    at async NextNodeServer.handleCatchallRenderRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/next-server.js:272:17)
+    at async DevServer.handleRequestImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/base-server.js:816:17)
+    at async (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:339:20)
+    at async Span.traceAsyncFn (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/trace/trace.js:154:20)
+    at async DevServer.handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/dev/next-dev-server.js:336:24)
+    at async invokeRender (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:174:21)
+    at async handleRequest (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:353:24)
+    at async requestHandlerImpl (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/router-server.js:377:13)
+    at async Server.requestListener (file:///Users/mehdi/Projex/memostyles/node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/server/lib/start-server.js:141:13)
+[ 1259457ms] [LOG] [HMR] connected @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:45
+[ 1430984ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1431988ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1432991ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1433996ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1435005ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1440011ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1445020ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1450051ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1455075ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1460152ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1465175ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1470429ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1476052ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1481971ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1488813ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1498442ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1504592ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1514027ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1523486ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1532892ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1540930ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1548075ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1553080ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1558087ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1563092ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ webpack-internal:///../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:76
+[ 1620101ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[ 1953050ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1954073ms] [LOG] [Fast Refresh] done in 1025ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1954364ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1954558ms] [LOG] [Fast Refresh] done in 193ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1954879ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1955044ms] [LOG] [Fast Refresh] done in 165ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1955293ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1955592ms] [LOG] [Fast Refresh] done in 299ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1955884ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1956059ms] [LOG] [Fast Refresh] done in 176ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1956347ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1956571ms] [LOG] [Fast Refresh] done in 223ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43

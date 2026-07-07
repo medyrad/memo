@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: memostyles
+      POSTGRES_USER: memostyles
+      POSTGRES_PASSWORD: memostyles
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  backend:
+    build:
+      context: ../../
+      dockerfile: infra/docker/backend.Dockerfile
+    env_file:
+      - ../../.env.example
+    environment:
+      POSTGRES_HOST: postgres
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    command: python manage.py runserver 0.0.0.0:8000
+
+volumes:
+  postgres_data:
+

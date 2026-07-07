@@ -1,0 +1,190 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۱,۵۰۰,۰۰۰ تومان
+        - generic [ref=e6]: پشتیبانی ۷/۲۴ | ۰۲۱-۹۱۰۹۰۹۰۹
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - link "سبد خرید" [ref=e9] [cursor=pointer]:
+            - /url: /cart
+            - text: کیف خرید
+            - generic [ref=e10]: ۲
+          - link "علاقه‌مندی" [ref=e11] [cursor=pointer]:
+            - /url: /wishlist
+          - link "ورود / ثبت‌نام" [ref=e12] [cursor=pointer]:
+            - /url: /auth/login
+        - link "◆ memostyles ACCESSORIES" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - text: ◆
+          - generic [ref=e14]: memostyles
+          - generic [ref=e15]: ACCESSORIES
+        - generic [ref=e16]:
+          - textbox "جستجو در محصولات..." [ref=e17]
+          - button "جستجو" [ref=e18]
+      - navigation "ناوبری فروشگاه" [ref=e19]:
+        - link "جدیدترین‌ها" [ref=e20] [cursor=pointer]:
+          - /url: /products
+        - link "گردنبند" [ref=e21] [cursor=pointer]:
+          - /url: /categories/necklaces
+        - link "گوشواره" [ref=e22] [cursor=pointer]:
+          - /url: /categories/earrings
+        - link "دستبند" [ref=e23] [cursor=pointer]:
+          - /url: /categories/bracelets
+        - link "کیف" [ref=e24] [cursor=pointer]:
+          - /url: /categories/bags
+        - link "هدیه" [ref=e25] [cursor=pointer]:
+          - /url: /categories/gifts
+        - link "کالکشن‌ها" [ref=e26] [cursor=pointer]:
+          - /url: /products
+        - link "مجله" [ref=e27] [cursor=pointer]:
+          - /url: /blog
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]: خانه / سبد خرید / اطلاعات ارسال / پرداخت / پرداخت ناموفق
+        - heading "پرداخت ناموفق" [level=1] [ref=e32]
+        - generic "مراحل خرید" [ref=e33]:
+          - generic [ref=e34]:
+            - generic [ref=e35]: ✓
+            - generic [ref=e36]: سبد خرید
+          - generic [ref=e37]:
+            - generic [ref=e38]: ✓
+            - generic [ref=e39]: اطلاعات ارسال
+          - generic [ref=e40]:
+            - generic [ref=e41]: ۳
+            - generic [ref=e42]: پرداخت
+        - generic [ref=e43]:
+          - generic [ref=e44]: ×
+          - heading "پرداخت ناموفق بود" [level=1] [ref=e45]
+          - paragraph [ref=e46]: متاسفانه پرداخت شما تکمیل نشد. مبلغی از حساب شما کسر نشده یا در صورت کسر، طی زمان اعلامی بانک بازخواهد گشت.
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e49]: شماره سفارش موقت
+              - text: TMP-65789214
+            - generic [ref=e50]:
+              - generic [ref=e51]: روش پرداخت
+              - text: پرداخت آنلاین (درگاه بانکی)
+            - generic [ref=e52]:
+              - generic [ref=e53]: تاریخ و زمان
+              - text: ۱۴۰۳/۰۳/۳۰ - ۱۲:۴۸
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - heading "دلایل احتمالی" [level=2] [ref=e56]
+              - article [ref=e57]:
+                - generic [ref=e58]: "!"
+                - generic [ref=e59]:
+                  - text: قطع ارتباط بانکی
+                  - paragraph [ref=e60]: در هنگام انتقال به درگاه بانکی، ارتباط قطع شده است.
+              - article [ref=e61]:
+                - generic [ref=e62]: "!"
+                - generic [ref=e63]:
+                  - text: انصراف از پرداخت
+                  - paragraph [ref=e64]: شما عملیات پرداخت را قبل از تکمیل لغو کرده‌اید.
+              - article [ref=e65]:
+                - generic [ref=e66]: "!"
+                - generic [ref=e67]:
+                  - text: موجودی ناکافی
+                  - paragraph [ref=e68]: موجودی حساب شما کافی نبوده است.
+              - article [ref=e69]:
+                - generic [ref=e70]: "!"
+                - generic [ref=e71]:
+                  - text: خطای درگاه پرداخت
+                  - paragraph [ref=e72]: خطایی در سمت درگاه رخ داده است. لطفا مجددا تلاش کنید.
+            - complementary [ref=e73]:
+              - generic [ref=e74]:
+                - heading "خلاصه سفارش" [level=3] [ref=e75]
+                - generic [ref=e76]: ۳ کالا
+              - generic [ref=e77]:
+                - generic [ref=e78]:
+                  - generic [ref=e81]:
+                    - text: گردنبند قلب مینیمال
+                    - generic [ref=e82]: "رنگ: طلایی | طول زنجیر: ۴۵ سانتی‌متر"
+                    - generic [ref=e83]: ۱٬۳۹۰٬۰۰۰ تومان
+                  - emphasis [ref=e84]: ۱×
+                - generic [ref=e85]:
+                  - generic [ref=e88]:
+                    - text: گوشواره مروارید اشکی
+                    - generic [ref=e89]: طلایی / مروارید طبیعی
+                    - generic [ref=e90]: ۷۲۰٬۰۰۰ تومان
+                  - emphasis [ref=e91]: ۱×
+                - generic [ref=e92]:
+                  - generic [ref=e95]:
+                    - text: دستبند زنجیری کلاسیک
+                    - generic [ref=e96]: "طلایی | سایز: ۱۴ سانتی‌متر"
+                    - generic [ref=e97]: ۷۵۰٬۰۰۰ تومان
+                  - emphasis [ref=e98]: ۱×
+              - generic [ref=e99]:
+                - generic [ref=e100]:
+                  - term [ref=e101]: جمع جزئی
+                  - definition [ref=e102]: ۲٬۸۶۰٬۰۰۰ تومان
+                - generic [ref=e103]:
+                  - term [ref=e104]: تخفیف (MEMO10)
+                  - definition [ref=e105]: "-۲۶۹٬۰۰۰ تومان"
+                - generic [ref=e106]:
+                  - term [ref=e107]: هزینه ارسال
+                  - definition [ref=e108]: رایگان
+                - generic [ref=e109]:
+                  - term [ref=e110]: مبلغ قابل پرداخت
+                  - definition [ref=e111]: ۲٬۴۹۰٬۰۰۰ تومان
+        - generic [ref=e112]:
+          - link "تماس با پشتیبانی ☏" [ref=e113] [cursor=pointer]:
+            - /url: /contact
+          - link "بازگشت به سبد خرید" [ref=e114] [cursor=pointer]:
+            - /url: /cart
+          - link "تغییر روش پرداخت ▭" [ref=e115] [cursor=pointer]:
+            - /url: /checkout
+          - link "تلاش مجدد برای پرداخت" [ref=e116] [cursor=pointer]:
+            - /url: /checkout
+        - generic [ref=e117]:
+          - generic [ref=e118]:
+            - generic [ref=e119]: ♢
+            - generic [ref=e120]: ضمانت اصالت کالا
+            - generic [ref=e121]: کالای اورجینال با ضمانت
+          - generic [ref=e122]:
+            - generic [ref=e123]: ▣
+            - generic [ref=e124]: ۷ روز ضمانت بازگشت
+            - generic [ref=e125]: مرجوعی آسان و بدون پرسش
+          - generic [ref=e126]:
+            - generic [ref=e127]: ▤
+            - generic [ref=e128]: ارسال سریع
+            - generic [ref=e129]: ارسال به سراسر ایران
+          - generic [ref=e130]:
+            - generic [ref=e131]: ☏
+            - generic [ref=e132]: پشتیبانی ۲۴/۷
+            - generic [ref=e133]: همیشه کنار شما هستیم
+    - contentinfo [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]:
+          - heading "از جدیدترین کالکشن‌ها و تخفیف‌ها باخبر شو!" [level=3] [ref=e137]
+          - paragraph [ref=e138]: ایمیل خود را وارد کنید و ۱۰٪ تخفیف اولین خرید را دریافت کنید.
+        - generic [ref=e139]:
+          - textbox "ایمیل خود را وارد کنید" [ref=e140]
+          - button "ثبت نام" [ref=e141]
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "memostyles" [level=3] [ref=e145]
+          - paragraph [ref=e146]: میمو استایل، انتخابی برای خاص پسندها که به جزئیات اهمیت می‌دهند.
+          - generic [ref=e147]:
+            - generic [ref=e148]: IG
+            - generic [ref=e149]: TG
+            - generic [ref=e150]: PI
+            - generic [ref=e151]: TT
+        - generic [ref=e152]:
+          - heading "راهنمای مشتریان" [level=4] [ref=e153]
+          - paragraph [ref=e154]: سوالات متداول
+          - paragraph [ref=e155]: راهنمای خرید
+          - paragraph [ref=e156]: شرایط بازگشت کالا
+          - paragraph [ref=e157]: حریم خصوصی
+        - generic [ref=e158]:
+          - heading "دسترسی سریع" [level=4] [ref=e159]
+          - paragraph [ref=e160]: جدیدترین‌ها
+          - paragraph [ref=e161]: گردنبند
+          - paragraph [ref=e162]: گوشواره
+          - paragraph [ref=e163]: دستبند
+        - generic [ref=e164]:
+          - heading "اطلاعات تماس" [level=4] [ref=e165]
+          - paragraph [ref=e166]: ۰۲۱-۹۱۰۹۰۹۰۹
+          - paragraph [ref=e167]: info@memostyles.com
+          - paragraph [ref=e168]: تهران، خیابان ولیعصر، مجتمع تجاری نور
+      - paragraph [ref=e169]: تمامی حقوق برای memostyles محفوظ است.
+  - alert [ref=e170]

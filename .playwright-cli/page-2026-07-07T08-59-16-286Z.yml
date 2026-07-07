@@ -1,0 +1,270 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۷۰۰ هزار تومان
+        - generic [ref=e6]: □
+      - generic [ref=e7]:
+        - generic [ref=e8]:
+          - generic [ref=e9]: ☎
+          - generic [ref=e10]: پشتیبانی ۲۴/۷ ساعته
+          - generic [ref=e11]: ۰۲۱-۹۱۰۹۰۹۰۹
+        - generic [ref=e12]:
+          - link "سبد خرید" [ref=e13] [cursor=pointer]:
+            - /url: /cart
+            - generic [ref=e14]: ▢
+            - generic [ref=e15]: ۲
+          - link "علاقه‌مندی" [ref=e16] [cursor=pointer]:
+            - /url: /wishlist
+            - generic [ref=e17]: ♡
+          - link "حساب کاربری" [ref=e18] [cursor=pointer]:
+            - /url: /profile
+            - generic [ref=e19]: ♙
+          - link "ورود / ثبت‌نام" [ref=e20] [cursor=pointer]:
+            - /url: /auth/login
+        - link "◆ memostyles ACCESSORIES" [ref=e21] [cursor=pointer]:
+          - /url: /
+          - text: ◆
+          - generic [ref=e22]: memostyles
+          - generic [ref=e23]: ACCESSORIES
+      - generic [ref=e24]:
+        - navigation "ناوبری فروشگاه" [ref=e25]:
+          - link "جدیدترین‌ها" [ref=e26] [cursor=pointer]:
+            - /url: /products
+          - link "گردنبند" [ref=e27] [cursor=pointer]:
+            - /url: /categories/necklaces
+          - link "گوشواره" [ref=e28] [cursor=pointer]:
+            - /url: /categories/earrings
+          - link "دستبند" [ref=e29] [cursor=pointer]:
+            - /url: /categories/bracelets
+          - link "کیف" [ref=e30] [cursor=pointer]:
+            - /url: /categories/bags
+          - link "هدیه" [ref=e31] [cursor=pointer]:
+            - /url: /categories/gifts
+          - link "کالکشن‌ها" [ref=e32] [cursor=pointer]:
+            - /url: /products
+          - link "مجله" [ref=e33] [cursor=pointer]:
+            - /url: /blog
+          - link "درباره ما" [ref=e34] [cursor=pointer]:
+            - /url: /about
+          - link "تماس با ما" [ref=e35] [cursor=pointer]:
+            - /url: /contact
+        - link "جستجو" [ref=e36] [cursor=pointer]:
+          - /url: /search
+          - generic [ref=e37]: ⌕
+    - main [ref=e38]:
+      - generic [ref=e39]:
+        - link "خانه" [ref=e40] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e41]: /حساب کاربری
+        - generic [ref=e42]: /پروفایل
+      - generic [ref=e43]:
+        - heading "پروفایل کاربر" [level=1] [ref=e44]
+        - paragraph [ref=e45]: خوش آمدید سارا احمدی، اطلاعات حساب کاربری خود را مدیریت کنید.
+      - generic [ref=e46]:
+        - complementary [ref=e47]:
+          - button "تغییر تصویر" [ref=e50]: ⌘
+          - heading "سارا احمدی" [level=3] [ref=e51]
+          - paragraph [ref=e52]: ۰۹۱۲۳۴۵۶۷۸۹
+          - generic [ref=e53]: عضو طلایی
+          - navigation [ref=e54]:
+            - link "داشبورد" [ref=e55] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e56]: ▦
+              - text: داشبورد
+            - link "اطلاعات حساب" [ref=e57] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e58]: ♙
+              - text: اطلاعات حساب
+            - link "سفارش‌های من" [ref=e59] [cursor=pointer]:
+              - /url: /profile/orders
+              - generic [ref=e60]: ▢
+              - text: سفارش‌های من
+            - link "آدرس‌ها" [ref=e61] [cursor=pointer]:
+              - /url: /profile/addresses
+              - generic [ref=e62]: ⌖
+              - text: آدرس‌ها
+            - link "علاقه‌مندی‌ها" [ref=e63] [cursor=pointer]:
+              - /url: /wishlist
+              - generic [ref=e64]: ♡
+              - text: علاقه‌مندی‌ها
+            - link "اطلاع‌رسانی" [ref=e65] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e66]: ♧
+              - text: اطلاع‌رسانی
+          - link "خروج" [ref=e67] [cursor=pointer]:
+            - /url: /auth/login
+            - generic [ref=e68]: ↱
+            - text: خروج
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - heading "اطلاعات شخصی" [level=2] [ref=e71]:
+              - generic [ref=e72]: ♙
+              - text: اطلاعات شخصی
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - text: نام
+                - generic [ref=e75]: "*"
+                - textbox "نام *" [ref=e76]: سارا
+              - generic [ref=e77]:
+                - text: نام خانوادگی
+                - generic [ref=e78]: "*"
+                - textbox "نام خانوادگی *" [ref=e79]: احمدی
+              - generic [ref=e80]:
+                - text: شماره موبایل
+                - generic [ref=e81]: "*"
+                - textbox "شماره موبایل *" [ref=e82]: ۰۹۱۲۳۴۵۶۷۸۹
+              - generic [ref=e83]:
+                - text: ایمیل
+                - generic [ref=e84]: "*"
+                - textbox "ایمیل *" [ref=e85]: sara@email.com
+              - generic [ref=e86]:
+                - text: تاریخ تولد (اختیاری)
+                - textbox "تاریخ تولد (اختیاری)" [ref=e87]: ۱۳۷۲/۰۵/۱۲
+            - generic [ref=e88]:
+              - button "ذخیره تغییرات" [ref=e89] [cursor=pointer]
+              - link "تغییر رمز عبور" [ref=e90] [cursor=pointer]:
+                - /url: /auth/login
+                - text: تغییر رمز عبور
+                - generic [ref=e91]: ▣
+          - generic [ref=e92]:
+            - article [ref=e93]:
+              - generic [ref=e94]: ▢
+              - generic [ref=e95]: سفارش‌های تکمیل‌شده
+              - generic [ref=e96]: ۲۷
+              - generic [ref=e97]: سفارش
+            - article [ref=e98]:
+              - generic [ref=e99]: ⬡
+              - generic [ref=e100]: سفارش‌های در حال پردازش
+              - generic [ref=e101]: ۳
+              - generic [ref=e102]: سفارش
+            - article [ref=e103]:
+              - generic [ref=e104]: ♡
+              - generic [ref=e105]: علاقه‌مندی‌ها
+              - generic [ref=e106]: ۱۸
+              - generic [ref=e107]: محصول
+            - article [ref=e108]:
+              - generic [ref=e109]: ◇
+              - generic [ref=e110]: امتیاز باشگاه مشتریان
+              - generic [ref=e111]: ۱,۲۵۰
+              - generic [ref=e112]: امتیاز
+          - generic [ref=e113]:
+            - article [ref=e114]:
+              - heading "آدرس پیش‌فرض" [level=2] [ref=e115]:
+                - text: آدرس پیش‌فرض
+                - generic [ref=e116]: ⌖
+              - paragraph [ref=e117]: تهران، خیابان ولیعصر، بالاتر از میدان مطهری، پلاک ۶۳، واحد ۱۲
+              - paragraph [ref=e118]: "کد پستی: ۱۵۸۷۸۶۵۴۳۲۱"
+              - paragraph [ref=e119]: "شماره تماس: ۰۹۱۲۳۴۵۶۷۸۹"
+              - generic [ref=e120]:
+                - link "مدیریت آدرس‌ها" [ref=e121] [cursor=pointer]:
+                  - /url: /profile/addresses
+                - button "ویرایش آدرس" [ref=e122] [cursor=pointer]
+            - article [ref=e123]:
+              - heading "آخرین سفارش‌ها" [level=2] [ref=e124]:
+                - text: آخرین سفارش‌ها
+                - generic [ref=e125]: ▢
+              - table [ref=e126]:
+                - rowgroup [ref=e127]:
+                  - row "شماره سفارش تاریخ مبلغ وضعیت" [ref=e128]:
+                    - columnheader "شماره سفارش" [ref=e129]
+                    - columnheader "تاریخ" [ref=e130]
+                    - columnheader "مبلغ" [ref=e131]
+                    - columnheader "وضعیت" [ref=e132]
+                - rowgroup [ref=e133]:
+                  - row "#۱۰۳۴۵۶ ۱۴۰۲/۰۳/۱۵ ۱,۲۹۰,۰۰۰ تومان تحویل‌شده" [ref=e134]:
+                    - cell "#۱۰۳۴۵۶" [ref=e135]
+                    - cell "۱۴۰۲/۰۳/۱۵" [ref=e136]
+                    - cell "۱,۲۹۰,۰۰۰ تومان" [ref=e137]
+                    - cell "تحویل‌شده" [ref=e138]:
+                      - generic [ref=e139]: تحویل‌شده
+                  - row "#۱۰۲۹۸۷ ۱۴۰۲/۰۳/۰۸ ۷۶۸,۰۰۰ تومان در حال آماده‌سازی" [ref=e140]:
+                    - cell "#۱۰۲۹۸۷" [ref=e141]
+                    - cell "۱۴۰۲/۰۳/۰۸" [ref=e142]
+                    - cell "۷۶۸,۰۰۰ تومان" [ref=e143]
+                    - cell "در حال آماده‌سازی" [ref=e144]:
+                      - generic [ref=e145]: در حال آماده‌سازی
+                  - row "#۱۰۲۴۵۱ ۱۴۰۲/۰۲/۲۵ ۴۵۰,۰۰۰ تومان لغو شده" [ref=e146]:
+                    - cell "#۱۰۲۴۵۱" [ref=e147]
+                    - cell "۱۴۰۲/۰۲/۲۵" [ref=e148]
+                    - cell "۴۵۰,۰۰۰ تومان" [ref=e149]
+                    - cell "لغو شده" [ref=e150]:
+                      - generic [ref=e151]: لغو شده
+              - link "مشاهده همه سفارش‌ها" [ref=e152] [cursor=pointer]:
+                - /url: /profile/orders
+    - contentinfo [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - generic [ref=e156]: ✪
+          - generic [ref=e157]: ضمانت اصالت کالا
+          - generic [ref=e158]: کالای اورجینال با ضمانت
+        - generic [ref=e159]:
+          - generic [ref=e160]: ▱
+          - generic [ref=e161]: ارسال سریع
+          - generic [ref=e162]: ارسال به سراسر ایران
+        - generic [ref=e163]:
+          - generic [ref=e164]: ↶
+          - generic [ref=e165]: ۷ روز ضمانت بازگشت
+          - generic [ref=e166]: مرجوعی آسان و بدون پرسش
+        - generic [ref=e167]:
+          - generic [ref=e168]: □
+          - generic [ref=e169]: بسته‌بندی هدیه
+          - generic [ref=e170]: بسته‌بندی شیک و رایگان
+        - generic [ref=e171]:
+          - generic [ref=e172]: ☎
+          - generic [ref=e173]: پشتیبانی ۲۴/۷
+          - generic [ref=e174]: همیشه کنار شما هستیم
+      - generic [ref=e175]:
+        - generic [ref=e176]: ✦ ✦
+        - generic [ref=e177]:
+          - heading "در اینستاگرام با ما همراه باشید" [level=3] [ref=e178]
+          - paragraph [ref=e179]: ایمیل خود را وارد کنید تا از تخفیف‌های ویژه و جدیدترین کالکشن‌ها باخبر شوید.
+        - generic [ref=e180]:
+          - textbox "ایمیل خود را وارد کنید" [ref=e181]
+          - button "ثبت نام" [ref=e182]
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - heading "memostyles" [level=3] [ref=e185]
+          - paragraph [ref=e186]: میمو استایل، انتخابی برای زنانی خاص که به جزئیات اهمیت می‌دهند. زیورآلاتی با عشق، ساخته‌شده با عشق و ظرافت برای شما.
+          - generic [ref=e187]:
+            - generic [ref=e188]: ◎
+            - generic [ref=e189]: ⌁
+            - generic [ref=e190]: Ⓟ
+            - generic [ref=e191]: ♪
+        - generic [ref=e192]:
+          - heading "راهنمای مشتریان" [level=4] [ref=e193]
+          - link "سوالات متداول" [ref=e194] [cursor=pointer]:
+            - /url: /faq
+          - link "روش‌های خرید" [ref=e195] [cursor=pointer]:
+            - /url: /products
+          - link "شرایط و قوانین" [ref=e196] [cursor=pointer]:
+            - /url: /return-policy
+          - link "حریم خصوصی" [ref=e197] [cursor=pointer]:
+            - /url: /privacy-policy
+          - link "تماس با ما" [ref=e198] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e199]:
+          - heading "دسترسی سریع" [level=4] [ref=e200]
+          - link "جدیدترین‌ها" [ref=e201] [cursor=pointer]:
+            - /url: /products
+          - link "گردنبند" [ref=e202] [cursor=pointer]:
+            - /url: /categories/necklaces
+          - link "گوشواره" [ref=e203] [cursor=pointer]:
+            - /url: /categories/earrings
+          - link "دستبند" [ref=e204] [cursor=pointer]:
+            - /url: /categories/bracelets
+          - link "کیف" [ref=e205] [cursor=pointer]:
+            - /url: /categories/bags
+        - generic [ref=e206]:
+          - heading "اطلاعات تماس" [level=4] [ref=e207]
+          - paragraph [ref=e208]:
+            - generic [ref=e209]: ⌕
+            - text: ۰۲۱-۹۱۰۹۰۹۰۹
+          - paragraph [ref=e210]:
+            - generic [ref=e211]: ✉
+            - text: info@memostyles.com
+          - paragraph [ref=e212]:
+            - generic [ref=e213]: ⌖
+            - text: تهران، خیابان ولیعصر، مجتمع تجاری نور، طبقه ۴، واحد ۱۲
+      - paragraph [ref=e214]: تمامی حقوق برای memostyles محفوظ است.
+  - alert [ref=e215]

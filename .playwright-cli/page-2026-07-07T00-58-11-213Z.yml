@@ -1,0 +1,275 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۱,۵۰۰,۰۰۰ تومان
+      - generic [ref=e6]: پشتیبانی ۷/۲۴ | ۰۲۱-۹۱۰۹۰۹۰۹
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - link "سبد خرید" [ref=e9] [cursor=pointer]:
+          - /url: /cart
+          - text: کیف خرید
+          - generic [ref=e10]: ۲
+        - link "علاقه‌مندی" [ref=e11] [cursor=pointer]:
+          - /url: /wishlist
+        - link "ورود / ثبت‌نام" [ref=e12] [cursor=pointer]:
+          - /url: /auth/login
+      - link "◆ memostyles ACCESSORIES" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - text: ◆
+        - generic [ref=e14]: memostyles
+        - generic [ref=e15]: ACCESSORIES
+      - generic [ref=e16]:
+        - textbox "جستجو در محصولات..." [ref=e17]
+        - button "جستجو" [ref=e18]
+    - navigation "ناوبری فروشگاه" [ref=e19]:
+      - link "جدیدترین‌ها" [ref=e20] [cursor=pointer]:
+        - /url: /products
+      - link "گردنبند" [ref=e21] [cursor=pointer]:
+        - /url: /categories/necklaces
+      - link "گوشواره" [ref=e22] [cursor=pointer]:
+        - /url: /categories/earrings
+      - link "دستبند" [ref=e23] [cursor=pointer]:
+        - /url: /categories/bracelets
+      - link "کیف" [ref=e24] [cursor=pointer]:
+        - /url: /categories/bags
+      - link "هدیه" [ref=e25] [cursor=pointer]:
+        - /url: /categories/gifts
+      - link "کالکشن‌ها" [ref=e26] [cursor=pointer]:
+        - /url: /products
+      - link "مجله" [ref=e27] [cursor=pointer]:
+        - /url: /blog
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]: خانه / حساب کاربری / سفارش‌های من / جزئیات سفارش
+      - generic [ref=e31]:
+        - complementary [ref=e32]:
+          - button "تغییر تصویر" [ref=e35]: ▣
+          - heading "سارا احمدی" [level=3] [ref=e36]
+          - paragraph [ref=e37]: ۰۹۱۲۳۴۵۶۷۸۹
+          - generic [ref=e38]: عضو طلایی ♢
+          - navigation [ref=e39]:
+            - link "▦ داشبورد" [ref=e40] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e41]: ▦
+              - text: داشبورد
+            - link "♙ اطلاعات حساب" [ref=e42] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e43]: ♙
+              - text: اطلاعات حساب
+            - link "▢ سفارش‌های من" [ref=e44] [cursor=pointer]:
+              - /url: /profile/orders
+              - generic [ref=e45]: ▢
+              - text: سفارش‌های من
+            - link "⌖ آدرس‌ها" [ref=e46] [cursor=pointer]:
+              - /url: /profile/addresses
+              - generic [ref=e47]: ⌖
+              - text: آدرس‌ها
+            - link "♡ علاقه‌مندی‌ها" [ref=e48] [cursor=pointer]:
+              - /url: /wishlist
+              - generic [ref=e49]: ♡
+              - text: علاقه‌مندی‌ها
+            - link "♧ اطلاع‌رسانی" [ref=e50] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e51]: ♧
+              - text: اطلاع‌رسانی
+          - link "خروج ←" [ref=e52] [cursor=pointer]:
+            - /url: /auth/login
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "جزئیات سفارش" [level=1] [ref=e55]
+            - paragraph [ref=e56]: اطلاعات کامل سفارش، وضعیت ارسال و جزئیات پرداخت را در اینجا ببینید.
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]: تحویل تخمینی
+              - generic [ref=e60]: ۱۴۰۴/۰۳/۲۲
+            - generic [ref=e61]:
+              - generic [ref=e62]: وضعیت سفارش
+              - generic [ref=e63]: در حال آماده‌سازی
+            - generic [ref=e64]:
+              - generic [ref=e65]: وضعیت پرداخت
+              - generic [ref=e66]: پرداخت شده
+            - generic [ref=e67]:
+              - generic [ref=e68]: تاریخ سفارش
+              - generic [ref=e69]: ۱۴۰۴/۰۲/۱۵
+            - generic [ref=e70]:
+              - generic [ref=e71]: شماره سفارش
+              - generic [ref=e72]: "#۱۰۳۴۵۶"
+          - generic [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: روش ارسال
+              - text: ارسال سریع
+            - generic [ref=e76]:
+              - generic [ref=e77]: روش پرداخت
+              - text: آنلاین
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - generic [ref=e80]: ✓
+              - generic [ref=e81]: ثبت سفارش
+              - generic [ref=e82]: تکمیل شده
+            - generic [ref=e83]:
+              - generic [ref=e84]: ۲
+              - generic [ref=e85]: آماده‌سازی
+              - generic [ref=e86]: در حال آماده‌سازی
+            - generic [ref=e87]:
+              - generic [ref=e88]: ۳
+              - generic [ref=e89]: ارسال
+              - generic [ref=e90]: در انتظار
+            - generic [ref=e91]:
+              - generic [ref=e92]: ۴
+              - generic [ref=e93]: تحویل
+              - generic [ref=e94]: در انتظار
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - heading "اطلاعات ارسال ⌖" [level=2] [ref=e97]
+              - generic [ref=e98]:
+                - generic [ref=e99]:
+                  - term [ref=e100]: نام گیرنده
+                  - definition [ref=e101]: سارا احمدی
+                - generic [ref=e102]:
+                  - term [ref=e103]: شماره موبایل
+                  - definition [ref=e104]: ۰۹۱۲۳۴۵۶۷۸۹
+                - generic [ref=e105]:
+                  - term [ref=e106]: آدرس
+                  - definition [ref=e107]: تهران، خیابان ولیعصر، خیابان مطهری، پلاک ۲۴، واحد ۴، طبقه ۲
+                - generic [ref=e108]:
+                  - term [ref=e109]: کد پستی
+                  - definition [ref=e110]: ۱۲۳۴۵۶۷۸۹۰
+              - paragraph [ref=e111]: "تحویل تخمینی: ۱۴۰۴/۰۳/۲۲ تا ۱۴۰۴/۰۳/۲۷"
+            - generic [ref=e112]:
+              - heading "جزئیات پرداخت ▭" [level=2] [ref=e113]
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - term [ref=e116]: روش پرداخت
+                  - definition [ref=e117]: آنلاین (زرین‌بانک)
+                - generic [ref=e118]:
+                  - term [ref=e119]: کد پیگیری پرداخت
+                  - definition [ref=e120]: PGW-14040315-8845
+                - generic [ref=e121]:
+                  - term [ref=e122]: شماره فاکتور
+                  - definition [ref=e123]: INV-۱۰۳۴۵۶
+                - generic [ref=e124]:
+                  - term [ref=e125]: جمع کل کالاها
+                  - definition [ref=e126]: ۲٬۸۶۰٬۰۰۰ تومان
+                - generic [ref=e127]:
+                  - term [ref=e128]: تخفیف
+                  - definition [ref=e129]: "-۲۶۹٬۰۰۰ تومان"
+                - generic [ref=e130]:
+                  - term [ref=e131]: هزینه ارسال
+                  - definition [ref=e132]: رایگان
+                - generic [ref=e133]:
+                  - term [ref=e134]: مبلغ قابل پرداخت
+                  - definition [ref=e135]: ۱٬۰۲۶٬۰۰۰ تومان
+          - generic [ref=e136]:
+            - heading "محصولات سفارش ▢" [level=2] [ref=e137]
+            - generic [ref=e138]:
+              - generic [ref=e141]:
+                - text: گردنبند قلب مینیمال
+                - generic [ref=e142]: "کد: N112"
+              - generic [ref=e143]: "رنگ: طلایی | طول زنجیر: ۴۵ سانتی‌متر"
+              - generic [ref=e144]: ۱
+              - generic [ref=e145]: ۱٬۳۹۰٬۰۰۰ تومان
+              - strong [ref=e146]: ۱٬۳۹۰٬۰۰۰ تومان
+            - generic [ref=e147]:
+              - generic [ref=e150]:
+                - text: گوشواره مروارید اشکی
+                - generic [ref=e151]: "کد: E205"
+              - generic [ref=e152]: طلایی / مروارید طبیعی
+              - generic [ref=e153]: ۱
+              - generic [ref=e154]: ۷۲۰٬۰۰۰ تومان
+              - strong [ref=e155]: ۷۲۰٬۰۰۰ تومان
+            - generic [ref=e156]:
+              - generic [ref=e159]:
+                - text: دستبند زنجیری کلاسیک
+                - generic [ref=e160]: "کد: B310"
+              - generic [ref=e161]: "طلایی | سایز: ۱۴ سانتی‌متر"
+              - generic [ref=e162]: ۱
+              - generic [ref=e163]: ۷۵۰٬۰۰۰ تومان
+              - strong [ref=e164]: ۷۵۰٬۰۰۰ تومان
+            - generic [ref=e165]:
+              - text: جمع کل سفارش
+              - generic [ref=e166]: ۱٬۲۹۰٬۰۰۰ تومان
+          - generic [ref=e167]:
+            - link "بازگشت به سفارش‌ها" [ref=e168] [cursor=pointer]:
+              - /url: /profile/orders
+            - link "درخواست پشتیبانی ☏" [ref=e169] [cursor=pointer]:
+              - /url: /contact
+            - link "پیگیری مرسوله ▤" [ref=e170] [cursor=pointer]:
+              - /url: /profile/orders
+            - link "بازگشت به سفارش‌ها" [ref=e171] [cursor=pointer]:
+              - /url: /profile/orders
+          - generic [ref=e172]:
+            - heading "ممکن است این محصولات را نیز دوست داشته باشید ✦" [level=2] [ref=e173]
+            - generic [ref=e174]:
+              - link "گردنبند قلب مینیمال ۱٬۳۹۰٬۰۰۰ تومان +" [ref=e175] [cursor=pointer]:
+                - /url: /products/minimal-necklace
+                - generic [ref=e178]: گردنبند قلب مینیمال
+                - generic [ref=e179]: ۱٬۳۹۰٬۰۰۰ تومان
+                - emphasis [ref=e180]: +
+              - link "گردنبند مروارید اشکی ۱٬۲۳۲٬۰۰۰ تومان +" [ref=e181] [cursor=pointer]:
+                - /url: /products/pearl-drop-necklace
+                - generic [ref=e184]: گردنبند مروارید اشکی
+                - generic [ref=e185]: ۱٬۲۳۲٬۰۰۰ تومان
+                - emphasis [ref=e186]: +
+              - link "گردنبند سکه‌ای مینیمال ۸۹۰٬۰۰۰ تومان +" [ref=e187] [cursor=pointer]:
+                - /url: /products/coin-necklace
+                - generic [ref=e190]: گردنبند سکه‌ای مینیمال
+                - generic [ref=e191]: ۸۹۰٬۰۰۰ تومان
+                - emphasis [ref=e192]: +
+              - link "★ گردنبند دو لایه ماه و ستاره ۱٬۱۹۰٬۰۰۰ تومان +" [ref=e193] [cursor=pointer]:
+                - /url: /products/moon-star-necklace
+                - generic [ref=e194]: ★
+                - generic [ref=e196]: گردنبند دو لایه ماه و ستاره
+                - generic [ref=e197]: ۱٬۱۹۰٬۰۰۰ تومان
+                - emphasis [ref=e198]: +
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - generic [ref=e201]: ♢
+          - generic [ref=e202]: ضمانت اصالت کالا
+          - generic [ref=e203]: کالای اورجینال با ضمانت
+        - generic [ref=e204]:
+          - generic [ref=e205]: ▣
+          - generic [ref=e206]: ۷ روز ضمانت بازگشت
+          - generic [ref=e207]: مرجوعی آسان و بدون پرسش
+        - generic [ref=e208]:
+          - generic [ref=e209]: ▤
+          - generic [ref=e210]: ارسال سریع
+          - generic [ref=e211]: ارسال به سراسر ایران
+        - generic [ref=e212]:
+          - generic [ref=e213]: ☏
+          - generic [ref=e214]: پشتیبانی ۲۴/۷
+          - generic [ref=e215]: همیشه کنار شما هستیم
+  - contentinfo [ref=e216]:
+    - generic [ref=e217]:
+      - generic [ref=e218]:
+        - heading "از جدیدترین کالکشن‌ها و تخفیف‌ها باخبر شو!" [level=3] [ref=e219]
+        - paragraph [ref=e220]: ایمیل خود را وارد کنید و ۱۰٪ تخفیف اولین خرید را دریافت کنید.
+      - generic [ref=e221]:
+        - textbox "ایمیل خود را وارد کنید" [ref=e222]
+        - button "ثبت نام" [ref=e223]
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - heading "memostyles" [level=3] [ref=e227]
+        - paragraph [ref=e228]: میمو استایل، انتخابی برای خاص پسندها که به جزئیات اهمیت می‌دهند.
+        - generic [ref=e229]:
+          - generic [ref=e230]: IG
+          - generic [ref=e231]: TG
+          - generic [ref=e232]: PI
+          - generic [ref=e233]: TT
+      - generic [ref=e234]:
+        - heading "راهنمای مشتریان" [level=4] [ref=e235]
+        - paragraph [ref=e236]: سوالات متداول
+        - paragraph [ref=e237]: راهنمای خرید
+        - paragraph [ref=e238]: شرایط بازگشت کالا
+        - paragraph [ref=e239]: حریم خصوصی
+      - generic [ref=e240]:
+        - heading "دسترسی سریع" [level=4] [ref=e241]
+        - paragraph [ref=e242]: جدیدترین‌ها
+        - paragraph [ref=e243]: گردنبند
+        - paragraph [ref=e244]: گوشواره
+        - paragraph [ref=e245]: دستبند
+      - generic [ref=e246]:
+        - heading "اطلاعات تماس" [level=4] [ref=e247]
+        - paragraph [ref=e248]: ۰۲۱-۹۱۰۹۰۹۰۹
+        - paragraph [ref=e249]: info@memostyles.com
+        - paragraph [ref=e250]: تهران، خیابان ولیعصر، مجتمع تجاری نور
+    - paragraph [ref=e251]: تمامی حقوق برای memostyles محفوظ است.

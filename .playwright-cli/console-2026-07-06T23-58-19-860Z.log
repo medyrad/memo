@@ -1,0 +1,47 @@
+[    1681ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[    2069ms] [WARNING] ./app/globals.css.webpack[javascript/auto]!=!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css
+Warning
+
+(1024:3) autoprefixer: end value has mixed support, consider using flex-end instead @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:226
+[   28521ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[   29348ms] [LOG] [Fast Refresh] done in 826ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1163586ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1164997ms] [LOG] [Fast Refresh] done in 1414ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1170718ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1171482ms] [LOG] [Fast Refresh] done in 765ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1838713ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1840443ms] [ERROR] ./components/cart-view.tsx
+Error: Failed to read source code from /Users/mehdi/Projex/memostyles/apps/storefront/components/cart-view.tsx
+
+Caused by:
+    No such file or directory (os error 2)
+
+Import trace for requested module:
+./components/cart-view.tsx
+./app/cart/page.tsx @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/app-index.js:32
+[ 1982114ms] [LOG] [Fast Refresh] done in 143405ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 1983058ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 1987115ms] [LOG] [Fast Refresh] done in 4057ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 2108782ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 2110251ms] [ERROR] ./components/checkout-view.tsx
+Error: Failed to read source code from /Users/mehdi/Projex/memostyles/apps/storefront/components/checkout-view.tsx
+
+Caused by:
+    No such file or directory (os error 2)
+
+Import trace for requested module:
+./components/checkout-view.tsx @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/app-index.js:32
+[ 2252871ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 2254047ms] [LOG] [Fast Refresh] done in 1175ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43
+[ 2386643ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 2570872ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 2959682ms] [LOG] [Fast Refresh] rebuilding @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:186
+[ 2961244ms] [WARNING] ./app/globals.css.webpack[javascript/auto]!=!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css
+Warning
+
+(1052:3) autoprefixer: end value has mixed support, consider using flex-end instead
+
+Import trace for requested module:
+./app/globals.css.webpack[javascript/auto]!=!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css
+./app/globals.css @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:226
+[ 2961333ms] [LOG] [Fast Refresh] done in 1652ms @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:43

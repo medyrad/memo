@@ -1,0 +1,226 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۱,۵۰۰,۰۰۰ تومان
+      - generic [ref=e6]: پشتیبانی ۷/۲۴ | ۰۲۱-۹۱۰۹۰۹۰۹
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - link "سبد خرید" [ref=e9] [cursor=pointer]:
+          - /url: /cart
+          - text: کیف خرید
+          - generic [ref=e10]: ۲
+        - link "علاقه‌مندی" [ref=e11] [cursor=pointer]:
+          - /url: /wishlist
+        - link "ورود / ثبت‌نام" [ref=e12] [cursor=pointer]:
+          - /url: /auth/login
+      - link "◆ memostyles ACCESSORIES" [ref=e13] [cursor=pointer]:
+        - /url: /
+        - text: ◆
+        - generic [ref=e14]: memostyles
+        - generic [ref=e15]: ACCESSORIES
+      - generic [ref=e16]:
+        - textbox "جستجو در محصولات..." [ref=e17]
+        - button "جستجو" [ref=e18]
+    - navigation "ناوبری فروشگاه" [ref=e19]:
+      - link "جدیدترین‌ها" [ref=e20] [cursor=pointer]:
+        - /url: /products
+      - link "گردنبند" [ref=e21] [cursor=pointer]:
+        - /url: /categories/necklaces
+      - link "گوشواره" [ref=e22] [cursor=pointer]:
+        - /url: /categories/earrings
+      - link "دستبند" [ref=e23] [cursor=pointer]:
+        - /url: /categories/bracelets
+      - link "کیف" [ref=e24] [cursor=pointer]:
+        - /url: /categories/bags
+      - link "هدیه" [ref=e25] [cursor=pointer]:
+        - /url: /categories/gifts
+      - link "کالکشن‌ها" [ref=e26] [cursor=pointer]:
+        - /url: /products
+      - link "مجله" [ref=e27] [cursor=pointer]:
+        - /url: /blog
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]: خانه / حساب کاربری / سفارش‌های من
+      - generic [ref=e31]:
+        - complementary [ref=e32]:
+          - button "تغییر تصویر" [ref=e35]: ▣
+          - heading "سارا احمدی" [level=3] [ref=e36]
+          - paragraph [ref=e37]: ۰۹۱۲۳۴۵۶۷۸۹
+          - generic [ref=e38]: عضو طلایی ♢
+          - navigation [ref=e39]:
+            - link "▦ داشبورد" [ref=e40] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e41]: ▦
+              - text: داشبورد
+            - link "♙ اطلاعات حساب" [ref=e42] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e43]: ♙
+              - text: اطلاعات حساب
+            - link "▢ سفارش‌های من" [ref=e44] [cursor=pointer]:
+              - /url: /profile/orders
+              - generic [ref=e45]: ▢
+              - text: سفارش‌های من
+            - link "⌖ آدرس‌ها" [ref=e46] [cursor=pointer]:
+              - /url: /profile/addresses
+              - generic [ref=e47]: ⌖
+              - text: آدرس‌ها
+            - link "♡ علاقه‌مندی‌ها" [ref=e48] [cursor=pointer]:
+              - /url: /wishlist
+              - generic [ref=e49]: ♡
+              - text: علاقه‌مندی‌ها
+            - link "♧ اطلاع‌رسانی" [ref=e50] [cursor=pointer]:
+              - /url: /profile
+              - generic [ref=e51]: ♧
+              - text: اطلاع‌رسانی
+          - link "خروج ←" [ref=e52] [cursor=pointer]:
+            - /url: /auth/login
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "سفارش‌های من" [level=1] [ref=e55]
+            - paragraph [ref=e56]: لیست سفارش‌های ثبت‌شده، وضعیت ارسال و جزئیات هر سفارش را اینجا ببینید.
+          - generic [ref=e57]:
+            - textbox "جستجو با شماره سفارش..." [ref=e58]
+            - generic [ref=e59]:
+              - button "همه" [ref=e60]
+              - button "در حال آماده‌سازی" [ref=e61]
+              - button "ارسال‌شده" [ref=e62]
+              - button "تحویل‌شده" [ref=e63]
+              - button "لغوشده" [ref=e64]
+            - combobox [ref=e65]:
+              - 'option "مرتب‌سازی: جدیدترین" [selected]'
+          - generic [ref=e66]:
+            - generic [ref=e67]:
+              - generic [ref=e68]: ▢
+              - generic [ref=e69]: ۵
+              - generic [ref=e70]: کل سفارش‌ها
+            - generic [ref=e71]:
+              - generic [ref=e72]: ◇
+              - generic [ref=e73]: ۳
+              - generic [ref=e74]: در حال انجام
+            - generic [ref=e75]:
+              - generic [ref=e76]: ▤
+              - generic [ref=e77]: ۱۹
+              - generic [ref=e78]: تحویل‌شده
+            - generic [ref=e79]:
+              - generic [ref=e80]: ◌
+              - generic [ref=e81]: ۵
+              - generic [ref=e82]: لغوشده
+            - generic [ref=e83]:
+              - generic [ref=e84]: ♢
+              - generic [ref=e85]: ۱۵٬۵۷۰٬۰۰۰ تومان
+              - generic [ref=e86]: مجموع هزینه‌ها
+          - heading "لیست سفارش‌ها" [level=2] [ref=e87]
+          - generic [ref=e88]:
+            - article [ref=e89]:
+              - generic [ref=e90]:
+                - generic [ref=e91]: ● در حال آماده‌سازی
+                - strong [ref=e92]: "# ۱۰۳۴۵۶"
+                - generic [ref=e93]: ۱۴۰۴/۰۳/۱۵
+                - generic [ref=e94]: "وضعیت پرداخت: پرداخت شده"
+              - generic [ref=e102]: ۳ کالا
+              - generic [ref=e103]:
+                - generic [ref=e104]: ۱٬۲۹۰٬۰۰۰ تومان
+                - generic [ref=e105]: پرداخت شده
+                - link "پیگیری سفارش" [ref=e106] [cursor=pointer]:
+                  - /url: /profile/orders/MS-1403-000856
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - generic [ref=e109]: ✓
+                  - generic [ref=e110]: ثبت سفارش
+                  - generic [ref=e111]: تکمیل شده
+                - generic [ref=e112]:
+                  - generic [ref=e113]: ۲
+                  - generic [ref=e114]: آماده‌سازی
+                  - generic [ref=e115]: در حال آماده‌سازی
+                - generic [ref=e116]:
+                  - generic [ref=e117]: ۳
+                  - generic [ref=e118]: ارسال
+                  - generic [ref=e119]: در انتظار
+                - generic [ref=e120]:
+                  - generic [ref=e121]: ۴
+                  - generic [ref=e122]: تحویل
+                  - generic [ref=e123]: در انتظار
+            - article [ref=e124]:
+              - generic [ref=e125]:
+                - generic [ref=e126]: ● ارسال شده
+                - strong [ref=e127]: "# ۱۰۳۹۸۷"
+                - generic [ref=e128]: ۱۴۰۳/۰۳/۰۸
+                - generic [ref=e129]: "وضعیت پرداخت: پرداخت شده"
+              - generic [ref=e135]: ۲ کالا
+              - generic [ref=e136]:
+                - generic [ref=e137]: ۷۴۰٬۰۰۰ تومان
+                - generic [ref=e138]: پرداخت شده
+                - link "پیگیری سفارش" [ref=e139] [cursor=pointer]:
+                  - /url: /profile/orders/MS-1403-000789
+            - article [ref=e140]:
+              - generic [ref=e141]:
+                - generic [ref=e142]: ● تحویل شده
+                - strong [ref=e143]: "# ۱۰۳۴۵۱"
+                - generic [ref=e144]: ۱۴۰۳/۰۳/۰۳
+                - generic [ref=e145]: "وضعیت پرداخت: پرداخت شده"
+              - generic [ref=e151]: ۲ کالا
+              - generic [ref=e152]:
+                - generic [ref=e153]: ۴۵۰٬۰۰۰ تومان
+                - generic [ref=e154]: پرداخت شده
+                - link "پیگیری سفارش" [ref=e155] [cursor=pointer]:
+                  - /url: /profile/orders/MS-1403-000654
+            - article [ref=e156]:
+              - generic [ref=e157]:
+                - generic [ref=e158]: ● تحویل شده
+                - strong [ref=e159]: "# ۱۰۲۷۸۴"
+                - generic [ref=e160]: ۱۴۰۳/۰۲/۲۵
+                - generic [ref=e161]: "وضعیت پرداخت: پرداخت شده"
+              - generic [ref=e169]: ۳ کالا
+              - generic [ref=e170]:
+                - generic [ref=e171]: ۳۲۰٬۰۰۰ تومان
+                - generic [ref=e172]: پرداخت شده
+                - link "پیگیری سفارش" [ref=e173] [cursor=pointer]:
+                  - /url: /profile/orders/MS-1403-000421
+            - article [ref=e174]:
+              - generic [ref=e175]:
+                - generic [ref=e176]: ● لغو شده
+                - strong [ref=e177]: "# ۱۰۲۴۰۲"
+                - generic [ref=e178]: ۱۴۰۳/۰۲/۱۵
+                - generic [ref=e179]: "وضعیت پرداخت: پرداخت شده"
+              - generic [ref=e183]: ۱ کالا
+              - generic [ref=e184]:
+                - generic [ref=e185]: ۲۸۰٬۰۰۰ تومان
+                - generic [ref=e186]: پرداخت شده
+                - link "پیگیری سفارش" [ref=e187] [cursor=pointer]:
+                  - /url: /profile/orders/MS-1403-000256
+          - button "مشاهده سفارش‌های بیشتر⌄" [ref=e188]
+  - contentinfo [ref=e189]:
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - heading "از جدیدترین کالکشن‌ها و تخفیف‌ها باخبر شو!" [level=3] [ref=e192]
+        - paragraph [ref=e193]: ایمیل خود را وارد کنید و ۱۰٪ تخفیف اولین خرید را دریافت کنید.
+      - generic [ref=e194]:
+        - textbox "ایمیل خود را وارد کنید" [ref=e195]
+        - button "ثبت نام" [ref=e196]
+    - generic [ref=e198]:
+      - generic [ref=e199]:
+        - heading "memostyles" [level=3] [ref=e200]
+        - paragraph [ref=e201]: میمو استایل، انتخابی برای خاص پسندها که به جزئیات اهمیت می‌دهند.
+        - generic [ref=e202]:
+          - generic [ref=e203]: IG
+          - generic [ref=e204]: TG
+          - generic [ref=e205]: PI
+          - generic [ref=e206]: TT
+      - generic [ref=e207]:
+        - heading "راهنمای مشتریان" [level=4] [ref=e208]
+        - paragraph [ref=e209]: سوالات متداول
+        - paragraph [ref=e210]: راهنمای خرید
+        - paragraph [ref=e211]: شرایط بازگشت کالا
+        - paragraph [ref=e212]: حریم خصوصی
+      - generic [ref=e213]:
+        - heading "دسترسی سریع" [level=4] [ref=e214]
+        - paragraph [ref=e215]: جدیدترین‌ها
+        - paragraph [ref=e216]: گردنبند
+        - paragraph [ref=e217]: گوشواره
+        - paragraph [ref=e218]: دستبند
+      - generic [ref=e219]:
+        - heading "اطلاعات تماس" [level=4] [ref=e220]
+        - paragraph [ref=e221]: ۰۲۱-۹۱۰۹۰۹۰۹
+        - paragraph [ref=e222]: info@memostyles.com
+        - paragraph [ref=e223]: تهران، خیابان ولیعصر، مجتمع تجاری نور
+    - paragraph [ref=e224]: تمامی حقوق برای memostyles محفوظ است.

@@ -1,0 +1,223 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۷۰۰ هزار تومان
+      - generic [ref=e6]: □
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: ☎
+        - generic [ref=e10]: پشتیبانی ۲۴/۷ ساعته
+        - generic [ref=e11]: ۰۲۱-۹۱۰۹۰۹۰۹
+      - generic [ref=e12]:
+        - link "سبد خرید" [ref=e13] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=e14]: ▢
+          - generic [ref=e15]: ۲
+        - link "علاقه‌مندی" [ref=e16] [cursor=pointer]:
+          - /url: /wishlist
+          - generic [ref=e17]: ♡
+        - link "حساب کاربری" [ref=e18] [cursor=pointer]:
+          - /url: /profile
+          - generic [ref=e19]: ♙
+        - link "ورود / ثبت‌نام" [ref=e20] [cursor=pointer]:
+          - /url: /auth/login
+      - link "◆ memostyles ACCESSORIES" [ref=e21] [cursor=pointer]:
+        - /url: /
+        - text: ◆
+        - generic [ref=e22]: memostyles
+        - generic [ref=e23]: ACCESSORIES
+    - generic [ref=e24]:
+      - navigation "ناوبری فروشگاه" [ref=e25]:
+        - link "جدیدترین‌ها" [ref=e26] [cursor=pointer]:
+          - /url: /products
+        - link "گردنبند" [ref=e27] [cursor=pointer]:
+          - /url: /categories/necklaces
+        - link "گوشواره" [ref=e28] [cursor=pointer]:
+          - /url: /categories/earrings
+        - link "دستبند" [ref=e29] [cursor=pointer]:
+          - /url: /categories/bracelets
+        - link "کیف" [ref=e30] [cursor=pointer]:
+          - /url: /categories/bags
+        - link "هدیه" [ref=e31] [cursor=pointer]:
+          - /url: /categories/gifts
+        - link "کالکشن‌ها" [ref=e32] [cursor=pointer]:
+          - /url: /products
+        - link "مجله" [ref=e33] [cursor=pointer]:
+          - /url: /blog
+        - link "درباره ما" [ref=e34] [cursor=pointer]:
+          - /url: /about
+        - link "تماس با ما" [ref=e35] [cursor=pointer]:
+          - /url: /contact
+      - link "جستجو" [ref=e36] [cursor=pointer]:
+        - /url: /search
+        - generic [ref=e37]: ⌕
+  - main [ref=e38]:
+    - generic [ref=e39]:
+      - link "خانه" [ref=e40] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e41]: /درباره ما
+    - heading "✦ درباره ما" [level=1] [ref=e43]:
+      - generic [ref=e44]: ✦
+      - text: درباره ما
+    - generic [ref=e45]:
+      - img "اکسسوری‌های ظریف memostyles" [ref=e46]
+      - generic [ref=e47]:
+        - heading "زیبایی شما، الهام ماست" [level=2] [ref=e48]
+        - paragraph [ref=e49]: در memostyles باور داریم که اکسسوری فقط یک جزئیات نیست؛ بیانگر شخصیت و داستان شماست.
+        - link "مشاهده کالکشن‌ها" [ref=e50] [cursor=pointer]:
+          - /url: /products
+    - generic [ref=e51]:
+      - img "گردنبند و گوشواره طلایی" [ref=e52]
+      - generic [ref=e53]:
+        - heading "✦ داستان ما" [level=2] [ref=e54]
+        - paragraph [ref=e55]: memostyles از سال ۱۳۹۸ با عشق به زیبایی‌های ساده و ماندگار متولد شد. ما با الهام از مینیمالیسم، ظرافت زنانه و کیفیت بی‌نقص، اکسسوری‌هایی طراحی می‌کنیم که در کنار شما هر روز خاص‌تر بدرخشند.
+        - paragraph [ref=e56]: هدف ما ساخت محصولاتی است که فراتر از ترندها بمانند و به بخشی از استایل و خاطرات شما تبدیل شوند.
+    - generic [ref=e57]:
+      - article [ref=e58]:
+        - generic [ref=e59]: ☎
+        - heading "پشتیبانی واقعی" [level=3] [ref=e60]
+        - paragraph [ref=e61]: کنار شما هستیم، قبل و بعد از خرید
+      - article [ref=e62]:
+        - generic [ref=e63]: □
+        - heading "بسته‌بندی هدیه" [level=3] [ref=e64]
+        - paragraph [ref=e65]: هر سفارش با ظرافت آماده هدیه دادن
+      - article [ref=e66]:
+        - generic [ref=e67]: ◇
+        - heading "طراحی مینیمال" [level=3] [ref=e68]
+        - paragraph [ref=e69]: سادگی، ظرافت و ماندگاری در هر قطعه
+      - article [ref=e70]:
+        - generic [ref=e71]: ✪
+        - heading "کیفیت منتخب" [level=3] [ref=e72]
+        - paragraph [ref=e73]: مواد اولیه ممتاز و کنترل کیفیت دقیق
+    - generic [ref=e74]:
+      - heading "✦ ماموریت و ارزش‌های ما" [level=2] [ref=e75]
+      - generic [ref=e76]:
+        - article [ref=e77]:
+          - generic [ref=e78]: ☼
+          - heading "مشتری‌مداری" [level=3] [ref=e79]
+          - paragraph [ref=e80]: تجربه‌ای دلپذیر و خاطره‌انگیز در هر خرید
+        - article [ref=e81]:
+          - generic [ref=e82]: ♢
+          - heading "پایداری" [level=3] [ref=e83]
+          - paragraph [ref=e84]: تولید مسئولانه و توجه به محیط‌زیست
+        - article [ref=e85]:
+          - generic [ref=e86]: ✣
+          - heading "شفافیت و اعتماد" [level=3] [ref=e87]
+          - paragraph [ref=e88]: رویکرد شفاف در خدمات، قیمت‌گذاری و ارتباط
+        - article [ref=e89]:
+          - generic [ref=e90]: ♧
+          - heading "کیفیت یک سرویس" [level=3] [ref=e91]
+          - paragraph [ref=e92]: استفاده از بهترین متریال‌ها و استانداردهای ساخت
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - heading "✦ چرا memostyles؟" [level=2] [ref=e95]
+        - paragraph [ref=e96]:
+          - generic [ref=e97]: ✓
+          - text: طراحی‌های اختصاصی و به‌روز
+        - paragraph [ref=e98]:
+          - generic [ref=e99]: ✓
+          - text: توجه به جزئیات در هر مرحله از تولید
+        - paragraph [ref=e100]:
+          - generic [ref=e101]: ✓
+          - text: ضمانت کیفیت و رضایت مشتری
+        - paragraph [ref=e102]:
+          - generic [ref=e103]: ✓
+          - text: ارسال سریع و بسته‌بندی شکیل
+        - link "مشاهده کالکشن‌ها" [ref=e104] [cursor=pointer]:
+          - /url: /products
+      - img "جعبه هدیه memostyles" [ref=e105]
+      - generic [ref=e106]:
+        - heading "هنر در جزئیات" [level=2] [ref=e107]
+        - paragraph [ref=e108]: هر قطعه با دقت و عشق ساخته می‌شود؛ از انتخاب متریال تا پرداخت نهایی، ما به یکپارچگی، کیفیت و درخشش توجه می‌کنیم تا چیزی ماندگار به همراه شما باشد.
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: ✪
+            - text: استیل ضدحساسیت
+          - generic [ref=e112]:
+            - generic [ref=e113]: ♢
+            - text: آبکاری بادوام
+          - generic [ref=e114]:
+            - generic [ref=e115]: ◇
+            - text: نگین‌های درخشان
+    - generic [ref=e116]:
+      - img "سارا احمدی بنیان‌گذار memostyles" [ref=e117]
+      - generic [ref=e118]:
+        - heading "پیام بنیان‌گذار" [level=2] [ref=e119]
+        - paragraph [ref=e120]: هدف من ساخت اکسسوری‌هایی است که زنان با اعتمادبه‌نفس می‌پوشند و هر روز با آن‌ها احساس خاص بودن دارند. از اینکه memostyles را انتخاب می‌کنید، صمیمانه سپاسگزارم.
+        - text: سارا احمدی، بنیان‌گذار memostyles
+      - strong [ref=e121]: Thank you
+  - contentinfo [ref=e122]:
+    - generic [ref=e123]:
+      - generic [ref=e124]:
+        - generic [ref=e125]: ✪
+        - generic [ref=e126]: ضمانت اصالت کالا
+        - generic [ref=e127]: کالای اورجینال با ضمانت
+      - generic [ref=e128]:
+        - generic [ref=e129]: ▱
+        - generic [ref=e130]: ارسال سریع
+        - generic [ref=e131]: ارسال به سراسر ایران
+      - generic [ref=e132]:
+        - generic [ref=e133]: ↶
+        - generic [ref=e134]: ۷ روز ضمانت بازگشت
+        - generic [ref=e135]: مرجوعی آسان و بدون پرسش
+      - generic [ref=e136]:
+        - generic [ref=e137]: □
+        - generic [ref=e138]: بسته‌بندی هدیه
+        - generic [ref=e139]: بسته‌بندی شیک و رایگان
+      - generic [ref=e140]:
+        - generic [ref=e141]: ☎
+        - generic [ref=e142]: پشتیبانی ۲۴/۷
+        - generic [ref=e143]: همیشه کنار شما هستیم
+    - generic [ref=e144]:
+      - generic [ref=e145]: ✦ ✦
+      - generic [ref=e146]:
+        - heading "در اینستاگرام با ما همراه باشید" [level=3] [ref=e147]
+        - paragraph [ref=e148]: ایمیل خود را وارد کنید تا از تخفیف‌های ویژه و جدیدترین کالکشن‌ها باخبر شوید.
+      - generic [ref=e149]:
+        - textbox "ایمیل خود را وارد کنید" [ref=e150]
+        - button "ثبت نام" [ref=e151]
+    - generic [ref=e152]:
+      - generic [ref=e153]:
+        - heading "memostyles" [level=3] [ref=e154]
+        - paragraph [ref=e155]: میمو استایل، انتخابی برای زنانی خاص که به جزئیات اهمیت می‌دهند. زیورآلاتی با عشق، ساخته‌شده با عشق و ظرافت برای شما.
+        - generic [ref=e156]:
+          - generic [ref=e157]: ◎
+          - generic [ref=e158]: ⌁
+          - generic [ref=e159]: Ⓟ
+          - generic [ref=e160]: ♪
+      - generic [ref=e161]:
+        - heading "راهنمای مشتریان" [level=4] [ref=e162]
+        - link "سوالات متداول" [ref=e163] [cursor=pointer]:
+          - /url: /faq
+        - link "روش‌های خرید" [ref=e164] [cursor=pointer]:
+          - /url: /products
+        - link "شرایط و قوانین" [ref=e165] [cursor=pointer]:
+          - /url: /return-policy
+        - link "حریم خصوصی" [ref=e166] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "تماس با ما" [ref=e167] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e168]:
+        - heading "دسترسی سریع" [level=4] [ref=e169]
+        - link "جدیدترین‌ها" [ref=e170] [cursor=pointer]:
+          - /url: /products
+        - link "گردنبند" [ref=e171] [cursor=pointer]:
+          - /url: /categories/necklaces
+        - link "گوشواره" [ref=e172] [cursor=pointer]:
+          - /url: /categories/earrings
+        - link "دستبند" [ref=e173] [cursor=pointer]:
+          - /url: /categories/bracelets
+        - link "کیف" [ref=e174] [cursor=pointer]:
+          - /url: /categories/bags
+      - generic [ref=e175]:
+        - heading "اطلاعات تماس" [level=4] [ref=e176]
+        - paragraph [ref=e177]:
+          - generic [ref=e178]: ⌕
+          - text: ۰۲۱-۹۱۰۹۰۹۰۹
+        - paragraph [ref=e179]:
+          - generic [ref=e180]: ✉
+          - text: info@memostyles.com
+        - paragraph [ref=e181]:
+          - generic [ref=e182]: ⌖
+          - text: تهران، خیابان ولیعصر، مجتمع تجاری نور، طبقه ۴، واحد ۱۲
+    - paragraph [ref=e183]: تمامی حقوق برای memostyles محفوظ است.

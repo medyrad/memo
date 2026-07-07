@@ -1,0 +1,5 @@
+[    2996ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/compiled/react-dom/cjs/react-dom.development.js:38559
+[    3812ms] [WARNING] ./app/globals.css.webpack[javascript/auto]!=!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[2]!../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[12].use[3]!./app/globals.css
+Warning
+
+(1052:3) autoprefixer: end value has mixed support, consider using flex-end instead @ webpack-internal:///(app-pages-browser)/../../node_modules/.pnpm/next@14.2.5_react-dom@18.3.1_react@18.3.1/node_modules/next/dist/client/components/react-dev-overlay/app/hot-reloader-client.js:226

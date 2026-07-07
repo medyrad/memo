@@ -1,0 +1,521 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: ارسال رایگان برای سفارش‌های بالای ۷۰۰ هزار تومان
+      - generic [ref=e6]: □
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: ☎
+        - generic [ref=e10]: پشتیبانی ۲۴/۷ ساعته
+        - generic [ref=e11]: ۰۲۱-۹۱۰۹۰۹۰۹
+      - generic [ref=e12]:
+        - link "سبد خرید" [ref=e13] [cursor=pointer]:
+          - /url: /cart
+          - generic [ref=e14]: ▢
+          - generic [ref=e15]: ۲
+        - link "علاقه‌مندی" [ref=e16] [cursor=pointer]:
+          - /url: /wishlist
+          - generic [ref=e17]: ♡
+        - link "حساب کاربری" [ref=e18] [cursor=pointer]:
+          - /url: /profile
+          - generic [ref=e19]: ♙
+        - link "ورود / ثبت‌نام" [ref=e20] [cursor=pointer]:
+          - /url: /auth/login
+      - link "◆ memostyles ACCESSORIES" [ref=e21] [cursor=pointer]:
+        - /url: /
+        - text: ◆
+        - generic [ref=e22]: memostyles
+        - generic [ref=e23]: ACCESSORIES
+    - generic [ref=e24]:
+      - navigation "ناوبری فروشگاه" [ref=e25]:
+        - link "جدیدترین‌ها" [ref=e26] [cursor=pointer]:
+          - /url: /products
+        - link "گردنبند" [ref=e27] [cursor=pointer]:
+          - /url: /categories/necklaces
+        - link "گوشواره" [ref=e28] [cursor=pointer]:
+          - /url: /categories/earrings
+        - link "دستبند" [ref=e29] [cursor=pointer]:
+          - /url: /categories/bracelets
+        - link "کیف" [ref=e30] [cursor=pointer]:
+          - /url: /categories/bags
+        - link "هدیه" [ref=e31] [cursor=pointer]:
+          - /url: /categories/gifts
+        - link "کالکشن‌ها" [ref=e32] [cursor=pointer]:
+          - /url: /products
+        - link "مجله" [ref=e33] [cursor=pointer]:
+          - /url: /blog
+        - link "درباره ما" [ref=e34] [cursor=pointer]:
+          - /url: /about
+        - link "تماس با ما" [ref=e35] [cursor=pointer]:
+          - /url: /contact
+      - link "جستجو" [ref=e36] [cursor=pointer]:
+        - /url: /search
+        - generic [ref=e37]: ⌕
+  - main [ref=e38]:
+    - generic [ref=e39]:
+      - link "خانه" [ref=e40] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e41]: /جستجو
+    - generic [ref=e42]:
+      - complementary [ref=e43]:
+        - heading "فیلتر محصولات" [level=2] [ref=e44]:
+          - text: فیلتر محصولات
+          - generic [ref=e45]: ≡
+        - generic [ref=e46]:
+          - heading "دسته‌بندی" [level=3] [ref=e47]
+          - generic [ref=e48]:
+            - text: همه گردنبندها (۲۴۸)
+            - checkbox "همه گردنبندها (۲۴۸)" [checked] [ref=e49]
+          - generic [ref=e50]:
+            - text: گردنبند طلا (۸۷)
+            - checkbox "گردنبند طلا (۸۷)" [ref=e51]
+          - generic [ref=e52]:
+            - text: گردنبند نقره (۶۳)
+            - checkbox "گردنبند نقره (۶۳)" [ref=e53]
+          - generic [ref=e54]:
+            - text: گردنبند سنگ (۵۱)
+            - checkbox "گردنبند سنگ (۵۱)" [ref=e55]
+          - generic [ref=e56]:
+            - text: گردنبند مروارید (۳۲)
+            - checkbox "گردنبند مروارید (۳۲)" [ref=e57]
+        - generic [ref=e58]:
+          - heading "قیمت (تومان)" [level=3] [ref=e59]
+          - generic [ref=e64]:
+            - textbox [ref=e65]: ۲۰۰,۰۰۰
+            - textbox [ref=e66]: ۵,۰۰۰,۰۰۰
+        - generic [ref=e67]:
+          - heading "رنگ" [level=3] [ref=e68]
+          - button "مشاهده بیشتر" [ref=e75]
+        - generic [ref=e76]:
+          - heading "جنس" [level=3] [ref=e77]
+          - generic [ref=e78]:
+            - text: طلا (۱۲۰)
+            - checkbox "طلا (۱۲۰)" [ref=e79]
+          - generic [ref=e80]:
+            - text: نقره (۶۵)
+            - checkbox "نقره (۶۵)" [ref=e81]
+          - generic [ref=e82]:
+            - text: استیل (۳۸)
+            - checkbox "استیل (۳۸)" [ref=e83]
+          - generic [ref=e84]:
+            - text: سنگ طبیعی (۴۴)
+            - checkbox "سنگ طبیعی (۴۴)" [ref=e85]
+          - generic [ref=e86]:
+            - text: مروارید (۱۰)
+            - checkbox "مروارید (۱۰)" [ref=e87]
+        - generic [ref=e88]:
+          - heading "موجودی" [level=3] [ref=e89]
+          - generic [ref=e90]:
+            - text: فقط کالاهای موجود
+            - checkbox "فقط کالاهای موجود" [ref=e91]
+          - generic [ref=e92]:
+            - text: فقط کالاهای تخفیف‌دار
+            - checkbox "فقط کالاهای تخفیف‌دار" [ref=e93]
+        - button "اعمال فیلترها" [ref=e94] [cursor=pointer]
+        - button "پاک کردن همه" [ref=e95]
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "نتایج جستجو برای \"گردنبند\"" [level=1] [ref=e98]
+          - paragraph [ref=e99]: ما ۱۲ محصول با کلمه "گردنبند" پیدا کردیم.
+        - generic [ref=e100]:
+          - textbox [ref=e101]: گردنبند
+          - button [ref=e102]:
+            - generic [ref=e103]: ⌕
+        - generic [ref=e104]:
+          - link "پرطرفدار" [ref=e105] [cursor=pointer]:
+            - /url: /search?q=پرطرفدار
+          - link "گردنبند طلا" [ref=e106] [cursor=pointer]:
+            - /url: /search?q=گردنبند طلا
+          - link "زیر میلیون تومان" [ref=e107] [cursor=pointer]:
+            - /url: /search?q=زیر میلیون تومان
+          - link "زنجیر ظریف" [ref=e108] [cursor=pointer]:
+            - /url: /search?q=زنجیر ظریف
+          - link "آویز قلب" [ref=e109] [cursor=pointer]:
+            - /url: /search?q=آویز قلب
+          - link "گردنبند با سنگ" [ref=e110] [cursor=pointer]:
+            - /url: /search?q=گردنبند با سنگ
+        - generic [ref=e111]:
+          - generic [ref=e112]: "مرتب‌سازی:"
+          - combobox [ref=e113]:
+            - option "محبوب‌ترین" [selected]
+            - option "جدیدترین"
+          - button [ref=e114]:
+            - generic [ref=e115]: ▦
+          - button [ref=e116]:
+            - generic [ref=e117]: ☷
+        - generic [ref=e118]:
+          - article [ref=e119]:
+            - button "علاقه‌مندی" [ref=e120]: ♡
+            - generic [ref=e121]: "-۱۵٪"
+            - link "گردنبند قلب مینیمال استیل ضدحساسیت ۱٬۳۹۰٬۰۰۰ تومان ۱٬۶۴۰٬۰۰۰ تومان ★★★★★ (89) موجود" [ref=e122] [cursor=pointer]:
+              - /url: /products/minimal-necklace
+              - generic [ref=e125]:
+                - heading "گردنبند قلب مینیمال" [level=3] [ref=e126]
+                - paragraph [ref=e127]: استیل ضدحساسیت
+                - strong [ref=e128]: ۱٬۳۹۰٬۰۰۰ تومان
+                - deletion [ref=e129]: ۱٬۶۴۰٬۰۰۰ تومان
+                - generic [ref=e130]:
+                  - text: ★★★★★
+                  - generic [ref=e131]: (89)
+                  - emphasis [ref=e132]: موجود
+            - generic [ref=e133]:
+              - button "افزودن به سبد" [ref=e134]:
+                - text: افزودن به سبد
+                - generic [ref=e135]: ▢
+              - link "مشاهده محصول" [ref=e136] [cursor=pointer]:
+                - /url: /products/minimal-necklace
+                - text: مشاهده محصول
+                - generic [ref=e137]: ⊙
+          - article [ref=e138]:
+            - button "علاقه‌مندی" [ref=e139]: ♡
+            - generic [ref=e140]: "-۱۰٪"
+            - link "گردنبند مروارید اشکی برنج آبکاری ۱٬۲۳۲٬۰۰۰ تومان ۱٬۴۵۰٬۰۰۰ تومان ★★★★★ (31) موجود" [ref=e141] [cursor=pointer]:
+              - /url: /products/pearl-drop-necklace
+              - generic [ref=e144]:
+                - heading "گردنبند مروارید اشکی" [level=3] [ref=e145]
+                - paragraph [ref=e146]: برنج آبکاری
+                - strong [ref=e147]: ۱٬۲۳۲٬۰۰۰ تومان
+                - deletion [ref=e148]: ۱٬۴۵۰٬۰۰۰ تومان
+                - generic [ref=e149]:
+                  - text: ★★★★★
+                  - generic [ref=e150]: (31)
+                  - emphasis [ref=e151]: موجود
+            - generic [ref=e152]:
+              - button "افزودن به سبد" [ref=e153]:
+                - text: افزودن به سبد
+                - generic [ref=e154]: ▢
+              - link "مشاهده محصول" [ref=e155] [cursor=pointer]:
+                - /url: /products/pearl-drop-necklace
+                - text: مشاهده محصول
+                - generic [ref=e156]: ⊙
+          - article [ref=e157]:
+            - button "علاقه‌مندی" [ref=e158]: ♡
+            - generic [ref=e159]: جدید
+            - link "گردنبند سکه‌ای مینیمال استیل ضدحساسیت ۸۹۰٬۰۰۰ تومان ★★★★★ (33) موجود" [ref=e160] [cursor=pointer]:
+              - /url: /products/coin-necklace
+              - generic [ref=e163]:
+                - heading "گردنبند سکه‌ای مینیمال" [level=3] [ref=e164]
+                - paragraph [ref=e165]: استیل ضدحساسیت
+                - strong [ref=e166]: ۸۹۰٬۰۰۰ تومان
+                - generic [ref=e167]:
+                  - text: ★★★★★
+                  - generic [ref=e168]: (33)
+                  - emphasis [ref=e169]: موجود
+            - generic [ref=e170]:
+              - button "افزودن به سبد" [ref=e171]:
+                - text: افزودن به سبد
+                - generic [ref=e172]: ▢
+              - link "مشاهده محصول" [ref=e173] [cursor=pointer]:
+                - /url: /products/coin-necklace
+                - text: مشاهده محصول
+                - generic [ref=e174]: ⊙
+          - article [ref=e175]:
+            - button "علاقه‌مندی" [ref=e176]: ♡
+            - link "★ گردنبند دو لایه ماه و ستاره استیل ۳۱۶ ۱٬۱۹۰٬۰۰۰ تومان ★★★★★ (56) موجود" [ref=e177] [cursor=pointer]:
+              - /url: /products/moon-star-necklace
+              - generic [ref=e178]: ★
+              - generic [ref=e180]:
+                - heading "گردنبند دو لایه ماه و ستاره" [level=3] [ref=e181]
+                - paragraph [ref=e182]: استیل ۳۱۶
+                - strong [ref=e183]: ۱٬۱۹۰٬۰۰۰ تومان
+                - generic [ref=e184]:
+                  - text: ★★★★★
+                  - generic [ref=e185]: (56)
+                  - emphasis [ref=e186]: موجود
+            - generic [ref=e187]:
+              - button "افزودن به سبد" [ref=e188]:
+                - text: افزودن به سبد
+                - generic [ref=e189]: ▢
+              - link "مشاهده محصول" [ref=e190] [cursor=pointer]:
+                - /url: /products/moon-star-necklace
+                - text: مشاهده محصول
+                - generic [ref=e191]: ⊙
+          - article [ref=e192]:
+            - button "علاقه‌مندی" [ref=e193]: ♡
+            - link "گردنبند حلقه و مروارید برنج آبکاری ۹۹۹٬۰۰۰ تومان ★★★★★ (18) کم موجود" [ref=e194] [cursor=pointer]:
+              - /url: /products/pearl-ring-necklace
+              - generic [ref=e197]:
+                - heading "گردنبند حلقه و مروارید" [level=3] [ref=e198]
+                - paragraph [ref=e199]: برنج آبکاری
+                - strong [ref=e200]: ۹۹۹٬۰۰۰ تومان
+                - generic [ref=e201]:
+                  - text: ★★★★★
+                  - generic [ref=e202]: (18)
+                  - emphasis [ref=e203]: کم موجود
+            - generic [ref=e204]:
+              - button "افزودن به سبد" [ref=e205]:
+                - text: افزودن به سبد
+                - generic [ref=e206]: ▢
+              - link "مشاهده محصول" [ref=e207] [cursor=pointer]:
+                - /url: /products/pearl-ring-necklace
+                - text: مشاهده محصول
+                - generic [ref=e208]: ⊙
+          - article [ref=e209]:
+            - button "علاقه‌مندی" [ref=e210]: ♡
+            - generic [ref=e211]: جدید
+            - link "M گردنبند حروف M استیل ضدحساسیت ۷۹۰٬۰۰۰ تومان ★★★★★ (34) موجود" [ref=e212] [cursor=pointer]:
+              - /url: /products/letter-m-necklace
+              - generic [ref=e214]: M
+              - generic [ref=e215]:
+                - heading "گردنبند حروف M" [level=3] [ref=e216]
+                - paragraph [ref=e217]: استیل ضدحساسیت
+                - strong [ref=e218]: ۷۹۰٬۰۰۰ تومان
+                - generic [ref=e219]:
+                  - text: ★★★★★
+                  - generic [ref=e220]: (34)
+                  - emphasis [ref=e221]: موجود
+            - generic [ref=e222]:
+              - button "افزودن به سبد" [ref=e223]:
+                - text: افزودن به سبد
+                - generic [ref=e224]: ▢
+              - link "مشاهده محصول" [ref=e225] [cursor=pointer]:
+                - /url: /products/letter-m-necklace
+                - text: مشاهده محصول
+                - generic [ref=e226]: ⊙
+          - article [ref=e227]:
+            - button "علاقه‌مندی" [ref=e228]: ♡
+            - link "گردنبند پلاک مستطیل استیل ضدحساسیت ۹۴۹٬۰۰۰ تومان ★★★★★ (14) کم موجود" [ref=e229] [cursor=pointer]:
+              - /url: /products/rectangle-plaque-necklace
+              - generic [ref=e232]:
+                - heading "گردنبند پلاک مستطیل" [level=3] [ref=e233]
+                - paragraph [ref=e234]: استیل ضدحساسیت
+                - strong [ref=e235]: ۹۴۹٬۰۰۰ تومان
+                - generic [ref=e236]:
+                  - text: ★★★★★
+                  - generic [ref=e237]: (14)
+                  - emphasis [ref=e238]: کم موجود
+            - generic [ref=e239]:
+              - button "افزودن به سبد" [ref=e240]:
+                - text: افزودن به سبد
+                - generic [ref=e241]: ▢
+              - link "مشاهده محصول" [ref=e242] [cursor=pointer]:
+                - /url: /products/rectangle-plaque-necklace
+                - text: مشاهده محصول
+                - generic [ref=e243]: ⊙
+          - article [ref=e244]:
+            - button "علاقه‌مندی" [ref=e245]: ♡
+            - link "♣ گردنبند ونکلیف برنج آبکاری ۱٬۲۹۹٬۰۰۰ تومان ★★★★★ (39) موجود" [ref=e246] [cursor=pointer]:
+              - /url: /products/clover-necklace
+              - generic [ref=e248]: ♣
+              - generic [ref=e249]:
+                - heading "گردنبند ونکلیف" [level=3] [ref=e250]
+                - paragraph [ref=e251]: برنج آبکاری
+                - strong [ref=e252]: ۱٬۲۹۹٬۰۰۰ تومان
+                - generic [ref=e253]:
+                  - text: ★★★★★
+                  - generic [ref=e254]: (39)
+                  - emphasis [ref=e255]: موجود
+            - generic [ref=e256]:
+              - button "افزودن به سبد" [ref=e257]:
+                - text: افزودن به سبد
+                - generic [ref=e258]: ▢
+              - link "مشاهده محصول" [ref=e259] [cursor=pointer]:
+                - /url: /products/clover-necklace
+                - text: مشاهده محصول
+                - generic [ref=e260]: ⊙
+          - article [ref=e261]:
+            - button "علاقه‌مندی" [ref=e262]: ♡
+            - link "دستبند زنجیری کارتیه برنج آبکاری ۵۹۹٬۰۰۰ تومان ★★★★★ (36) موجود" [ref=e263] [cursor=pointer]:
+              - /url: /products/cartier-chain-bracelet
+              - generic [ref=e266]:
+                - heading "دستبند زنجیری کارتیه" [level=3] [ref=e267]
+                - paragraph [ref=e268]: برنج آبکاری
+                - strong [ref=e269]: ۵۹۹٬۰۰۰ تومان
+                - generic [ref=e270]:
+                  - text: ★★★★★
+                  - generic [ref=e271]: (36)
+                  - emphasis [ref=e272]: موجود
+            - generic [ref=e273]:
+              - button "افزودن به سبد" [ref=e274]:
+                - text: افزودن به سبد
+                - generic [ref=e275]: ▢
+              - link "مشاهده محصول" [ref=e276] [cursor=pointer]:
+                - /url: /products/cartier-chain-bracelet
+                - text: مشاهده محصول
+                - generic [ref=e277]: ⊙
+          - article [ref=e278]:
+            - button "علاقه‌مندی" [ref=e279]: ♡
+            - generic [ref=e280]: ۱۲٪
+            - link "گوشواره مروارید اشکی مروارید مصنوعی ۷۲۰٬۰۰۰ تومان ۸۵۰٬۰۰۰ تومان ★★★★★ (102) موجود" [ref=e281] [cursor=pointer]:
+              - /url: /products/pearl-earrings
+              - generic [ref=e284]:
+                - heading "گوشواره مروارید اشکی" [level=3] [ref=e285]
+                - paragraph [ref=e286]: مروارید مصنوعی
+                - strong [ref=e287]: ۷۲۰٬۰۰۰ تومان
+                - deletion [ref=e288]: ۸۵۰٬۰۰۰ تومان
+                - generic [ref=e289]:
+                  - text: ★★★★★
+                  - generic [ref=e290]: (102)
+                  - emphasis [ref=e291]: موجود
+            - generic [ref=e292]:
+              - button "افزودن به سبد" [ref=e293]:
+                - text: افزودن به سبد
+                - generic [ref=e294]: ▢
+              - link "مشاهده محصول" [ref=e295] [cursor=pointer]:
+                - /url: /products/pearl-earrings
+                - text: مشاهده محصول
+                - generic [ref=e296]: ⊙
+          - article [ref=e297]:
+            - button "علاقه‌مندی" [ref=e298]: ♡
+            - link "گوشواره حلقه‌ای زنجیری استیل ضدحساسیت ۶۴۹٬۰۰۰ تومان ★★★★★ (98) موجود" [ref=e299] [cursor=pointer]:
+              - /url: /products/chain-link-earrings
+              - generic [ref=e302]:
+                - heading "گوشواره حلقه‌ای زنجیری" [level=3] [ref=e303]
+                - paragraph [ref=e304]: استیل ضدحساسیت
+                - strong [ref=e305]: ۶۴۹٬۰۰۰ تومان
+                - generic [ref=e306]:
+                  - text: ★★★★★
+                  - generic [ref=e307]: (98)
+                  - emphasis [ref=e308]: موجود
+            - generic [ref=e309]:
+              - button "افزودن به سبد" [ref=e310]:
+                - text: افزودن به سبد
+                - generic [ref=e311]: ▢
+              - link "مشاهده محصول" [ref=e312] [cursor=pointer]:
+                - /url: /products/chain-link-earrings
+                - text: مشاهده محصول
+                - generic [ref=e313]: ⊙
+          - article [ref=e314]:
+            - button "علاقه‌مندی" [ref=e315]: ♡
+            - link "کیف دستی قهوه‌ای چرم مصنوعی ۱٬۸۵۰٬۰۰۰ تومان ★★★★★ (22) موجود" [ref=e316] [cursor=pointer]:
+              - /url: /products/brown-handbag
+              - generic [ref=e319]:
+                - heading "کیف دستی قهوه‌ای" [level=3] [ref=e320]
+                - paragraph [ref=e321]: چرم مصنوعی
+                - strong [ref=e322]: ۱٬۸۵۰٬۰۰۰ تومان
+                - generic [ref=e323]:
+                  - text: ★★★★★
+                  - generic [ref=e324]: (22)
+                  - emphasis [ref=e325]: موجود
+            - generic [ref=e326]:
+              - button "افزودن به سبد" [ref=e327]:
+                - text: افزودن به سبد
+                - generic [ref=e328]: ▢
+              - link "مشاهده محصول" [ref=e329] [cursor=pointer]:
+                - /url: /products/brown-handbag
+                - text: مشاهده محصول
+                - generic [ref=e330]: ⊙
+    - generic [ref=e331]:
+      - heading "جستجوهای مرتبط" [level=2] [ref=e332]
+      - link "گردنبند طلا" [ref=e333] [cursor=pointer]:
+        - /url: /search?q=گردنبند طلا
+      - link "گردنبند مروارید" [ref=e334] [cursor=pointer]:
+        - /url: /search?q=گردنبند مروارید
+      - link "گردنبند دخترانه" [ref=e335] [cursor=pointer]:
+        - /url: /search?q=گردنبند دخترانه
+      - link "گردنبند با سنگ" [ref=e336] [cursor=pointer]:
+        - /url: /search?q=گردنبند با سنگ
+      - link "گردنبند قلب" [ref=e337] [cursor=pointer]:
+        - /url: /search?q=گردنبند قلب
+      - link "گردنبند نقره" [ref=e338] [cursor=pointer]:
+        - /url: /search?q=گردنبند نقره
+    - generic [ref=e339]:
+      - generic [ref=e340]:
+        - link "مشاهده همه" [ref=e341] [cursor=pointer]:
+          - /url: /products
+        - heading "✦ محصولات اخیرا مشاهده‌شده" [level=2] [ref=e342]
+      - generic [ref=e343]:
+        - button "قبلی" [ref=e344]: ‹
+        - link "گردنبند مروارید اشکی ۱٬۲۳۲٬۰۰۰ تومان ★★★★★ (31)" [ref=e345] [cursor=pointer]:
+          - /url: /products/pearl-drop-necklace
+          - generic [ref=e348]: گردنبند مروارید اشکی
+          - generic [ref=e349]: ۱٬۲۳۲٬۰۰۰ تومان
+          - emphasis [ref=e350]: ★★★★★ (31)
+        - link "گردنبند سکه‌ای مینیمال ۸۹۰٬۰۰۰ تومان ★★★★★ (33)" [ref=e351] [cursor=pointer]:
+          - /url: /products/coin-necklace
+          - generic [ref=e354]: گردنبند سکه‌ای مینیمال
+          - generic [ref=e355]: ۸۹۰٬۰۰۰ تومان
+          - emphasis [ref=e356]: ★★★★★ (33)
+        - link "★ گردنبند دو لایه ماه و ستاره ۱٬۱۹۰٬۰۰۰ تومان ★★★★★ (56)" [ref=e357] [cursor=pointer]:
+          - /url: /products/moon-star-necklace
+          - generic [ref=e358]: ★
+          - generic [ref=e360]: گردنبند دو لایه ماه و ستاره
+          - generic [ref=e361]: ۱٬۱۹۰٬۰۰۰ تومان
+          - emphasis [ref=e362]: ★★★★★ (56)
+        - link "گردنبند حلقه و مروارید ۹۹۹٬۰۰۰ تومان ★★★★★ (18)" [ref=e363] [cursor=pointer]:
+          - /url: /products/pearl-ring-necklace
+          - generic [ref=e366]: گردنبند حلقه و مروارید
+          - generic [ref=e367]: ۹۹۹٬۰۰۰ تومان
+          - emphasis [ref=e368]: ★★★★★ (18)
+        - link "M گردنبند حروف M ۷۹۰٬۰۰۰ تومان ★★★★★ (34)" [ref=e369] [cursor=pointer]:
+          - /url: /products/letter-m-necklace
+          - generic [ref=e371]: M
+          - generic [ref=e372]: گردنبند حروف M
+          - generic [ref=e373]: ۷۹۰٬۰۰۰ تومان
+          - emphasis [ref=e374]: ★★★★★ (34)
+        - button "بعدی" [ref=e375]: ›
+  - contentinfo [ref=e376]:
+    - generic [ref=e377]:
+      - generic [ref=e378]:
+        - generic [ref=e379]: ✪
+        - generic [ref=e380]: ضمانت اصالت کالا
+        - generic [ref=e381]: کالای اورجینال با ضمانت
+      - generic [ref=e382]:
+        - generic [ref=e383]: ▱
+        - generic [ref=e384]: ارسال سریع
+        - generic [ref=e385]: ارسال به سراسر ایران
+      - generic [ref=e386]:
+        - generic [ref=e387]: ↶
+        - generic [ref=e388]: ۷ روز ضمانت بازگشت
+        - generic [ref=e389]: مرجوعی آسان و بدون پرسش
+      - generic [ref=e390]:
+        - generic [ref=e391]: □
+        - generic [ref=e392]: بسته‌بندی هدیه
+        - generic [ref=e393]: بسته‌بندی شیک و رایگان
+      - generic [ref=e394]:
+        - generic [ref=e395]: ☎
+        - generic [ref=e396]: پشتیبانی ۲۴/۷
+        - generic [ref=e397]: همیشه کنار شما هستیم
+    - generic [ref=e398]:
+      - generic [ref=e399]: ✦ ✦
+      - generic [ref=e400]:
+        - heading "در اینستاگرام با ما همراه باشید" [level=3] [ref=e401]
+        - paragraph [ref=e402]: ایمیل خود را وارد کنید تا از تخفیف‌های ویژه و جدیدترین کالکشن‌ها باخبر شوید.
+      - generic [ref=e403]:
+        - textbox "ایمیل خود را وارد کنید" [ref=e404]
+        - button "ثبت نام" [ref=e405]
+    - generic [ref=e406]:
+      - generic [ref=e407]:
+        - heading "memostyles" [level=3] [ref=e408]
+        - paragraph [ref=e409]: میمو استایل، انتخابی برای زنانی خاص که به جزئیات اهمیت می‌دهند. زیورآلاتی با عشق، ساخته‌شده با عشق و ظرافت برای شما.
+        - generic [ref=e410]:
+          - generic [ref=e411]: ◎
+          - generic [ref=e412]: ⌁
+          - generic [ref=e413]: Ⓟ
+          - generic [ref=e414]: ♪
+      - generic [ref=e415]:
+        - heading "راهنمای مشتریان" [level=4] [ref=e416]
+        - link "سوالات متداول" [ref=e417] [cursor=pointer]:
+          - /url: /faq
+        - link "روش‌های خرید" [ref=e418] [cursor=pointer]:
+          - /url: /products
+        - link "شرایط و قوانین" [ref=e419] [cursor=pointer]:
+          - /url: /return-policy
+        - link "حریم خصوصی" [ref=e420] [cursor=pointer]:
+          - /url: /privacy-policy
+        - link "تماس با ما" [ref=e421] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e422]:
+        - heading "دسترسی سریع" [level=4] [ref=e423]
+        - link "جدیدترین‌ها" [ref=e424] [cursor=pointer]:
+          - /url: /products
+        - link "گردنبند" [ref=e425] [cursor=pointer]:
+          - /url: /categories/necklaces
+        - link "گوشواره" [ref=e426] [cursor=pointer]:
+          - /url: /categories/earrings
+        - link "دستبند" [ref=e427] [cursor=pointer]:
+          - /url: /categories/bracelets
+        - link "کیف" [ref=e428] [cursor=pointer]:
+          - /url: /categories/bags
+      - generic [ref=e429]:
+        - heading "اطلاعات تماس" [level=4] [ref=e430]
+        - paragraph [ref=e431]:
+          - generic [ref=e432]: ⌕
+          - text: ۰۲۱-۹۱۰۹۰۹۰۹
+        - paragraph [ref=e433]:
+          - generic [ref=e434]: ✉
+          - text: info@memostyles.com
+        - paragraph [ref=e435]:
+          - generic [ref=e436]: ⌖
+          - text: تهران، خیابان ولیعصر، مجتمع تجاری نور، طبقه ۴، واحد ۱۲
+    - paragraph [ref=e437]: تمامی حقوق برای memostyles محفوظ است.
