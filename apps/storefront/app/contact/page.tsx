@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs, MsIcon, PageTitle } from "../../components/storefront-page-kit";
+import { Instagram, Send, MessageCircle, Music2 } from "lucide-react";
 
 export const metadata = {
   title: "تماس با ما | memostyles",
@@ -30,7 +31,7 @@ export default function ContactPage() {
               </article>
             ))}
             <h3>ما را در شبکه‌های اجتماعی دنبال کنید</h3>
-            <div className="ms-social-circles"><span>◎</span><span>⌁</span><span>☏</span><span>Ⓟ</span></div>
+            <div className="ms-social-circles"><span><Instagram/></span><span><Send/></span><span><MessageCircle/></span><span><Music2/></span></div>
           </section>
           <section className="ms-contact-card">
             <h2>موقعیت روی نقشه</h2>

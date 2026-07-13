@@ -23,9 +23,17 @@ html {
 body {
   background: #fffdfb;
   color: var(--ms-ink);
-  font-family: Tahoma, Arial, sans-serif;
   margin: 0;
 }
+
+/* Authentication pages — matched to the supplied storefront references. */
+.ms-auth-page{padding-top:20px;padding-bottom:30px}.ms-auth-page>.ms-breadcrumb{margin-bottom:20px}.ms-auth-shell{border:1px solid var(--ms-border);border-radius:12px;display:grid;grid-template-columns:1fr 1.04fr;min-height:690px;overflow:hidden}.ms-auth-shell.login{direction:ltr}.ms-auth-shell.login>*{direction:rtl}.ms-auth-art{background-position:center;background-size:cover;min-height:690px}.login-art{background-image:linear-gradient(#2b211b0a,#2b211b0a),url('/reference-assets/faq-jewels.png');background-color:#eee1d4;background-size:cover}.ms-register-art{background:linear-gradient(#0000,#0001),url('/reference-assets/about-jewels.png') center/cover;display:flex;min-height:760px;padding:28px}.ms-register-benefits{align-self:end;background:#fffdfbe8;border:1px solid #fff8;border-radius:12px;margin:0 auto;padding:24px 30px;width:min(92%,430px);backdrop-filter:blur(10px)}.ms-register-benefits h2{font-size:20px;margin:0 0 18px}.ms-register-benefits p{align-items:center;color:#5f554c;display:flex;gap:13px;margin:14px 0}.ms-register-benefits svg{color:var(--ms-gold)}.ms-auth-form{align-content:center;background:#fff;display:grid;padding:44px 58px}.ms-auth-form header{text-align:center;margin-bottom:24px}.ms-auth-form header h1{display:inline;font-size:32px;margin:0}.ms-auth-spark{color:var(--ms-gold);font-size:24px;margin-left:8px}.ms-auth-form header p{color:var(--ms-muted);font-size:14px;margin:12px 0 0}.ms-auth-two{display:grid;gap:14px;grid-template-columns:1fr 1fr}.ms-auth-field{margin-bottom:14px}.ms-auth-field>label{display:block;font-size:13px;font-weight:600;margin-bottom:7px}.ms-auth-field label b{color:var(--ms-gold)}.ms-auth-field>div{align-items:center;border:1px solid var(--ms-border);border-radius:7px;display:flex;min-height:52px;padding:0 13px}.ms-auth-field>div:focus-within{border-color:var(--ms-gold);box-shadow:0 0 0 3px #b98a4a12}.ms-auth-field svg{color:#81776e;height:18px;width:18px}.ms-auth-field input{background:transparent;border:0;outline:0;padding:0 10px;width:100%}.ms-auth-field button{background:none;border:0;display:flex;padding:0}.ms-auth-options{align-items:center;display:flex;font-size:12px;justify-content:space-between;margin:0 0 14px}.ms-auth-options label,.ms-terms{align-items:center;display:flex;gap:7px}.ms-auth-options a,.ms-terms a{color:#b77822}.ms-terms{font-size:12px;margin-bottom:13px}.ms-auth-submit{align-items:center;background:#211914;border:0;border-radius:7px;color:white;display:flex;font-weight:700;justify-content:space-between;min-height:52px;padding:0 20px;width:100%}.ms-auth-submit span{margin:auto}.ms-auth-submit:disabled{opacity:.65}.ms-auth-submit svg,.ms-auth-switch svg{height:18px;width:18px}.ms-auth-or{align-items:center;display:flex;margin:18px 0 10px}.ms-auth-or:before,.ms-auth-or:after{background:var(--ms-border);content:"";height:1px;flex:1}.ms-auth-or span{color:#8b8178;padding:0 16px}.ms-other-title{color:#6d635b;font-size:12px;margin:0 0 12px;text-align:center}.ms-social-login{display:flex;gap:36px;justify-content:center;margin-bottom:18px}.ms-social-login button{align-items:center;background:white;border:1px solid var(--ms-border);border-radius:8px;display:flex;height:52px;justify-content:center;width:58px}.ms-social-login svg{height:21px;width:21px}.ms-auth-switch{align-items:center;background:#f8f3ee;border:1px solid transparent;border-radius:7px;display:flex;justify-content:center;min-height:48px;position:relative}.ms-auth-switch svg{left:16px;position:absolute}.register .ms-auth-switch{background:white;border-color:#d7ae7c}.ms-auth-status{background:#f8f3ee;border-right:3px solid var(--ms-gold);font-size:12px;margin:12px 0 0;padding:9px}.ms-auth-page>.ms-trust-row{margin-top:28px}
+@media(max-width:900px){.ms-auth-shell{grid-template-columns:1fr}.ms-auth-art,.ms-register-art{display:none}.ms-auth-form{padding:40px;min-height:600px}.ms-auth-shell{min-height:0}}
+@media(max-width:560px){.ms-auth-page{padding-inline:14px}.ms-auth-form{padding:30px 20px}.ms-auth-two{grid-template-columns:1fr}.ms-auth-form header h1{font-size:27px}.ms-social-login{gap:18px}}
+
+/* Main catalog */
+.ms-catalog-page{padding-top:26px;padding-bottom:50px}.ms-catalog-page>.ms-breadcrumb{margin-bottom:22px}.ms-catalog-heading{align-items:flex-end;display:flex;justify-content:space-between;margin-bottom:20px}.ms-catalog-heading h1{font-size:32px;margin:0}.ms-catalog-heading p{color:var(--ms-muted);margin:6px 0 0}.ms-catalog-heading .ms-result-toolbar{margin:0}.ms-filter-panel h2{align-items:center;display:flex;font-size:18px;justify-content:space-between;margin:0 0 18px}.ms-filter-submit{margin-top:18px;width:100%}.ms-catalog-results .ms-catalog-card{min-width:0}.ms-catalog-results .ms-product-grid{gap:18px}.ms-catalog-results .ms-pagination button{background:white;border:1px solid var(--ms-border);border-radius:6px;padding:8px 15px}.ms-result-toolbar button.is-active{border-color:var(--ms-gold);color:var(--ms-gold)}
+@media(max-width:1050px){.ms-catalog-results .ms-product-grid.is-four{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.ms-catalog-page .ms-category-page{grid-template-columns:1fr}.ms-catalog-page .ms-filter-panel{display:none}.ms-catalog-heading{align-items:flex-start;flex-direction:column;gap:16px}.ms-catalog-results .ms-product-grid.is-four{grid-template-columns:repeat(2,1fr)}}@media(max-width:430px){.ms-catalog-results .ms-product-grid.is-four{grid-template-columns:1fr}}
 
 a {
   color: inherit;
@@ -177,31 +185,17 @@ textarea {
 }
 
 .ms-home-hero {
-  background:
-    linear-gradient(90deg, rgba(255, 253, 250, 0) 0 52%, rgba(244, 235, 226, 0.96) 58%),
-    radial-gradient(circle at 22% 20%, rgba(255,255,255,.45), transparent 24%),
-    linear-gradient(135deg, #b48662 0%, #f6eee6 46%, #efe4da 100%);
+  background: url('/catalog/home-hero-v2.jpg') center/cover no-repeat;
   min-height: 520px;
   overflow: hidden;
   position: relative;
 }
 
 .ms-home-hero::before {
-  background:
-    radial-gradient(ellipse at 50% 20%, #2d2019 0 8%, transparent 9%),
-    radial-gradient(ellipse at 44% 35%, #e1aa86 0 12%, transparent 13%),
-    radial-gradient(circle at 40% 50%, #f0c2a1 0 5%, transparent 6%),
-    linear-gradient(120deg, transparent 0 22%, #f8f0e7 23% 49%, transparent 50%),
-    linear-gradient(160deg, #4b2f25 0 18%, #c38f6d 19% 42%, #f4dfce 43% 70%, transparent 71%);
-  border-radius: 0 0 120px 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  max-width: 620px;
-  position: absolute;
-  top: 0;
-  width: 50vw;
+  background:linear-gradient(90deg,transparent 35%,rgba(244,235,226,.35) 58%,rgba(244,235,226,.82));content:"";inset:0;position:absolute;
 }
+
+.ms-product-visual.has-photo{background:#f5eee8;overflow:hidden}.ms-product-visual.has-photo::before,.ms-product-visual.has-photo::after,.ms-product-visual.has-photo span{display:none!important}.ms-product-visual.has-photo img{display:block;height:100%;object-fit:cover;width:100%}
 
 .ms-home-hero-inner {
   align-items: center;

@@ -2,9 +2,26 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ProductVisual } from "./product-card";
 import type { ShowcaseProduct } from "../lib/showcase-data";
+import {
+  BadgeCheck, Bell, Box, CalendarDays, ChevronLeft, CircleUserRound,
+  Clock3, CreditCard, Eye, Gift, Grid2X2, Headphones, Heart, LogOut,
+  Mail, MapPin, PackageCheck, Phone, RotateCcw, Search, Send, ShieldCheck,
+  ShoppingBag, ShoppingCart, SlidersHorizontal, List, Truck, UserRound, X,
+} from "lucide-react";
 
-export function MsIcon({ name }: { name: string }) {
-  return <span className={`ms-ui-icon icon-${name}`} aria-hidden="true" />;
+const iconMap = {
+  authentic: BadgeCheck, bag: ShoppingBag, bell: Bell, box: Box,
+  calendar: CalendarDays, card: CreditCard, clock: Clock3, eye: Eye,
+  gift: Gift, grid: Grid2X2, heart: Heart, logout: LogOut, mail: Mail,
+  package: PackageCheck, phone: Phone, pin: MapPin, return: RotateCcw,
+  search: Search, send: Send, shield: ShieldCheck, support: Headphones,
+  truck: Truck, user: UserRound, profile: CircleUserRound, cart: ShoppingCart,
+  filter: SlidersHorizontal, list: List,
+} as const;
+
+export function MsIcon({ name, size = 22, strokeWidth = 1.55 }: { name: string; size?: number; strokeWidth?: number }) {
+  const Icon = iconMap[name as keyof typeof iconMap] ?? CircleUserRound;
+  return <Icon className={`ms-ui-icon icon-${name}`} size={size} strokeWidth={strokeWidth} aria-hidden="true" />;
 }
 
 export function Breadcrumbs({ items }: { items: Array<[string, string?]> }) {
@@ -96,10 +113,10 @@ export function ProfileSidebar({ active }: { active: "profile" | "wishlist" | "o
 export function CatalogProductCard({ product, removable = false }: { product: ShowcaseProduct; removable?: boolean }) {
   return (
     <article className="ms-catalog-card">
-      {removable ? <button className="ms-remove" type="button" aria-label="حذف">×</button> : <button className="ms-save" type="button" aria-label="علاقه‌مندی">♡</button>}
+      {removable ? <button className="ms-remove" type="button" aria-label="حذف"><X size={17}/></button> : <button className="ms-save" type="button" aria-label="علاقه‌مندی"><Heart size={18}/></button>}
       {product.badge ? <span className="ms-badge">{product.badge}</span> : null}
       <Link href={`/products/${product.slug}`}>
-        <ProductVisual visual={product.visual} />
+        <ProductVisual visual={product.visual} src={product.imageUrl} alt={product.title} />
         <div className="ms-catalog-info">
           <h3>{product.title}</h3>
           <p>{product.material}</p>
@@ -127,7 +144,7 @@ export function ProductRail({ title, products }: { title: string; products: Show
         <button type="button" aria-label="قبلی">‹</button>
         {products.map((product) => (
           <Link href={`/products/${product.slug}`} className="ms-rail-item" key={product.id}>
-            <ProductVisual visual={product.visual} />
+            <ProductVisual visual={product.visual} src={product.imageUrl} alt={product.title} />
             <b>{product.title}</b>
             <span>{product.price.toLocaleString("fa-IR")} تومان</span>
             <em>★★★★★ ({product.reviewCount})</em>

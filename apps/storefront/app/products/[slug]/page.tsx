@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { AddToCartButton } from "../../../components/add-to-cart-button";
 import { ProductCard, ProductVisual } from "../../../components/product-card";
 import { getShowcaseProduct, showcaseProducts } from "../../../lib/showcase-data";
+import { Heart } from "lucide-react";
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
   const product = getShowcaseProduct(params.slug);
@@ -56,7 +57,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
 
           <div className="ms-purchase-box">
             <AddToCartButton variantId={product.variantId} />
-            <button className="ms-outline-button" type="button">افزودن به علاقه‌مندی‌ها ♡</button>
+            <button className="ms-outline-button" type="button">افزودن به علاقه‌مندی‌ها <Heart size={18}/></button>
           </div>
 
           <div className="ms-trust-strip">
@@ -124,4 +125,3 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     </main>
   );
 }
-

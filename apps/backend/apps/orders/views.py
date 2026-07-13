@@ -2,6 +2,9 @@ from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
+from django.db.models import Count, Sum
+from django.db.models.functions import TruncDate
+from django.utils import timezone
 
 from apps.cart.models import Cart
 from .models import Order, OrderItem, OrderStatusHistory
@@ -13,6 +16,48 @@ class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.select_related("user").prefetch_related("items", "status_history").all().order_by("-created_at")
     serializer_class = OrderSerializer
     filterset_fields = ["user", "status"]
+
+    @action(detail=False, methods=["get"], url_path="dashboard")
+    def dashboard(self, request):
+        """Aggregated dashboard data calculated from persisted commerce records."""
+        start = timezone.now() - timezone.timedelta(days=6)
+        paid_statuses = [Order.Status.PAID, Order.Status.PROCESSING, Order.Status.SHIPPED, Order.Status.DELIVERED]
+        completed = self.get_queryset().filter(status__in=paid_statuses)
+        sales = completed.aggregate(total=Sum("grand_total"))["total"] or 0
+        series_rows = (
+            completed.filter(created_at__gte=start)
+            .annotate(day=TruncDate("created_at"))
+            .values("day")
+            .annotate(value=Sum("grand_total"), orders=Count("id"))
+            .order_by("day")
+        )
+        category_rows = (
+            OrderItem.objects.filter(order__status__in=paid_statuses)
+            .values("variant__product__category__title")
+            .annotate(value=Sum("line_total"))
+            .order_by("-value")[:6]
+        )
+        recent = self.get_queryset().select_related("user")[:5]
+        return Response({
+            "metrics": {
+                "total_sales": sales,
+                "orders": self.get_queryset().count(),
+                "customers": self.get_queryset().values("user_id").distinct().count(),
+                "average_order_value": (sales / completed.count()) if completed.count() else 0,
+            },
+            "sales_series": [
+                {"date": row["day"].isoformat(), "value": row["value"], "orders": row["orders"]}
+                for row in series_rows
+            ],
+            "category_sales": [
+                {"name": row["variant__product__category__title"] or "بدون دسته‌بندی", "value": row["value"]}
+                for row in category_rows
+            ],
+            "recent_orders": [
+                {"id": str(order.id), "customer": order.user.get_full_name() or order.user.username, "total": order.grand_total, "status": order.status}
+                for order in recent
+            ],
+        })
 
     @action(detail=False, methods=["post"])
     def checkout(self, request):

@@ -5,7 +5,10 @@ export type Product = {
   short_description: string;
   status: string;
   variants?: Array<{ id: string; sku: string; price: string; color: string; material: string }>;
+  images?: Array<{ id: string; image: string; alt_text: string; is_primary: boolean; sort_order: number }>;
 };
+
+export type Banner = { id: string; title: string; subtitle: string; image: string | null; link_url: string; placement: string; sort_order: number };
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api";
 const API_TIMEOUT_MS = 1200;
@@ -34,4 +37,13 @@ export async function getProducts(): Promise<Product[]> {
 export async function getProduct(slug: string): Promise<Product | null> {
   const products = await getProducts();
   return products.find((product) => product.slug === slug) ?? null;
+}
+
+export async function getBanners(placement = "home"): Promise<Banner[]> {
+  try {
+    const response = await fetchWithTimeout(`${API_BASE_URL}/banners/?placement=${encodeURIComponent(placement)}&is_active=true`, { next: { revalidate: 60 } });
+    if (!response.ok) return [];
+    const data = await response.json();
+    return data.results ?? data;
+  } catch { return []; }
 }

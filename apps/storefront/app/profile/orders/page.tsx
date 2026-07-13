@@ -1,5 +1,6 @@
 import { AccountSidebar, ProfileOrderRow } from "../../../components/order-ui";
 import { profileOrders, toman } from "../../../lib/order-data";
+import { Ban, ChevronDown, Gem, PackageCheck, ShoppingBag, Truck } from "lucide-react";
 
 export default function ProfileOrdersPage() {
   return (
@@ -23,17 +24,17 @@ export default function ProfileOrdersPage() {
               <select defaultValue="newest"><option value="newest">مرتب‌سازی: جدیدترین</option></select>
             </div>
             <div className="ms-order-stats">
-              <div><span>▢</span><b>{profileOrders.length.toLocaleString("fa-IR")}</b><small>کل سفارش‌ها</small></div>
-              <div><span>◇</span><b>۳</b><small>در حال انجام</small></div>
-              <div><span>▤</span><b>۱۹</b><small>تحویل‌شده</small></div>
-              <div><span>◌</span><b>۵</b><small>لغوشده</small></div>
-              <div><span>♢</span><b>{toman(15570000)}</b><small>مجموع هزینه‌ها</small></div>
+              <div><ShoppingBag/><b>{profileOrders.length.toLocaleString("fa-IR")}</b><small>کل سفارش‌ها</small></div>
+              <div><Truck/><b>۳</b><small>در حال انجام</small></div>
+              <div><PackageCheck/><b>۱۹</b><small>تحویل‌شده</small></div>
+              <div><Ban/><b>۵</b><small>لغوشده</small></div>
+              <div><Gem/><b>{toman(15570000)}</b><small>مجموع هزینه‌ها</small></div>
             </div>
             <h2 className="ms-list-title">لیست سفارش‌ها</h2>
             <div className="ms-profile-order-list">
               {profileOrders.map((order, index) => <ProfileOrderRow index={index} key={order.id} />)}
             </div>
-            <button className="ms-load-more" type="button">مشاهده سفارش‌های بیشتر⌄</button>
+            <button className="ms-load-more" type="button">مشاهده سفارش‌های بیشتر <ChevronDown size={18}/></button>
           </section>
         </div>
       </div>

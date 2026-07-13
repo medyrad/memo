@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { CheckoutStepper, StaticOrderSummary, TrustStrip } from "./order-ui";
 import { createCheckoutOrder, startPayment } from "../lib/checkout";
+import { CreditCard, MapPin, NotepadText, Truck, UserRound } from "lucide-react";
 
 export function CheckoutView() {
   const [status, setStatus] = useState("");
@@ -35,7 +36,7 @@ export function CheckoutView() {
         <StaticOrderSummary />
         <section className="ms-checkout-form">
           <div className="ms-form-panel">
-            <h2>اطلاعات گیرنده <span>♙</span></h2>
+            <h2>اطلاعات گیرنده <UserRound size={22}/></h2>
             <div className="ms-field-grid">
               <label>نام<span>*</span><input defaultValue="سارا" /></label>
               <label>نام خانوادگی<span>*</span><input defaultValue="احمدی" /></label>
@@ -44,7 +45,7 @@ export function CheckoutView() {
             </div>
           </div>
           <div className="ms-form-panel">
-            <h2>آدرس ارسال <span>⌖</span></h2>
+            <h2>آدرس ارسال <MapPin size={22}/></h2>
             <div className="ms-field-grid">
               <label>استان<span>*</span><select defaultValue="tehran"><option value="tehran">تهران</option></select></label>
               <label>شهر<span>*</span><select defaultValue="tehran-city"><option value="tehran-city">تهران</option></select></label>
@@ -54,7 +55,7 @@ export function CheckoutView() {
             </div>
           </div>
           <div className="ms-form-panel">
-            <h2>روش ارسال <span>▤</span></h2>
+            <h2>روش ارسال <Truck size={22}/></h2>
             <div className="ms-choice-grid">
               <label className="ms-choice"><input name="shipping" type="radio" /> <b>ارسال عادی</b><small>تحویل ۳ تا ۵ روز کاری</small><em>رایگان</em></label>
               <label className="ms-choice is-selected"><input defaultChecked name="shipping" type="radio" /> <b>ارسال سریع</b><small>تحویل ۱ تا ۲ روز کاری</small><em>۳۹,۰۰۰ تومان</em></label>
@@ -62,7 +63,7 @@ export function CheckoutView() {
             </div>
           </div>
           <div className="ms-form-panel">
-            <h2>روش پرداخت <span>▭</span></h2>
+            <h2>روش پرداخت <CreditCard size={22}/></h2>
             <div className="ms-choice-grid">
               <label className="ms-choice is-selected"><input defaultChecked name="payment" type="radio" /> <b>پرداخت آنلاین</b><small>پرداخت از طریق درگاه بانکی</small></label>
               <label className="ms-choice"><input name="payment" type="radio" /> <b>پرداخت از کیف پول</b><small>موجودی کیف پول: ۵۲۸,۰۰۰ تومان</small></label>
@@ -70,7 +71,7 @@ export function CheckoutView() {
             </div>
           </div>
           <div className="ms-form-panel">
-            <h2>یادداشت سفارش <span>✎</span></h2>
+            <h2>یادداشت سفارش <NotepadText size={22}/></h2>
             <textarea placeholder="اگر نکته‌ای در مورد سفارش خود دارید، اینجا بنویسید..." />
           </div>
           {status ? <p className="ms-form-status">{status}</p> : null}

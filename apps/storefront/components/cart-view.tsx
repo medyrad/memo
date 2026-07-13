@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ProductCard } from "./product-card";
 import { CheckoutStepper, OrderMiniImage, StaticOrderSummary, TrustStrip } from "./order-ui";
 import { checkoutLines, suggestedProducts, toman } from "../lib/order-data";
+import { Heart, Trash2 } from "lucide-react";
 
 export function CartView() {
   const [quantities, setQuantities] = useState<Record<string, number>>(
@@ -47,14 +48,14 @@ export function CartView() {
                 </div>
                 <strong>{toman(line.unitPrice * quantity)}</strong>
                 <div className="ms-cart-actions">
-                  <button type="button" aria-label="حذف">⌫</button>
-                  <button type="button" aria-label="علاقه‌مندی">♡</button>
+                  <button type="button" aria-label="حذف"><Trash2 size={18}/></button>
+                  <button type="button" aria-label="علاقه‌مندی"><Heart size={18}/></button>
                 </div>
               </article>
             );
           })}
           <div className="ms-cart-bottom">
-            <button type="button">⌫ پاک کردن سبد خرید</button>
+            <button type="button"><Trash2 size={17}/> پاک کردن سبد خرید</button>
           </div>
         </section>
       </div>

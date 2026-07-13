@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { ProductVisual } from "./product-card";
 import { checkoutLines, orderTotals, profileOrders, toman, type CheckoutLine } from "../lib/order-data";
+import { BadgeCheck, Bell, Camera, Check, Gift, Grid2X2, Headphones, Heart, LogOut, MapPin, Package, RotateCcw, ShoppingBag, Truck, UserRound } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 type StepperProps = {
   active: 1 | 2 | 3;
@@ -17,7 +19,7 @@ export function CheckoutStepper({ active, failed = false }: StepperProps) {
         const isActive = number === active;
         return (
           <div className={`ms-step ${isActive ? "is-active" : ""} ${isDone ? "is-done" : ""}`} key={step}>
-            <span>{isDone ? "✓" : number.toLocaleString("fa-IR")}</span>
+            <span>{isDone ? <Check size={16}/> : number.toLocaleString("fa-IR")}</span>
             <b>{step}</b>
           </div>
         );
@@ -67,17 +69,17 @@ export function StaticOrderSummary({ compact = false, showCoupon = true }: { com
 }
 
 export function TrustStrip({ dense = false }: { dense?: boolean }) {
-  const items = [
-    ["♢", "ضمانت اصالت کالا", "کالای اورجینال با ضمانت"],
-    ["▣", "۷ روز ضمانت بازگشت", "مرجوعی آسان و بدون پرسش"],
-    ["▤", "ارسال سریع", "ارسال به سراسر ایران"],
-    ["☏", "پشتیبانی ۲۴/۷", "همیشه کنار شما هستیم"],
+  const items: Array<[LucideIcon, string, string]> = [
+    [BadgeCheck, "ضمانت اصالت کالا", "کالای اورجینال با ضمانت"],
+    [RotateCcw, "۷ روز ضمانت بازگشت", "مرجوعی آسان و بدون پرسش"],
+    [Truck, "ارسال سریع", "ارسال به سراسر ایران"],
+    [Headphones, "پشتیبانی ۲۴/۷", "همیشه کنار شما هستیم"],
   ];
   return (
     <section className={`ms-checkout-trust ${dense ? "is-dense" : ""}`}>
-      {items.map(([icon, title, text]) => (
+      {items.map(([Icon, title, text]) => (
         <div key={title}>
-          <span>{icon}</span>
+          <Icon size={24}/>
           <b>{title}</b>
           <small>{text}</small>
         </div>
@@ -87,32 +89,29 @@ export function TrustStrip({ dense = false }: { dense?: boolean }) {
 }
 
 export function AccountSidebar() {
-  const menu = [
-    ["داشبورد", "▦", "/profile"],
-    ["اطلاعات حساب", "♙", "/profile"],
-    ["سفارش‌های من", "▢", "/profile/orders"],
-    ["آدرس‌ها", "⌖", "/profile/addresses"],
-    ["علاقه‌مندی‌ها", "♡", "/wishlist"],
-    ["اطلاع‌رسانی", "♧", "/profile"],
+  const menu: Array<[string, LucideIcon, string]> = [
+    ["داشبورد", Grid2X2, "/profile"], ["اطلاعات حساب", UserRound, "/profile"],
+    ["سفارش‌های من", ShoppingBag, "/profile/orders"], ["آدرس‌ها", MapPin, "/profile/addresses"],
+    ["علاقه‌مندی‌ها", Heart, "/wishlist"], ["اطلاع‌رسانی", Bell, "/profile"],
   ];
   return (
     <aside className="ms-account-sidebar">
       <div className="ms-profile-avatar">
         <span />
-        <button type="button" aria-label="تغییر تصویر">▣</button>
+        <button type="button" aria-label="تغییر تصویر"><Camera size={16}/></button>
       </div>
       <h3>سارا احمدی</h3>
       <p>۰۹۱۲۳۴۵۶۷۸۹</p>
       <b className="ms-gold-pill">عضو طلایی ♢</b>
       <nav>
-        {menu.map(([label, icon, href]) => (
+        {menu.map(([label, Icon, href]) => (
           <Link className={label === "سفارش‌های من" ? "is-active" : ""} href={href} key={label}>
-            <span>{icon}</span>
+            <Icon size={20}/>
             {label}
           </Link>
         ))}
       </nav>
-      <Link className="ms-logout" href="/auth/login">خروج ←</Link>
+      <Link className="ms-logout" href="/auth/login"><LogOut size={20}/> خروج</Link>
     </aside>
   );
 }
@@ -129,7 +128,7 @@ export function OrderProgress({ active = 2 }: { active?: 1 | 2 | 3 | 4 }) {
         const number = index + 1;
         return (
           <div className={`${number <= active ? "is-active" : ""}`} key={step}>
-            <span>{number === 1 && active >= 1 ? "✓" : number.toLocaleString("fa-IR")}</span>
+            <span>{number === 1 && active >= 1 ? <Check size={16}/> : number.toLocaleString("fa-IR")}</span>
             <b>{step}</b>
             <small>{number === active ? "در حال " + step : number < active ? "تکمیل شده" : "در انتظار"}</small>
           </div>

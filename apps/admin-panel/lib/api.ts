@@ -68,6 +68,13 @@ export type BlogPost = {
   is_published: boolean;
 };
 
+export type DashboardData = {
+  metrics: { total_sales: string; orders: number; customers: number; average_order_value: string };
+  sales_series: Array<{ date: string; value: string; orders: number }>;
+  category_sales: Array<{ name: string; value: string }>;
+  recent_orders: Array<{ id: string; customer: string; total: string; status: string }>;
+};
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api";
 const API_TIMEOUT_MS = 1200;
 
@@ -136,4 +143,8 @@ export async function getBanners(): Promise<Banner[]> {
 
 export async function getBlogPosts(): Promise<BlogPost[]> {
   return unwrapList(await apiFetch<BlogPost[] | { results: BlogPost[] }>("/blog-posts/", { cache: "no-store" }));
+}
+
+export async function getDashboard(): Promise<DashboardData> {
+  return apiFetch<DashboardData>("/orders/dashboard/", { cache: "no-store" });
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CheckoutStepper, StaticOrderSummary, TrustStrip } from "../../../components/order-ui";
+import { CreditCard, Headphones, X } from "lucide-react";
 
 export default function PaymentFailurePage() {
   const reasons = [
@@ -16,7 +17,7 @@ export default function PaymentFailurePage() {
         <div className="ms-page-heading"><h1>پرداخت ناموفق</h1></div>
         <CheckoutStepper active={3} failed />
         <section className="ms-payment-result is-failure">
-          <div className="ms-result-icon">×</div>
+          <div className="ms-result-icon"><X/></div>
           <h1>پرداخت ناموفق بود</h1>
           <p>متاسفانه پرداخت شما تکمیل نشد. مبلغی از حساب شما کسر نشده یا در صورت کسر، طی زمان اعلامی بانک بازخواهد گشت.</p>
           <div className="ms-failure-meta">
@@ -38,9 +39,9 @@ export default function PaymentFailurePage() {
           </div>
         </section>
         <div className="ms-result-actions">
-          <Link href="/contact">تماس با پشتیبانی ☏</Link>
+          <Link href="/contact">تماس با پشتیبانی <Headphones size={18}/></Link>
           <Link href="/cart">بازگشت به سبد خرید</Link>
-          <Link href="/checkout">تغییر روش پرداخت ▭</Link>
+          <Link href="/checkout">تغییر روش پرداخت <CreditCard size={18}/></Link>
           <Link className="ms-dark-button" href="/checkout">تلاش مجدد برای پرداخت</Link>
         </div>
         <TrustStrip dense />

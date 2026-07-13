@@ -15,6 +15,7 @@ export type ShowcaseProduct = {
   variantId: string;
   visual: string;
   description: string;
+  imageUrl?: string;
 };
 
 export const showcaseProducts: ShowcaseProduct[] = [
@@ -231,4 +232,3 @@ export function getShowcaseProduct(slug: string) {
 export function getProductsByCategory(slug: string) {
   return showcaseProducts.filter((product) => product.category === slug);
 }
-
