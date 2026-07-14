@@ -1,0 +1,20 @@
+export type CatalogProduct = {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  categoryTitle: string;
+  price: number;
+  compareAtPrice?: number;
+  rating: number;
+  reviewCount: number;
+  badge?: string;
+  material: string;
+  color: string;
+  chainLength?: string;
+  variantId: string;
+  visual: string;
+  description: string;
+  imageUrl?: string;
+  availableQuantity?: number;
+};

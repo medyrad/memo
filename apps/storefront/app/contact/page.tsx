@@ -2,17 +2,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs, MsIcon, PageTitle } from "../../components/storefront-page-kit";
 import { Instagram, Send, MessageCircle, Music2 } from "lucide-react";
+import { getSiteSettings } from "../../lib/api";
 
 export const metadata = {
   title: "تماس با ما | memostyles",
 };
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSiteSettings();
+  const contact = settings.find(setting => setting.key === "contact")?.value;
   const contactItems = [
-    ["phone", "تلفن پشتیبانی", "۰۲۱-۹۱۰۹۰۹۰۹"],
-    ["mail", "ایمیل", "info@memostyles.com"],
-    ["pin", "آدرس", "تهران، خیابان ولیعصر، مجتمع تجاری نور، طبقه ۴، واحد ۱۲"],
-    ["clock", "ساعات کاری", "شنبه تا چهارشنبه: ۹ تا ۱۹، پنجشنبه: ۹ تا ۱۴"],
+    ["phone", "تلفن پشتیبانی", String(contact?.phone ?? "")],
+    ["mail", "ایمیل", String(contact?.email ?? "")],
+    ["pin", "آدرس", String(contact?.address ?? "")],
+    ["clock", "ساعات کاری", String(contact?.hours ?? "شنبه تا چهارشنبه: ۹ تا ۱۹")],
   ];
 
   return (

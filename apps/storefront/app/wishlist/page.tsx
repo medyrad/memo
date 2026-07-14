@@ -1,35 +1,9 @@
-import { Breadcrumbs, CatalogProductCard, MsIcon, PageTitle, ProductRail, ProfileSidebar } from "../../components/storefront-page-kit";
-import { showcaseProducts } from "../../lib/showcase-data";
+"use client";
 
-export const metadata = {
-  title: "علاقه‌مندی‌ها | memostyles",
-};
+import { useCallback, useEffect, useState } from "react";
+import { X } from "lucide-react";
+import { getMe, getWishlist, removeWishlistItem, type User, type WishlistItem } from "../../lib/account";
+import { toCatalogProduct } from "../../lib/catalog";
+import { Breadcrumbs, CatalogProductCard, PageTitle, ProfileSidebar } from "../../components/storefront-page-kit";
 
-export default function WishlistPage() {
-  const products = showcaseProducts.slice(0, 8);
-  return (
-    <main className="ms-container ms-account-page">
-      <Breadcrumbs items={[["حساب کاربری", "/profile"], ["علاقه‌مندی‌ها"]]} />
-      <PageTitle title="علاقه‌مندی‌ها" text="محصولاتی که دوست دارید را در اینجا مشاهده و مدیریت کنید." icon={false} />
-      <section className="ms-account-layout">
-        <ProfileSidebar active="wishlist" />
-        <div className="ms-account-content">
-          <div className="ms-wishlist-summary">
-            <div><MsIcon name="heart" /><span>تعداد محصولات ذخیره‌شده</span><b>۸</b><small>محصول</small></div>
-            <form>
-              <button type="button" className="is-active">همه</button>
-              <button type="button">موجود</button>
-              <button type="button">تخفیف‌دار</button>
-              <label>مرتب‌سازی:<select defaultValue="new"><option value="new">جدیدترین</option><option>محبوب‌ترین</option></select></label>
-              <span><MsIcon name="grid" /><MsIcon name="list" /></span>
-            </form>
-          </div>
-          <div className="ms-product-grid is-four">
-            {products.map((product) => <CatalogProductCard product={product} removable key={product.id} />)}
-          </div>
-        </div>
-      </section>
-      <ProductRail title="شاید این‌ها هم مورد پسندتان باشد" products={showcaseProducts.slice(4, 10)} />
-    </main>
-  );
-}
+export default function WishlistPage(){const [user,setUser]=useState<User|null>(null);const [items,setItems]=useState<WishlistItem[]>([]);const [error,setError]=useState("");const load=useCallback(()=>Promise.all([getMe(),getWishlist()]).then(([me,lists])=>{setUser(me);setItems(lists[0]?.items??[]);}).catch(reason=>setError(reason.message)),[]);useEffect(()=>{void load();},[load]);return <main className="ms-container ms-account-page"><Breadcrumbs items={[["حساب کاربری","/profile"],["علاقه‌مندی‌ها"]]}/><PageTitle title="علاقه‌مندی‌ها" text="محصولات ذخیره‌شده در حساب واقعی شما" icon={false}/><section className="ms-account-layout"><ProfileSidebar active="wishlist" user={user}/><div className="ms-account-content">{error?<div className="ms-catalog-empty"><p>{error}</p></div>:null}<div className="ms-wishlist-summary"><div><span>تعداد محصولات ذخیره‌شده</span><b>{items.length.toLocaleString("fa-IR")}</b><small>محصول</small></div></div><div className="ms-product-grid is-four">{items.map(item=><div key={item.id} style={{position:"relative"}}><button className="ms-remove" onClick={async()=>{await removeWishlistItem(item.id);await load();}} aria-label="حذف از علاقه‌مندی"><X size={17}/></button><CatalogProductCard product={toCatalogProduct(item.product_detail)}/></div>)}</div>{!items.length&&!error?<div className="ms-catalog-empty"><h2>فهرست علاقه‌مندی خالی است</h2><p>محصولات دلخواه شما پس از ذخیره اینجا نمایش داده می‌شوند.</p></div>:null}</div></section></main>;}

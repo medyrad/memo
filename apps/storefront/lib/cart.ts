@@ -10,6 +10,7 @@ export type CartItem = {
   sku: string;
   unit_price: string;
   line_total: string;
+  image_url: string;
 };
 
 export type Cart = {

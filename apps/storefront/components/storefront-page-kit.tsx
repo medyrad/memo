@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ProductVisual } from "./product-card";
 import { AddToCartButton } from "./add-to-cart-button";
-import type { ShowcaseProduct } from "../lib/showcase-data";
+import type { CatalogProduct } from "../lib/catalog-types";
 import {
   BadgeCheck, Bell, Box, CalendarDays, ChevronLeft, CircleUserRound,
   Clock3, CreditCard, Eye, Gift, Grid2X2, Headphones, Heart, LogOut,
@@ -83,7 +83,7 @@ export function TrustBar({ compact = false }: { compact?: boolean }) {
   );
 }
 
-export function ProfileSidebar({ active }: { active: "profile" | "wishlist" | "orders" | "addresses" | "dashboard" | "notifications" }) {
+export function ProfileSidebar({ active, user }: { active: "profile" | "wishlist" | "orders" | "addresses" | "dashboard" | "notifications"; user?: { first_name?: string; last_name?: string; username?: string; phone?: string } | null }) {
   const nav = [
     ["dashboard", "داشبورد", "/profile", "grid"],
     ["profile", "اطلاعات حساب", "/profile", "user"],
@@ -95,9 +95,8 @@ export function ProfileSidebar({ active }: { active: "profile" | "wishlist" | "o
   return (
     <aside className="ms-account-sidebar">
       <div className="ms-profile-avatar"><span /><button aria-label="تغییر تصویر">⌘</button></div>
-      <h3>سارا احمدی</h3>
-      <p>۰۹۱۲۳۴۵۶۷۸۹</p>
-      <span className="ms-gold-pill">عضو طلایی</span>
+      <h3>{[user?.first_name, user?.last_name].filter(Boolean).join(" ") || user?.username || "حساب کاربری"}</h3>
+      <p>{user?.phone || ""}</p>
       <nav>
         {nav.map(([key, label, href, icon]) => (
           <Link className={active === key ? "is-active" : ""} href={href} key={key}>
@@ -111,7 +110,7 @@ export function ProfileSidebar({ active }: { active: "profile" | "wishlist" | "o
   );
 }
 
-export function CatalogProductCard({ product, removable = false }: { product: ShowcaseProduct; removable?: boolean }) {
+export function CatalogProductCard({ product, removable = false }: { product: CatalogProduct; removable?: boolean }) {
   return (
     <article className="ms-catalog-card">
       {removable ? <button className="ms-remove" type="button" aria-label="حذف"><X size={17}/></button> : <button className="ms-save" type="button" aria-label="علاقه‌مندی"><Heart size={18}/></button>}
@@ -134,7 +133,7 @@ export function CatalogProductCard({ product, removable = false }: { product: Sh
   );
 }
 
-export function ProductRail({ title, products }: { title: string; products: ShowcaseProduct[] }) {
+export function ProductRail({ title, products }: { title: string; products: CatalogProduct[] }) {
   return (
     <section className="ms-product-rail">
       <div className="ms-rail-head">

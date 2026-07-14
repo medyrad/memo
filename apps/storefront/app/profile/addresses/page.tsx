@@ -1,11 +1,14 @@
-export default function ProfileAddressesPage() {
-  return (
-    <main className="section">
-      <h2>آدرس‌ها</h2>
-      <div className="panel">
-        <p>آدرس‌های ارسال شما اینجا مدیریت می‌شود.</p>
-      </div>
-    </main>
-  );
-}
+"use client";
 
+import { FormEvent, useCallback, useEffect, useState } from "react";
+import { createAddress } from "../../../lib/addresses";
+import { deleteAddress, getAddresses, getMe, updateAddress, type Address, type User } from "../../../lib/account";
+import { Breadcrumbs, PageTitle, ProfileSidebar } from "../../../components/storefront-page-kit";
+
+export default function ProfileAddressesPage(){
+  const [user,setUser]=useState<User|null>(null);const [addresses,setAddresses]=useState<Address[]>([]);const [message,setMessage]=useState("");
+  const load=useCallback(()=>Promise.all([getMe(),getAddresses()]).then(([me,data])=>{setUser(me);setAddresses(data);}).catch(error=>setMessage(error.message)),[]);
+  useEffect(()=>{void load();},[load]);
+  async function add(event:FormEvent<HTMLFormElement>){event.preventDefault();const form=new FormData(event.currentTarget);try{await createAddress({title:String(form.get("title")),recipient_name:String(form.get("recipient_name")),phone:String(form.get("phone")),province:String(form.get("province")),city:String(form.get("city")),postal_code:String(form.get("postal_code")),address_line:String(form.get("address_line")),is_default:addresses.length===0});event.currentTarget.reset();await load();setMessage("آدرس ثبت شد.");}catch(error){setMessage(error instanceof Error?error.message:"ثبت انجام نشد.");}}
+  return <main className="ms-container ms-account-page"><Breadcrumbs items={[["حساب کاربری","/profile"],["آدرس‌ها"]]}/><PageTitle title="آدرس‌های من" text="آدرس‌های واقعی ارسال را مدیریت کنید." icon={false}/><section className="ms-account-layout"><ProfileSidebar active="addresses" user={user}/><div className="ms-account-content"><section className="ms-profile-bottom">{addresses.map(address=><article className="ms-default-address" key={address.id}><h2>{address.title} {address.is_default?<small>پیش‌فرض</small>:null}</h2><p>{address.recipient_name} — {address.phone}</p><p>{address.province}، {address.city}، {address.address_line}</p><p>کد پستی: {address.postal_code}</p><div>{!address.is_default?<button className="ms-outline-button" onClick={async()=>{await updateAddress(address.id,{is_default:true});await load();}}>انتخاب پیش‌فرض</button>:null}<button className="ms-outline-button" onClick={async()=>{await deleteAddress(address.id);await load();}}>حذف</button></div></article>)}</section><form className="ms-profile-form" onSubmit={add}><h2>افزودن آدرس</h2><div className="ms-field-grid"><label>عنوان<input name="title" defaultValue="آدرس منزل" required/></label><label>نام گیرنده<input name="recipient_name" required/></label><label>موبایل<input name="phone" required/></label><label>استان<input name="province" required/></label><label>شهر<input name="city" required/></label><label>کدپستی<input name="postal_code" required/></label><label className="is-wide">نشانی کامل<input name="address_line" required/></label></div><button className="ms-dark-button" type="submit">ثبت آدرس</button>{message?<p className="ms-form-status">{message}</p>:null}</form></div></section></main>;
+}

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { MsIcon, TrustBar } from "./storefront-page-kit";
 
-export function StoreFooter() {
+export function StoreFooter({contact,footer}:{contact?:Record<string,unknown>;footer?:Record<string,unknown>}) {
+  const phone=String(contact?.phone??""); const email=String(contact?.email??""); const address=String(contact?.address??"");
   return (
     <footer className="ms-footer">
       <TrustBar compact />
@@ -19,7 +20,7 @@ export function StoreFooter() {
       <section className="ms-footer-grid">
         <div>
           <h3 className="ms-footer-logo">memostyles</h3>
-          <p>میمو استایل، انتخابی برای زنانی خاص که به جزئیات اهمیت می‌دهند. زیورآلاتی با عشق، ساخته‌شده با عشق و ظرافت برای شما.</p>
+          <p>{String(footer?.description??"")}</p>
           <div className="ms-socials"><span>◎</span><span>⌁</span><span>Ⓟ</span><span>♪</span></div>
         </div>
         <div>
@@ -34,18 +35,18 @@ export function StoreFooter() {
           <h4>دسترسی سریع</h4>
           <Link href="/products">جدیدترین‌ها</Link>
           <Link href="/categories/necklaces">گردنبند</Link>
-          <Link href="/categories/earrings">گوشواره</Link>
           <Link href="/categories/bracelets">دستبند</Link>
+          <Link href="/categories/gifts">ست هدیه</Link>
           <Link href="/categories/bags">کیف</Link>
         </div>
         <div>
           <h4>اطلاعات تماس</h4>
-          <p><MsIcon name="phone" /> ۰۲۱-۹۱۰۹۰۹۰۹</p>
-          <p><MsIcon name="mail" /> info@memostyles.com</p>
-          <p><MsIcon name="pin" /> تهران، خیابان ولیعصر، مجتمع تجاری نور، طبقه ۴، واحد ۱۲</p>
+          <p><MsIcon name="phone" /> {phone}</p>
+          <p><MsIcon name="mail" /> {email}</p>
+          <p><MsIcon name="pin" /> {address}</p>
         </div>
       </section>
-      <p className="ms-copyright">تمامی حقوق برای memostyles محفوظ است.</p>
+      <p className="ms-copyright">{String(footer?.copyright??"")}</p>
     </footer>
   );
 }

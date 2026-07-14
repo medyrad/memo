@@ -28,7 +28,8 @@ export function PaymentResult({ paymentId, expected }: { paymentId?: string; exp
 
   useEffect(() => {
     if (!paymentId) { setError("شناسه پرداخت در آدرس موجود نیست."); return; }
-    fetch(`${API_BASE_URL}/payments/${paymentId}/`, { credentials: "include", cache: "no-store" })
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(paymentId)) { setError("شناسه پرداخت معتبر نیست."); return; }
+    fetch(`${API_BASE_URL}/payments/${encodeURIComponent(paymentId)}/`, { credentials: "include", cache: "no-store" })
       .then(async (response) => {
         const data = await response.json().catch(() => null);
         if (!response.ok) throw new Error(data?.detail ?? "اطلاعات پرداخت دریافت نشد.");

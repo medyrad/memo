@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AddToCartButton } from "./add-to-cart-button";
-import type { ShowcaseProduct } from "../lib/showcase-data";
+import type { CatalogProduct } from "../lib/catalog-types";
 import { Heart } from "lucide-react";
 
 export function ProductVisual({ visual, className = "", src, alt = "" }: { visual: string; className?: string; src?: string; alt?: string }) {
@@ -16,7 +16,7 @@ export function ProductVisual({ visual, className = "", src, alt = "" }: { visua
   );
 }
 
-export function ProductCard({ product }: { product: ShowcaseProduct }) {
+export function ProductCard({ product }: { product: CatalogProduct }) {
   return (
     <article className="ms-product-card">
       <Link href={`/products/${product.slug}`} className="ms-product-link">

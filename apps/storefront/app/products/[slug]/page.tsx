@@ -1,14 +1,15 @@
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "../../../components/add-to-cart-button";
 import { ProductCard, ProductVisual } from "../../../components/product-card";
-import { getProduct, getProducts } from "../../../lib/api";
+import { getProduct, getProducts, getReviews } from "../../../lib/api";
 import { toCatalogProduct } from "../../../lib/catalog";
-import { Heart } from "lucide-react";
+import { WishlistButton } from "../../../components/wishlist-button";
 
 export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
   const apiProduct = await getProduct(params.slug);
   if (!apiProduct) notFound();
   const product = toCatalogProduct(apiProduct);
+  const reviews = await getReviews(apiProduct.id);
 
   const related = (await getProducts(`category__slug=${encodeURIComponent(apiProduct.category_slug ?? "")}`))
     .filter((item) => item.id !== apiProduct.id)
@@ -22,10 +23,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
         <div>
           <ProductVisual visual={product.visual} src={product.imageUrl} alt={product.title} className="ms-detail-gallery-main" />
           <div className="ms-detail-thumbs">
-            <ProductVisual visual={product.visual} />
-            <ProductVisual visual="coin" />
-            <ProductVisual visual="plaque" />
-            <ProductVisual visual="bracelet" />
+            {(apiProduct.images ?? []).map((image) => <ProductVisual key={image.id} visual={product.visual} src={image.image_url || image.image || undefined} alt={image.alt_text || product.title}/>) }
           </div>
         </div>
 
@@ -33,36 +31,32 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           <h1>{product.title}</h1>
           <div className="ms-detail-meta">
             <span className="ms-rating">★★★★★</span>
-            <span>{product.reviewCount} نظر مشتری</span>
-            <span>کد محصول: {product.variantId}</span>
+            <span>{reviews.length.toLocaleString("fa-IR")} نظر مشتری</span>
+            <span>کد محصول: {apiProduct.variants?.[0]?.sku}</span>
           </div>
           <div className="ms-detail-price">
             <strong>{product.price.toLocaleString("fa-IR")} تومان</strong>
             {product.compareAtPrice ? <del>{product.compareAtPrice.toLocaleString("fa-IR")} تومان</del> : null}
             {product.badge ? <span className="ms-badge">{product.badge}</span> : null}
           </div>
-          <p className="muted">{product.description} این گردنبند از متریال ضدحساسیت ساخته شده و انتخابی ایده‌آل برای استفاده روزمره و هدیه‌های ماندگار است.</p>
+          <p className="muted">{product.description}</p>
 
           <div className="ms-option-group">
             <b>رنگ:</b>
             <div className="ms-option-list">
-              <span className="ms-option is-active">طلایی</span>
-              <span className="ms-option">نقره‌ای</span>
-              <span className="ms-option">رزگلد</span>
+              {[...new Set((apiProduct.variants ?? []).map((variant) => variant.color).filter(Boolean))].map((color, index) => <span className={`ms-option ${index === 0 ? "is-active" : ""}`} key={color}>{color}</span>)}
             </div>
           </div>
           <div className="ms-option-group">
             <b>طول زنجیر:</b>
             <div className="ms-option-list">
-              <span className="ms-option">۴۰ سانتی‌متر</span>
-              <span className="ms-option is-active">{product.chainLength ?? "۴۵ سانتی‌متر"}</span>
-              <span className="ms-option">۵۰ سانتی‌متر</span>
+              {[...new Set((apiProduct.variants ?? []).map((variant) => variant.size).filter(Boolean))].map((size, index) => <span className={`ms-option ${index === 0 ? "is-active" : ""}`} key={size}>{size}</span>)}
             </div>
           </div>
 
           <div className="ms-purchase-box">
             <AddToCartButton variantId={(product.availableQuantity ?? 0) > 0 ? product.variantId : undefined} />
-            <button className="ms-outline-button" type="button">افزودن به علاقه‌مندی‌ها <Heart size={18}/></button>
+            <WishlistButton productId={apiProduct.id}/>
           </div>
 
           <div className="ms-trust-strip">
@@ -83,14 +77,12 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           <span>توضیحات محصول</span>
           <span>مشخصات</span>
           <span>نحوه نگهداری</span>
-          <span>نظرات کاربران ({product.reviewCount})</span>
+          <span>نظرات کاربران ({reviews.length.toLocaleString("fa-IR")})</span>
         </div>
         <div className="ms-tab-body">
           <ul>
             <li>{product.description}</li>
-            <li>طراحی مینیمال و ظریف مناسب استفاده روزمره و مهمانی</li>
-            <li>آبکاری طلا با کیفیت بالا و مقاومت در برابر رطوبت</li>
-            <li>قفل محکم و ایمن برای اطمینان بیشتر</li>
+            {(apiProduct.attributes ?? []).map((attribute: { id: string; name: string; value: string }) => <li key={attribute.id}>{attribute.name}: {attribute.value}</li>)}
           </ul>
         </div>
       </section>
@@ -99,20 +91,20 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
         <aside className="ms-review-score">
           <h2>نظرات کاربران</h2>
           <strong>{product.rating.toLocaleString("fa-IR")}</strong>
-          <span>از ۵ ({product.reviewCount} نظر)</span>
+          <span>از ۵ ({reviews.length.toLocaleString("fa-IR")} نظر)</span>
           <div className="ms-rating">★★★★★</div>
         </aside>
         <div className="ms-review-list">
-          {["نرگس محمدی", "سارا رحیمی"].map((name, index) => (
-            <article className="ms-review" key={name}>
-              <ProductVisual visual={index ? "earrings" : product.visual} />
+          {reviews.map((review) => (
+            <article className="ms-review" key={review.id}>
               <div>
-                <b>{name}</b>
-                <span className="ms-rating">★★★★★</span>
-                <p className="muted">خیلی ظریف و خوش‌رنگه، دقیقاً همون چیزی بود که می‌خواستم. بسته‌بندی هم تمیز و شیک بود.</p>
+                <b>{review.title || "خریدار محصول"}</b>
+                <span className="ms-rating">{"★".repeat(review.rating)}{"☆".repeat(5-review.rating)}</span>
+                <p className="muted">{review.body}</p>
               </div>
             </article>
           ))}
+          {!reviews.length ? <div className="ms-catalog-empty"><p>هنوز نظری برای این محصول ثبت نشده است.</p></div> : null}
         </div>
       </section>
 

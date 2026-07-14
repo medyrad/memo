@@ -62,8 +62,13 @@ class UserViewSet(viewsets.ModelViewSet):
         logout(request)
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-    @action(detail=False, methods=["get"], permission_classes=[permissions.IsAuthenticated])
+    @action(detail=False, methods=["get", "patch"], permission_classes=[permissions.IsAuthenticated])
     def me(self, request):
+        if request.method == "PATCH":
+            serializer = UserSerializer(request.user, data=request.data, partial=True)
+            serializer.is_valid(raise_exception=True)
+            serializer.save()
+            return Response(serializer.data)
         return Response(UserSerializer(request.user).data)
 
     @action(detail=False, methods=["get"], permission_classes=[permissions.AllowAny], authentication_classes=[])

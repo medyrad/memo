@@ -1,20 +1,17 @@
 import Link from "next/link";
 import { MsIcon } from "./storefront-page-kit";
+import { CartBadge } from "./cart-badge";
+import type { Category } from "../lib/api";
 
-const nav = [
+const staticNav = [
   ["جدیدترین‌ها", "/products"],
-  ["گردنبند", "/categories/necklaces"],
-  ["گوشواره", "/categories/earrings"],
-  ["دستبند", "/categories/bracelets"],
-  ["کیف", "/categories/bags"],
-  ["هدیه", "/categories/gifts"],
-  ["کالکشن‌ها", "/products"],
   ["مجله", "/blog"],
   ["درباره ما", "/about"],
   ["تماس با ما", "/contact"],
 ];
 
-export function StoreHeader() {
+export function StoreHeader({categories,phone}:{categories:Category[];phone?:string}) {
+  const nav = [["جدیدترین‌ها", "/products"], ...categories.map(category => [category.title, `/categories/${category.slug}`]), ...staticNav.slice(1)];
   return (
     <header className="ms-header">
       <div className="ms-announcement">
@@ -25,10 +22,10 @@ export function StoreHeader() {
         <div className="ms-support-call">
           <MsIcon name="support" />
           <span>پشتیبانی ۲۴/۷ ساعته</span>
-          <b>۰۲۱-۹۱۰۹۰۹۰۹</b>
+          <b>{phone || ""}</b>
         </div>
         <div className="ms-header-actions">
-          <Link href="/cart" aria-label="سبد خرید"><MsIcon name="bag" /><b>۲</b></Link>
+          <CartBadge />
           <Link href="/wishlist" aria-label="علاقه‌مندی"><MsIcon name="heart" /></Link>
           <Link href="/profile" aria-label="حساب کاربری"><MsIcon name="user" /></Link>
           <Link className="ms-login-link" href="/auth/login">ورود / ثبت‌نام</Link>

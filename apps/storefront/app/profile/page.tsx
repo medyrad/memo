@@ -1,66 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { FormEvent, useEffect, useState } from "react";
+import { getAddresses, getMe, getOrders, getWishlist, updateMe, type Address, type Order, type User } from "../../lib/account";
 import { Breadcrumbs, MsIcon, PageTitle, ProfileSidebar } from "../../components/storefront-page-kit";
 
-export const metadata = {
-  title: "پروفایل کاربر | memostyles",
-};
-
-const rows = [
-  ["#۱۰۳۴۵۶", "۱۴۰۲/۰۳/۱۵", "۱,۲۹۰,۰۰۰ تومان", "تحویل‌شده", "tone-green"],
-  ["#۱۰۲۹۸۷", "۱۴۰۲/۰۳/۰۸", "۷۶۸,۰۰۰ تومان", "در حال آماده‌سازی", "tone-warm"],
-  ["#۱۰۲۴۵۱", "۱۴۰۲/۰۲/۲۵", "۴۵۰,۰۰۰ تومان", "لغو شده", "tone-red"],
-];
+const statusLabel: Record<string,string> = { pending_payment:"در انتظار پرداخت", paid:"پرداخت‌شده", processing:"در حال آماده‌سازی", shipped:"ارسال‌شده", delivered:"تحویل‌شده", cancelled:"لغوشده", refunded:"مرجوع‌شده" };
 
 export default function ProfilePage() {
-  return (
-    <main className="ms-container ms-account-page">
-      <Breadcrumbs items={[["حساب کاربری"], ["پروفایل"]]} />
-      <PageTitle title="پروفایل کاربر" text="خوش آمدید سارا احمدی، اطلاعات حساب کاربری خود را مدیریت کنید." icon={false} />
-      <section className="ms-account-layout">
-        <ProfileSidebar active="profile" />
-        <div className="ms-account-content">
-          <section className="ms-profile-form">
-            <h2><MsIcon name="user" /> اطلاعات شخصی</h2>
-            <div className="ms-field-grid">
-              <label>نام <span>*</span><input defaultValue="سارا" /></label>
-              <label>نام خانوادگی <span>*</span><input defaultValue="احمدی" /></label>
-              <label>شماره موبایل <span>*</span><input defaultValue="۰۹۱۲۳۴۵۶۷۸۹" /></label>
-              <label>ایمیل <span>*</span><input defaultValue="sara@email.com" /></label>
-              <label>تاریخ تولد (اختیاری)<input defaultValue="۱۳۷۲/۰۵/۱۲" /></label>
-            </div>
-            <div className="ms-form-actions"><button className="ms-dark-button" type="button">ذخیره تغییرات</button><Link href="/auth/login">تغییر رمز عبور <MsIcon name="lock" /></Link></div>
-          </section>
-
-          <section className="ms-profile-stats">
-            {[
-              ["bag", "سفارش‌های تکمیل‌شده", "۲۷", "سفارش"],
-              ["box", "سفارش‌های در حال پردازش", "۳", "سفارش"],
-              ["heart", "علاقه‌مندی‌ها", "۱۸", "محصول"],
-              ["diamond", "امتیاز باشگاه مشتریان", "۱,۲۵۰", "امتیاز"],
-            ].map(([icon, label, value, unit]) => (
-              <article key={label}><MsIcon name={icon} /><span>{label}</span><b>{value}</b><small>{unit}</small></article>
-            ))}
-          </section>
-
-          <section className="ms-profile-bottom">
-            <article className="ms-default-address">
-              <h2>آدرس پیش‌فرض <MsIcon name="pin" /></h2>
-              <p>تهران، خیابان ولیعصر، بالاتر از میدان مطهری، پلاک ۶۳، واحد ۱۲</p>
-              <p>کد پستی: ۱۵۸۷۸۶۵۴۳۲۱</p>
-              <p>شماره تماس: ۰۹۱۲۳۴۵۶۷۸۹</p>
-              <div><Link className="ms-outline-button" href="/profile/addresses">مدیریت آدرس‌ها</Link><button className="ms-dark-button" type="button">ویرایش آدرس</button></div>
-            </article>
-            <article className="ms-last-orders">
-              <h2>آخرین سفارش‌ها <MsIcon name="bag" /></h2>
-              <table>
-                <thead><tr><th>شماره سفارش</th><th>تاریخ</th><th>مبلغ</th><th>وضعیت</th></tr></thead>
-                <tbody>{rows.map(([id, date, price, status, tone]) => <tr key={id}><td>{id}</td><td>{date}</td><td>{price}</td><td><span className={tone}>{status}</span></td></tr>)}</tbody>
-              </table>
-              <Link className="ms-outline-button" href="/profile/orders">مشاهده همه سفارش‌ها</Link>
-            </article>
-          </section>
-        </div>
-      </section>
-    </main>
-  );
+  const [user,setUser]=useState<User|null>(null); const [orders,setOrders]=useState<Order[]>([]); const [addresses,setAddresses]=useState<Address[]>([]); const [wishlistCount,setWishlistCount]=useState(0); const [message,setMessage]=useState("");
+  useEffect(()=>{Promise.all([getMe(),getOrders(),getAddresses(),getWishlist()]).then(([me,ownedOrders,ownedAddresses,wishlists])=>{setUser(me);setOrders(ownedOrders);setAddresses(ownedAddresses);setWishlistCount(wishlists[0]?.items.length??0);}).catch((error)=>setMessage(error.message));},[]);
+  async function save(event:FormEvent<HTMLFormElement>){event.preventDefault();const form=new FormData(event.currentTarget);try{const updated=await updateMe({first_name:String(form.get("first_name")??""),last_name:String(form.get("last_name")??""),phone:String(form.get("phone")??""),email:String(form.get("email")??"")});setUser(updated);setMessage("تغییرات ذخیره شد.");}catch(error){setMessage(error instanceof Error?error.message:"ذخیره انجام نشد.");}}
+  const defaultAddress=addresses.find((address)=>address.is_default)??addresses[0];
+  return <main className="ms-container ms-account-page"><Breadcrumbs items={[["حساب کاربری"],["پروفایل"]]}/><PageTitle title="پروفایل کاربر" text={user?`خوش آمدید ${user.first_name||user.username}`:"اطلاعات حساب واقعی شما"} icon={false}/><section className="ms-account-layout"><ProfileSidebar active="profile" user={user}/><div className="ms-account-content">
+    <form className="ms-profile-form" onSubmit={save}><h2><MsIcon name="user"/> اطلاعات شخصی</h2><div className="ms-field-grid"><label>نام<input defaultValue={user?.first_name??""} key={`first-${user?.id}`} name="first_name"/></label><label>نام خانوادگی<input defaultValue={user?.last_name??""} key={`last-${user?.id}`} name="last_name"/></label><label>شماره موبایل<input defaultValue={user?.phone??""} key={`phone-${user?.id}`} name="phone"/></label><label>ایمیل<input defaultValue={user?.email??""} key={`email-${user?.id}`} name="email" type="email"/></label></div><div className="ms-form-actions"><button className="ms-dark-button" type="submit">ذخیره تغییرات</button></div>{message?<p className="ms-form-status">{message}</p>:null}</form>
+    <section className="ms-profile-stats">{[["bag","سفارش‌های تکمیل‌شده",orders.filter(order=>order.status==="delivered").length],["box","سفارش‌های در حال پردازش",orders.filter(order=>["paid","processing","shipped"].includes(order.status)).length],["heart","علاقه‌مندی‌ها",wishlistCount],["diamond","کل سفارش‌ها",orders.length]].map(([icon,label,value])=><article key={String(label)}><MsIcon name={String(icon)}/><span>{label}</span><b>{Number(value).toLocaleString("fa-IR")}</b></article>)}</section>
+    <section className="ms-profile-bottom"><article className="ms-default-address"><h2>آدرس پیش‌فرض <MsIcon name="pin"/></h2>{defaultAddress?<><p>{defaultAddress.province}، {defaultAddress.city}، {defaultAddress.address_line}</p><p>کد پستی: {defaultAddress.postal_code}</p><p>شماره تماس: {defaultAddress.phone}</p></>:<p>هنوز آدرسی ثبت نشده است.</p>}<Link className="ms-outline-button" href="/profile/addresses">مدیریت آدرس‌ها</Link></article><article className="ms-last-orders"><h2>آخرین سفارش‌ها <MsIcon name="bag"/></h2><table><thead><tr><th>شماره سفارش</th><th>تاریخ</th><th>مبلغ</th><th>وضعیت</th></tr></thead><tbody>{orders.slice(0,3).map(order=><tr key={order.id}><td><Link href={`/profile/orders/${order.id}`}>{order.id.slice(0,8)}</Link></td><td>{new Date(order.created_at).toLocaleDateString("fa-IR")}</td><td>{Number(order.grand_total).toLocaleString("fa-IR")} تومان</td><td>{statusLabel[order.status]??order.status}</td></tr>)}</tbody></table><Link className="ms-outline-button" href="/profile/orders">مشاهده همه سفارش‌ها</Link></article></section>
+  </div></section></main>;
 }

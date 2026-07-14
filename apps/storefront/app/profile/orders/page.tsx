@@ -1,43 +1,10 @@
-import { AccountSidebar, ProfileOrderRow } from "../../../components/order-ui";
-import { profileOrders, toman } from "../../../lib/order-data";
-import { Ban, ChevronDown, Gem, PackageCheck, ShoppingBag, Truck } from "lucide-react";
+"use client";
 
-export default function ProfileOrdersPage() {
-  return (
-    <main className="ms-container">
-      <div className="ms-account-page">
-        <div className="ms-breadcrumb">خانه / حساب کاربری / سفارش‌های من</div>
-        <div className="ms-account-layout">
-          <AccountSidebar />
-          <section className="ms-account-content">
-            <div className="ms-page-heading">
-              <h1>سفارش‌های من</h1>
-              <p>لیست سفارش‌های ثبت‌شده، وضعیت ارسال و جزئیات هر سفارش را اینجا ببینید.</p>
-            </div>
-            <div className="ms-order-tools">
-              <input placeholder="جستجو با شماره سفارش..." />
-              <div>
-                {["همه", "در حال آماده‌سازی", "ارسال‌شده", "تحویل‌شده", "لغوشده"].map((item, index) => (
-                  <button className={index === 0 ? "is-active" : ""} type="button" key={item}>{item}</button>
-                ))}
-              </div>
-              <select defaultValue="newest"><option value="newest">مرتب‌سازی: جدیدترین</option></select>
-            </div>
-            <div className="ms-order-stats">
-              <div><ShoppingBag/><b>{profileOrders.length.toLocaleString("fa-IR")}</b><small>کل سفارش‌ها</small></div>
-              <div><Truck/><b>۳</b><small>در حال انجام</small></div>
-              <div><PackageCheck/><b>۱۹</b><small>تحویل‌شده</small></div>
-              <div><Ban/><b>۵</b><small>لغوشده</small></div>
-              <div><Gem/><b>{toman(15570000)}</b><small>مجموع هزینه‌ها</small></div>
-            </div>
-            <h2 className="ms-list-title">لیست سفارش‌ها</h2>
-            <div className="ms-profile-order-list">
-              {profileOrders.map((order, index) => <ProfileOrderRow index={index} key={order.id} />)}
-            </div>
-            <button className="ms-load-more" type="button">مشاهده سفارش‌های بیشتر <ChevronDown size={18}/></button>
-          </section>
-        </div>
-      </div>
-    </main>
-  );
-}
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Ban, Gem, PackageCheck, ShoppingBag, Truck } from "lucide-react";
+import { getMe, getOrders, type Order, type User } from "../../../lib/account";
+import { Breadcrumbs, PageTitle, ProfileSidebar } from "../../../components/storefront-page-kit";
+
+const labels:Record<string,string>={pending_payment:"در انتظار پرداخت",paid:"پرداخت‌شده",processing:"در حال آماده‌سازی",shipped:"ارسال‌شده",delivered:"تحویل‌شده",cancelled:"لغوشده",refunded:"مرجوع‌شده"};
+export default function ProfileOrdersPage(){const [orders,setOrders]=useState<Order[]>([]);const [user,setUser]=useState<User|null>(null);const [error,setError]=useState("");useEffect(()=>{Promise.all([getMe(),getOrders()]).then(([me,data])=>{setUser(me);setOrders(data);}).catch(reason=>setError(reason.message));},[]);const spent=orders.filter(order=>order.payment?.status==="succeeded").reduce((sum,order)=>sum+Number(order.grand_total),0);return <main className="ms-container ms-account-page"><Breadcrumbs items={[["حساب کاربری","/profile"],["سفارش‌های من"]]}/><PageTitle title="سفارش‌های من" text="وضعیت ثبت، پرداخت و ارسال سفارش‌های واقعی شما" icon={false}/><section className="ms-account-layout"><ProfileSidebar active="orders" user={user}/><section className="ms-account-content"><div className="ms-order-stats"><div><ShoppingBag/><b>{orders.length.toLocaleString("fa-IR")}</b><small>کل سفارش‌ها</small></div><div><Truck/><b>{orders.filter(order=>["paid","processing","shipped"].includes(order.status)).length.toLocaleString("fa-IR")}</b><small>در حال انجام</small></div><div><PackageCheck/><b>{orders.filter(order=>order.status==="delivered").length.toLocaleString("fa-IR")}</b><small>تحویل‌شده</small></div><div><Ban/><b>{orders.filter(order=>order.status==="cancelled").length.toLocaleString("fa-IR")}</b><small>لغوشده</small></div><div><Gem/><b>{spent.toLocaleString("fa-IR")}</b><small>مجموع خرید</small></div></div>{error?<div className="ms-catalog-empty"><p>{error}</p></div>:null}<div className="ms-profile-order-list">{orders.map(order=><article className="ms-profile-order" key={order.id}><div className="ms-profile-order-main"><span className="ms-status-badge">● {labels[order.status]??order.status}</span><strong># {order.id.slice(0,8)}</strong><span>{new Date(order.created_at).toLocaleString("fa-IR")}</span><span>پرداخت: {order.payment?.status??"ثبت نشده"}</span></div><div className="ms-profile-order-products"><small>{order.items.length.toLocaleString("fa-IR")} کالا</small>{order.items.slice(0,3).map(item=><span key={item.id}>{item.product_title}</span>)}</div><div className="ms-profile-order-pay"><b>{Number(order.grand_total).toLocaleString("fa-IR")} تومان</b><Link className="ms-dark-button" href={`/profile/orders/${order.id}`}>جزئیات سفارش</Link></div></article>)}</div>{!orders.length&&!error?<div className="ms-catalog-empty"><h2>هنوز سفارشی ندارید</h2><Link className="ms-dark-button" href="/products">شروع خرید</Link></div>:null}</section></section></main>;}

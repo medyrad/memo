@@ -1,93 +1,11 @@
-import Link from "next/link";
-import { AccountSidebar, OrderMiniImage, OrderProgress, TrustStrip } from "../../../../components/order-ui";
-import { ProductVisual } from "../../../../components/product-card";
-import { checkoutLines, orderTotals, suggestedProducts, toman } from "../../../../lib/order-data";
+"use client";
 
-export default function OrderDetailPage() {
-  return (
-    <main className="ms-container">
-      <div className="ms-account-page">
-        <div className="ms-breadcrumb">خانه / حساب کاربری / سفارش‌های من / جزئیات سفارش</div>
-        <div className="ms-account-layout">
-          <AccountSidebar />
-          <section className="ms-account-content">
-            <div className="ms-page-heading">
-              <h1>جزئیات سفارش</h1>
-              <p>اطلاعات کامل سفارش، وضعیت ارسال و جزئیات پرداخت را در اینجا ببینید.</p>
-            </div>
-            <div className="ms-detail-stats">
-              <div><span>تحویل تخمینی</span><b>۱۴۰۴/۰۳/۲۲</b></div>
-              <div><span>وضعیت سفارش</span><b className="is-warm">در حال آماده‌سازی</b></div>
-              <div><span>وضعیت پرداخت</span><b className="is-green">پرداخت شده</b></div>
-              <div><span>تاریخ سفارش</span><b>۱۴۰۴/۰۲/۱۵</b></div>
-              <div><span>شماره سفارش</span><b>#۱۰۳۴۵۶</b></div>
-            </div>
-            <div className="ms-shipping-methods">
-              <div><span>روش ارسال</span><b>ارسال سریع</b></div>
-              <div><span>روش پرداخت</span><b>آنلاین</b></div>
-            </div>
-            <OrderProgress active={2} />
-            <div className="ms-order-detail-grid">
-              <section>
-                <h2>اطلاعات ارسال ⌖</h2>
-                <dl>
-                  <div><dt>نام گیرنده</dt><dd>سارا احمدی</dd></div>
-                  <div><dt>شماره موبایل</dt><dd>۰۹۱۲۳۴۵۶۷۸۹</dd></div>
-                  <div><dt>آدرس</dt><dd>تهران، خیابان ولیعصر، خیابان مطهری، پلاک ۲۴، واحد ۴، طبقه ۲</dd></div>
-                  <div><dt>کد پستی</dt><dd>۱۲۳۴۵۶۷۸۹۰</dd></div>
-                </dl>
-                <p className="ms-eta">تحویل تخمینی: ۱۴۰۴/۰۳/۲۲ تا ۱۴۰۴/۰۳/۲۷</p>
-              </section>
-              <section>
-                <h2>جزئیات پرداخت ▭</h2>
-                <dl>
-                  <div><dt>روش پرداخت</dt><dd>آنلاین (زرین‌بانک)</dd></div>
-                  <div><dt>کد پیگیری پرداخت</dt><dd>PGW-14040315-8845</dd></div>
-                  <div><dt>شماره فاکتور</dt><dd>INV-۱۰۳۴۵۶</dd></div>
-                  <div><dt>جمع کل کالاها</dt><dd>{toman(orderTotals.subtotal)}</dd></div>
-                  <div><dt>تخفیف</dt><dd>-{toman(orderTotals.discount)}</dd></div>
-                  <div><dt>هزینه ارسال</dt><dd>رایگان</dd></div>
-                  <div className="is-total"><dt>مبلغ قابل پرداخت</dt><dd>{toman(1026000)}</dd></div>
-                </dl>
-              </section>
-            </div>
-            <section className="ms-products-table">
-              <h2>محصولات سفارش ▢</h2>
-              {checkoutLines.map((line) => (
-                <div key={line.id}>
-                  <OrderMiniImage compact line={line} />
-                  <b>{line.title}<small>کد: {line.sku}</small></b>
-                  <span>{line.subtitle}</span>
-                  <span>۱</span>
-                  <span>{toman(line.unitPrice)}</span>
-                  <strong>{toman(line.unitPrice)}</strong>
-                </div>
-              ))}
-              <footer>جمع کل سفارش <b>{toman(1290000)}</b></footer>
-            </section>
-            <div className="ms-result-actions">
-              <Link href="/profile/orders">بازگشت به سفارش‌ها</Link>
-              <Link href="/contact">درخواست پشتیبانی ☏</Link>
-              <Link href="/profile/orders">پیگیری مرسوله ▤</Link>
-              <Link className="ms-outline-warm" href="/profile/orders">بازگشت به سفارش‌ها</Link>
-            </div>
-            <section className="ms-slim-suggestions">
-              <h2>ممکن است این محصولات را نیز دوست داشته باشید ✦</h2>
-              <div>
-                {suggestedProducts.map((product) => (
-                  <Link href={`/products/${product.slug}`} key={product.id}>
-                    <ProductVisual className="ms-mini-product" visual={product.visual} />
-                    <b>{product.title}</b>
-                    <span>{toman(product.price)}</span>
-                    <em>+</em>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          </section>
-        </div>
-        <TrustStrip dense />
-      </div>
-    </main>
-  );
-}
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { getMe, getOrder, type Order, type User } from "../../../../lib/account";
+import { Breadcrumbs, PageTitle, ProfileSidebar } from "../../../../components/storefront-page-kit";
+import { OrderProgress } from "../../../../components/order-ui";
+
+const labels:Record<string,string>={pending_payment:"در انتظار پرداخت",paid:"پرداخت‌شده",processing:"در حال آماده‌سازی",shipped:"ارسال‌شده",delivered:"تحویل‌شده",cancelled:"لغوشده",refunded:"مرجوع‌شده"};
+const progress=(status:string):1|2|3|4=>status==="delivered"?4:status==="shipped"?3:["paid","processing"].includes(status)?2:1;
+export default function OrderDetailPage({params}:{params:{id:string}}){const [order,setOrder]=useState<Order|null>(null);const [user,setUser]=useState<User|null>(null);const [error,setError]=useState("");useEffect(()=>{Promise.all([getMe(),getOrder(params.id)]).then(([me,data])=>{setUser(me);setOrder(data);}).catch(reason=>setError(reason.message));},[params.id]);if(error)return <main className="ms-container"><div className="ms-catalog-empty"><h2>سفارش قابل مشاهده نیست</h2><p>{error}</p><Link href="/profile/orders">بازگشت</Link></div></main>;if(!order)return <main className="ms-container"><div className="ms-catalog-empty"><p>در حال دریافت سفارش…</p></div></main>;const address=order.shipping_address??{};return <main className="ms-container ms-account-page"><Breadcrumbs items={[["حساب کاربری","/profile"],["سفارش‌ها","/profile/orders"],[order.id.slice(0,8)]]}/><PageTitle title="جزئیات سفارش" text="اطلاعات واقعی سفارش، پرداخت و ارسال" icon={false}/><section className="ms-account-layout"><ProfileSidebar active="orders" user={user}/><section className="ms-account-content"><div className="ms-detail-stats"><div><span>وضعیت سفارش</span><b>{labels[order.status]??order.status}</b></div><div><span>وضعیت پرداخت</span><b>{order.payment?.status??"ثبت نشده"}</b></div><div><span>تاریخ سفارش</span><b>{new Date(order.created_at).toLocaleString("fa-IR")}</b></div><div><span>شماره سفارش</span><b>{order.id}</b></div></div><OrderProgress active={progress(order.status)}/><div className="ms-order-detail-grid"><section><h2>اطلاعات ارسال</h2><dl><div><dt>نام گیرنده</dt><dd>{address.recipient_name??"—"}</dd></div><div><dt>شماره موبایل</dt><dd>{address.phone??"—"}</dd></div><div><dt>آدرس</dt><dd>{[address.province,address.city,address.address_line].filter(Boolean).join("، ")}</dd></div><div><dt>کد پستی</dt><dd>{address.postal_code??"—"}</dd></div><div><dt>روش ارسال</dt><dd>{order.shipping_method}</dd></div><div><dt>کد رهگیری</dt><dd>{order.shipment?.tracking_code||"هنوز ثبت نشده"}</dd></div></dl></section><section><h2>جزئیات پرداخت</h2><dl><div><dt>درگاه</dt><dd>{order.payment?.provider??"—"}</dd></div><div><dt>کد پیگیری</dt><dd>{order.payment?.reference_id??"—"}</dd></div><div><dt>جمع کالاها</dt><dd>{Number(order.subtotal).toLocaleString("fa-IR")} تومان</dd></div><div><dt>تخفیف</dt><dd>{Number(order.discount_total).toLocaleString("fa-IR")} تومان</dd></div><div><dt>هزینه ارسال</dt><dd>{Number(order.shipping_total).toLocaleString("fa-IR")} تومان</dd></div><div className="is-total"><dt>مبلغ نهایی</dt><dd>{Number(order.grand_total).toLocaleString("fa-IR")} تومان</dd></div></dl></section></div><section className="ms-products-table"><h2>محصولات سفارش</h2>{order.items.map(item=><div key={item.id}><b>{item.product_title}<small>SKU: {item.sku}</small></b><span>{item.quantity.toLocaleString("fa-IR")}</span><span>{Number(item.unit_price).toLocaleString("fa-IR")} تومان</span><strong>{Number(item.line_total).toLocaleString("fa-IR")} تومان</strong></div>)}<footer>جمع کل سفارش <b>{Number(order.grand_total).toLocaleString("fa-IR")} تومان</b></footer></section><div className="ms-result-actions"><Link href="/profile/orders">بازگشت به سفارش‌ها</Link><Link href="/contact">درخواست پشتیبانی</Link></div></section></section></main>;}
