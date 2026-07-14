@@ -7,7 +7,7 @@ from apps.accounts.views import AddressViewSet, CustomerProfileViewSet, Permissi
 from apps.audit.views import AuditLogViewSet
 from apps.cart.views import CartItemViewSet, CartViewSet
 from apps.catalog.views import CategoryViewSet, ProductImageViewSet, ProductVariantViewSet, ProductViewSet
-from apps.content.views import BannerViewSet, BlogPostViewSet, PageViewSet
+from apps.content.views import BannerViewSet, BlogPostViewSet, HomepageSectionViewSet, PageViewSet, SiteSettingViewSet
 from apps.discounts.views import CouponViewSet, DiscountRuleViewSet
 from apps.inventory.views import InventoryViewSet
 from apps.notifications.views import NotificationViewSet
@@ -15,6 +15,10 @@ from apps.orders.views import OrderItemViewSet, OrderStatusHistoryViewSet, Order
 from apps.payments.views import PaymentViewSet
 from apps.reviews.views import ReviewViewSet, WishlistItemViewSet, WishlistViewSet
 from apps.shipping.views import ShipmentViewSet
+
+admin.site.site_header = "مدیریت فروشگاه memostyles"
+admin.site.site_title = "memostyles Admin"
+admin.site.index_title = "عملیات فروشگاه"
 
 router = DefaultRouter()
 router.register("users", UserViewSet)
@@ -42,6 +46,8 @@ router.register("reviews", ReviewViewSet)
 router.register("blog-posts", BlogPostViewSet)
 router.register("pages", PageViewSet)
 router.register("banners", BannerViewSet)
+router.register("homepage-sections", HomepageSectionViewSet)
+router.register("site-settings", SiteSettingViewSet)
 router.register("notifications", NotificationViewSet)
 router.register("audit-logs", AuditLogViewSet)
 

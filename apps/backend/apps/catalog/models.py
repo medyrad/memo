@@ -60,7 +60,8 @@ class ProductVariant(TimeStampedModel):
 
 class ProductImage(TimeStampedModel):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="images")
-    image = models.FileField(upload_to="products/")
+    image = models.FileField(upload_to="products/", null=True, blank=True)
+    external_url = models.CharField(max_length=600, blank=True)
     alt_text = models.CharField(max_length=180, blank=True)
     sort_order = models.PositiveIntegerField(default=0)
     is_primary = models.BooleanField(default=False)
@@ -69,7 +70,14 @@ class ProductImage(TimeStampedModel):
         ordering = ["sort_order", "created_at"]
         constraints = [
             models.UniqueConstraint(fields=["product"], condition=models.Q(is_primary=True), name="one_primary_image_per_product"),
+            models.CheckConstraint(
+                check=models.Q(image__isnull=False) | ~models.Q(external_url=""),
+                name="product_image_has_file_or_url",
+            ),
         ]
+
+    def __str__(self) -> str:
+        return self.alt_text or f"Image for {self.product}"
 
 
 class ProductAttribute(TimeStampedModel):

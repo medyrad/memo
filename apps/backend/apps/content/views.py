@@ -2,8 +2,8 @@ from rest_framework import viewsets
 
 from apps.common_permissions import IsAdminOrReadOnly
 
-from .models import Banner, BlogPost, Page
-from .serializers import BannerSerializer, BlogPostSerializer, PageSerializer
+from .models import Banner, BlogPost, HomepageSection, Page, SiteSetting
+from .serializers import BannerSerializer, BlogPostSerializer, HomepageSectionSerializer, PageSerializer, SiteSettingSerializer
 
 
 class PageViewSet(viewsets.ModelViewSet):
@@ -38,3 +38,25 @@ class BannerViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset if self.request.user.is_staff else queryset.filter(is_active=True)
+
+
+class HomepageSectionViewSet(viewsets.ModelViewSet):
+    queryset = HomepageSection.objects.all()
+    serializer_class = HomepageSectionSerializer
+    filterset_fields = ["kind", "is_active", "key"]
+    permission_classes = [IsAdminOrReadOnly]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset if self.request.user.is_staff else queryset.filter(is_active=True)
+
+
+class SiteSettingViewSet(viewsets.ModelViewSet):
+    queryset = SiteSetting.objects.all()
+    serializer_class = SiteSettingSerializer
+    filterset_fields = ["key", "is_public"]
+    permission_classes = [IsAdminOrReadOnly]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset if self.request.user.is_staff else queryset.filter(is_public=True)

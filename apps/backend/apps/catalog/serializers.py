@@ -25,9 +25,24 @@ class ProductVariantSerializer(serializers.ModelSerializer):
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = ProductImage
         fields = "__all__"
+
+    def get_image_url(self, obj):
+        if obj.image:
+            request = self.context.get("request")
+            return request.build_absolute_uri(obj.image.url) if request else obj.image.url
+        return obj.external_url
+
+    def validate(self, attrs):
+        image = attrs.get("image", getattr(self.instance, "image", None))
+        external_url = attrs.get("external_url", getattr(self.instance, "external_url", ""))
+        if not image and not external_url:
+            raise serializers.ValidationError("فایل تصویر یا آدرس خارجی تصویر الزامی است.")
+        return attrs
 
 
 class ProductAttributeSerializer(serializers.ModelSerializer):
