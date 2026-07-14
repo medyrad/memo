@@ -6,7 +6,10 @@ from .serializers import ReviewSerializer, WishlistItemSerializer, WishlistSeria
 
 
 class WishlistViewSet(viewsets.ModelViewSet):
-    queryset = Wishlist.objects.prefetch_related("items").all().order_by("-created_at")
+    queryset = Wishlist.objects.prefetch_related(
+        "items", "items__product", "items__product__category", "items__product__variants",
+        "items__product__variants__inventory", "items__product__images", "items__product__attributes", "items__product__reviews",
+    ).all().order_by("-created_at")
     serializer_class = WishlistSerializer
     filterset_fields = ["user"]
     permission_classes = [IsAuthenticated]
@@ -20,7 +23,9 @@ class WishlistViewSet(viewsets.ModelViewSet):
 
 
 class WishlistItemViewSet(viewsets.ModelViewSet):
-    queryset = WishlistItem.objects.select_related("wishlist", "product").all().order_by("-created_at")
+    queryset = WishlistItem.objects.select_related("wishlist", "product", "product__category").prefetch_related(
+        "product__variants", "product__variants__inventory", "product__images", "product__attributes", "product__reviews",
+    ).all().order_by("-created_at")
     serializer_class = WishlistItemSerializer
     filterset_fields = ["wishlist", "product"]
     permission_classes = [IsAuthenticated]

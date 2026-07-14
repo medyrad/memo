@@ -19,7 +19,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.select_related("category").prefetch_related("variants", "variants__inventory", "images", "attributes").all().order_by("-created_at")
+    queryset = Product.objects.select_related("category").prefetch_related("variants", "variants__inventory", "images", "attributes", "reviews").all().order_by("-created_at")
     serializer_class = ProductSerializer
     permission_classes = [IsAdminOrReadOnly]
     filterset_fields = ["category", "category__slug", "status", "slug"]

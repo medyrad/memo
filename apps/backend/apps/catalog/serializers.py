@@ -57,7 +57,16 @@ class ProductSerializer(serializers.ModelSerializer):
     attributes = ProductAttributeSerializer(many=True, read_only=True)
     category_title = serializers.CharField(source="category.title", read_only=True)
     category_slug = serializers.CharField(source="category.slug", read_only=True)
+    rating = serializers.SerializerMethodField()
+    review_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Product
         fields = "__all__"
+
+    def get_rating(self, obj):
+        reviews = [review.rating for review in obj.reviews.all() if review.status == "approved"]
+        return round(sum(reviews) / len(reviews), 1) if reviews else 0
+
+    def get_review_count(self, obj):
+        return sum(1 for review in obj.reviews.all() if review.status == "approved")

@@ -14,7 +14,7 @@ from .services import CheckoutError, create_pending_order_from_cart, release_exp
 
 
 class OrderViewSet(viewsets.ModelViewSet):
-    queryset = Order.objects.select_related("user").prefetch_related("items", "status_history").all().order_by("-created_at")
+    queryset = Order.objects.select_related("user").prefetch_related("items", "status_history", "payments", "shipments").all().order_by("-created_at")
     serializer_class = OrderSerializer
     filterset_fields = ["user", "status"]
 

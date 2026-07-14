@@ -1,9 +1,13 @@
 from rest_framework import serializers
 
+from apps.catalog.serializers import ProductSerializer
+
 from .models import Review, Wishlist, WishlistItem
 
 
 class WishlistItemSerializer(serializers.ModelSerializer):
+    product_detail = ProductSerializer(source="product", read_only=True)
+
     class Meta:
         model = WishlistItem
         fields = "__all__"

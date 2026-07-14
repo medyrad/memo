@@ -12,7 +12,7 @@ from .serializers import AddCartItemSerializer, CartItemSerializer, CartSerializ
 
 @method_decorator(csrf_protect, name="dispatch")
 class CartViewSet(viewsets.ModelViewSet):
-    queryset = Cart.objects.prefetch_related("items", "items__variant", "items__variant__product").all().order_by("-updated_at")
+    queryset = Cart.objects.prefetch_related("items", "items__variant", "items__variant__product", "items__variant__product__images").all().order_by("-updated_at")
     serializer_class = CartSerializer
     http_method_names = ["get", "post", "head", "options"]
     permission_classes = [permissions.AllowAny]
@@ -60,7 +60,7 @@ class CartViewSet(viewsets.ModelViewSet):
 
 @method_decorator(csrf_protect, name="dispatch")
 class CartItemViewSet(viewsets.ModelViewSet):
-    queryset = CartItem.objects.select_related("cart", "variant").all()
+    queryset = CartItem.objects.select_related("cart", "variant", "variant__product").prefetch_related("variant__product__images").all()
     serializer_class = CartItemSerializer
     filterset_fields = ["cart", "variant"]
     http_method_names = ["get", "post", "delete", "head", "options"]

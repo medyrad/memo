@@ -18,6 +18,8 @@ class OrderStatusHistorySerializer(serializers.ModelSerializer):
 class OrderSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many=True, read_only=True)
     status_history = OrderStatusHistorySerializer(many=True, read_only=True)
+    payment = serializers.SerializerMethodField()
+    shipment = serializers.SerializerMethodField()
 
     class Meta:
         model = Order
@@ -26,6 +28,18 @@ class OrderSerializer(serializers.ModelSerializer):
             "user", "status", "subtotal", "discount_total", "shipping_total", "grand_total",
             "coupon", "shipping_address", "expires_at", "inventory_reserved", "created_at", "updated_at",
         ]
+
+    def get_payment(self, obj):
+        payment = obj.payments.order_by("-created_at").first()
+        if not payment:
+            return None
+        return {"id": str(payment.id), "status": payment.status, "provider": payment.provider, "reference_id": payment.reference_id}
+
+    def get_shipment(self, obj):
+        shipment = obj.shipments.order_by("-created_at").first()
+        if not shipment:
+            return None
+        return {"status": shipment.status, "carrier": shipment.carrier, "tracking_code": shipment.tracking_code}
 
 
 class CheckoutSerializer(serializers.Serializer):

@@ -9,6 +9,7 @@ class CartItemSerializer(serializers.ModelSerializer):
     sku = serializers.CharField(source="variant.sku", read_only=True)
     unit_price = serializers.DecimalField(source="variant.price", max_digits=12, decimal_places=2, read_only=True)
     line_total = serializers.SerializerMethodField()
+    image_url = serializers.SerializerMethodField()
 
     class Meta:
         model = CartItem
@@ -22,6 +23,7 @@ class CartItemSerializer(serializers.ModelSerializer):
             "sku",
             "unit_price",
             "line_total",
+            "image_url",
             "created_at",
             "updated_at",
         ]
@@ -29,6 +31,15 @@ class CartItemSerializer(serializers.ModelSerializer):
 
     def get_line_total(self, obj):
         return obj.variant.price * obj.quantity
+
+    def get_image_url(self, obj):
+        image = obj.variant.product.images.first()
+        if not image:
+            return ""
+        if image.image:
+            request = self.context.get("request")
+            return request.build_absolute_uri(image.image.url) if request else image.image.url
+        return image.external_url
 
 
 class CartSerializer(serializers.ModelSerializer):
