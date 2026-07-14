@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ProductVisual } from "./product-card";
+import { AddToCartButton } from "./add-to-cart-button";
 import type { ShowcaseProduct } from "../lib/showcase-data";
 import {
   BadgeCheck, Bell, Box, CalendarDays, ChevronLeft, CircleUserRound,
@@ -122,11 +123,11 @@ export function CatalogProductCard({ product, removable = false }: { product: Sh
           <p>{product.material}</p>
           <strong>{product.price.toLocaleString("fa-IR")} تومان</strong>
           {product.compareAtPrice ? <del>{product.compareAtPrice.toLocaleString("fa-IR")} تومان</del> : null}
-          <span className="ms-stars">★★★★★ <small>({product.reviewCount})</small> <em>{product.reviewCount < 20 ? "کم موجود" : "موجود"}</em></span>
+          <span className="ms-stars">★★★★★ <small>({product.reviewCount})</small> <em>{(product.availableQuantity ?? 0) > 0 ? `${product.availableQuantity} موجود` : "ناموجود"}</em></span>
         </div>
       </Link>
       <div className="ms-card-actions">
-        <button type="button">افزودن به سبد <MsIcon name="bag" /></button>
+        <AddToCartButton compact variantId={product.availableQuantity === 0 ? undefined : product.variantId} />
         <Link href={`/products/${product.slug}`}>مشاهده محصول <MsIcon name="eye" /></Link>
       </div>
     </article>

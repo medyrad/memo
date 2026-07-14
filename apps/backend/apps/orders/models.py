@@ -5,6 +5,10 @@ from apps.common import TimeStampedModel
 
 
 class Order(TimeStampedModel):
+    class ShippingMethod(models.TextChoices):
+        STANDARD = "standard", "Standard"
+        EXPRESS = "express", "Express"
+
     class Status(models.TextChoices):
         DRAFT = "draft", "Draft"
         PENDING_PAYMENT = "pending_payment", "Pending payment"
@@ -22,6 +26,11 @@ class Order(TimeStampedModel):
     shipping_total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     grand_total = models.DecimalField(max_digits=12, decimal_places=2, default=0)
     customer_note = models.TextField(blank=True)
+    coupon = models.ForeignKey("discounts.Coupon", on_delete=models.SET_NULL, null=True, blank=True, related_name="orders")
+    shipping_method = models.CharField(max_length=20, choices=ShippingMethod.choices, default=ShippingMethod.STANDARD)
+    shipping_address = models.JSONField(default=dict, blank=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
+    inventory_reserved = models.BooleanField(default=False)
 
     class Meta:
         indexes = [models.Index(fields=["user", "status"]), models.Index(fields=["status", "created_at"])]
@@ -49,4 +58,3 @@ class OrderStatusHistory(TimeStampedModel):
 
     class Meta:
         ordering = ["-created_at"]
-

@@ -1,4 +1,5 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api";
+import { csrfHeaders } from "./csrf";
 
 export type CartItem = {
   id: string;
@@ -29,7 +30,7 @@ export async function getCurrentCart(): Promise<Cart | null> {
 export async function addCartItem(variantId: string, quantity = 1) {
   const response = await fetch(`${API_BASE_URL}/cart/add_item/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
     body: JSON.stringify({ variant_id: variantId, quantity }),
   });
@@ -43,7 +44,7 @@ export async function addCartItem(variantId: string, quantity = 1) {
 export async function setCartItemQuantity(itemId: string, quantity: number) {
   const response = await fetch(`${API_BASE_URL}/cart-items/${itemId}/set_quantity/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
     body: JSON.stringify({ quantity }),
   });
@@ -58,9 +59,9 @@ export async function removeCartItem(itemId: string) {
   const response = await fetch(`${API_BASE_URL}/cart-items/${itemId}/`, {
     method: "DELETE",
     credentials: "include",
+    headers: await csrfHeaders(),
   });
   if (!response.ok) {
     throw new Error("حذف آیتم انجام نشد.");
   }
 }
-

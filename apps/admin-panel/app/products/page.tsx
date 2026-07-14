@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PageFrame, StatusBadge } from "../../components/page-frame";
-import { getProducts, type Product } from "../../lib/api";
+import type { Product } from "../../lib/api";
+import { getProducts } from "../../lib/server-api";
 import { AlertTriangle, CheckCircle2, Copy, Edit3, Eye, FilePenLine, Layers3, Package, Plus, Search, SlidersHorizontal, Trash2 } from "lucide-react";
 
 const samples = [

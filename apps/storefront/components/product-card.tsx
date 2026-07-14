@@ -30,7 +30,7 @@ export function ProductCard({ product }: { product: ShowcaseProduct }) {
           <div className="ms-rating">★★★★★ <span>({product.reviewCount})</span></div>
         </div>
       </Link>
-      <AddToCartButton compact variantId={product.variantId} />
+      <AddToCartButton compact variantId={product.availableQuantity === 0 ? undefined : product.variantId} />
     </article>
   );
 }

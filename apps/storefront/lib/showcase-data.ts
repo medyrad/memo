@@ -16,6 +16,7 @@ export type ShowcaseProduct = {
   visual: string;
   description: string;
   imageUrl?: string;
+  availableQuantity?: number;
 };
 
 export const showcaseProducts: ShowcaseProduct[] = [

@@ -1,5 +1,5 @@
 import { PageFrame } from "../../components/page-frame";
-import { getOrders } from "../../lib/api";
+import { getOrders } from "../../lib/server-api";
 
 export default async function OrdersPage() {
   const orders = await getOrders().catch(() => []);

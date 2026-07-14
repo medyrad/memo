@@ -1,4 +1,5 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api";
+import { csrfHeaders } from "./csrf";
 
 export type AuthPayload = {
   username: string;
@@ -12,7 +13,7 @@ export type AuthPayload = {
 async function postAuth(path: string, payload: AuthPayload) {
   const response = await fetch(`${API_BASE_URL}/users/${path}/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
     body: JSON.stringify(payload),
   });
@@ -31,4 +32,3 @@ export function login(payload: AuthPayload) {
 export function register(payload: AuthPayload) {
   return postAuth("register", payload);
 }
-

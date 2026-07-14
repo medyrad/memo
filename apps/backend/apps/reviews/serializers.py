@@ -7,6 +7,7 @@ class WishlistItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = WishlistItem
         fields = "__all__"
+        read_only_fields = ["wishlist"]
 
 
 class WishlistSerializer(serializers.ModelSerializer):
@@ -15,10 +16,16 @@ class WishlistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Wishlist
         fields = "__all__"
+        read_only_fields = ["user"]
 
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = "__all__"
+        read_only_fields = ["user", "status"]
 
+    def validate_rating(self, value):
+        if not 1 <= value <= 5:
+            raise serializers.ValidationError("امتیاز باید بین ۱ تا ۵ باشد.")
+        return value

@@ -1,4 +1,5 @@
 import { getCurrentCart } from "./cart";
+import { csrfHeaders } from "./csrf";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api";
 
@@ -18,7 +19,7 @@ export type Payment = {
   payment_url?: string;
 };
 
-export async function createCheckoutOrder(couponCode = ""): Promise<Order> {
+export async function createCheckoutOrder(input: { addressId: string; couponCode?: string; shippingMethod: "standard" | "express"; customerNote?: string }): Promise<Order> {
   const cart = await getCurrentCart();
   if (!cart?.id || !cart.items.length) {
     throw new Error("سبد خرید خالی است.");
@@ -26,9 +27,15 @@ export async function createCheckoutOrder(couponCode = ""): Promise<Order> {
 
   const response = await fetch(`${API_BASE_URL}/orders/checkout/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
-    body: JSON.stringify({ cart_id: cart.id, coupon_code: couponCode }),
+    body: JSON.stringify({
+      cart_id: cart.id,
+      address_id: input.addressId,
+      coupon_code: input.couponCode ?? "",
+      shipping_method: input.shippingMethod,
+      customer_note: input.customerNote ?? "",
+    }),
   });
   const data = await response.json().catch(() => null);
   if (!response.ok) {
@@ -37,12 +44,12 @@ export async function createCheckoutOrder(couponCode = ""): Promise<Order> {
   return data;
 }
 
-export async function startPayment(orderId: string): Promise<Payment> {
+export async function startPayment(orderId: string, idempotencyKey: string): Promise<Payment> {
   const response = await fetch(`${API_BASE_URL}/payments/start/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
-    body: JSON.stringify({ order_id: orderId, provider: "mock" }),
+    body: JSON.stringify({ order_id: orderId, idempotency_key: idempotencyKey }),
   });
   const data = await response.json().catch(() => null);
   if (!response.ok) {
@@ -54,9 +61,9 @@ export async function startPayment(orderId: string): Promise<Payment> {
 export async function verifyPayment(paymentId: string): Promise<Payment> {
   const response = await fetch(`${API_BASE_URL}/payments/${paymentId}/verify/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
-    body: JSON.stringify({ reference_id: `mock-ref-${Date.now()}` }),
+    body: JSON.stringify({}),
   });
   const data = await response.json().catch(() => null);
   if (!response.ok) {

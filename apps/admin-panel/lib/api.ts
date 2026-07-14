@@ -107,8 +107,10 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export async function createProduct(payload: ProductPayload): Promise<Product> {
+  const { csrfHeaders } = await import("./csrf");
   return apiFetch<Product>("/products/", {
     method: "POST",
+    headers: await csrfHeaders(),
     body: JSON.stringify(payload),
   });
 }

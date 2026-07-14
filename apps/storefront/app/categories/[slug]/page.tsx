@@ -1,5 +1,6 @@
 import { ProductCard } from "../../../components/product-card";
-import { getProductsByCategory, showcaseProducts } from "../../../lib/showcase-data";
+import { getProducts } from "../../../lib/api";
+import { toCatalogProduct } from "../../../lib/catalog";
 
 const categoryTitles: Record<string, string> = {
   necklaces: "گردنبند",
@@ -9,10 +10,10 @@ const categoryTitles: Record<string, string> = {
   gifts: "هدیه",
 };
 
-export default function CategoryPage({ params }: { params: { slug: string } }) {
-  const products = getProductsByCategory(params.slug);
+export default async function CategoryPage({ params }: { params: { slug: string } }) {
+  const products = (await getProducts(`category__slug=${encodeURIComponent(params.slug)}`)).map(toCatalogProduct);
   const title = categoryTitles[params.slug] ?? "محصولات";
-  const list = products.length ? products : showcaseProducts.slice(0, 8);
+  const list = products;
 
   return (
     <main className="ms-container">
@@ -68,7 +69,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
           <div className="ms-category-toolbar">
             <div>
               <h1>{title}</h1>
-              <p className="muted">{list.length * 39} محصول</p>
+              <p className="muted">{list.length.toLocaleString("fa-IR")} محصول</p>
             </div>
             <select className="ms-sort" defaultValue="popular">
               <option value="popular">پربازدیدترین</option>
@@ -77,9 +78,7 @@ export default function CategoryPage({ params }: { params: { slug: string } }) {
             </select>
           </div>
           <div className="ms-product-grid" style={{ gridTemplateColumns: "repeat(4, minmax(0, 1fr))" }}>
-            {list.concat(showcaseProducts.slice(0, Math.max(0, 12 - list.length))).slice(0, 12).map((product, index) => (
-              <ProductCard product={{ ...product, id: `${product.id}-${index}` }} key={`${product.id}-${index}`} />
-            ))}
+            {list.map((product) => <ProductCard product={product} key={product.id} />)}
           </div>
           <nav className="ms-pagination">
             <a>قبلی</a>

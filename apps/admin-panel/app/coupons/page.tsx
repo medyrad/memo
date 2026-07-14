@@ -1,5 +1,5 @@
 import { PageFrame } from "../../components/page-frame";
-import { getCoupons } from "../../lib/api";
+import { getCoupons } from "../../lib/server-api";
 
 export default async function CouponsPage() {
   const coupons = await getCoupons().catch(() => []);

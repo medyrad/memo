@@ -1,21 +1,26 @@
 import { notFound } from "next/navigation";
 import { AddToCartButton } from "../../../components/add-to-cart-button";
 import { ProductCard, ProductVisual } from "../../../components/product-card";
-import { getShowcaseProduct, showcaseProducts } from "../../../lib/showcase-data";
+import { getProduct, getProducts } from "../../../lib/api";
+import { toCatalogProduct } from "../../../lib/catalog";
 import { Heart } from "lucide-react";
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
-  const product = getShowcaseProduct(params.slug);
-  if (!product) notFound();
+export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const apiProduct = await getProduct(params.slug);
+  if (!apiProduct) notFound();
+  const product = toCatalogProduct(apiProduct);
 
-  const related = showcaseProducts.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 4);
+  const related = (await getProducts(`category__slug=${encodeURIComponent(apiProduct.category_slug ?? "")}`))
+    .filter((item) => item.id !== apiProduct.id)
+    .slice(0, 4)
+    .map(toCatalogProduct);
 
   return (
     <main className="ms-container">
       <div className="ms-breadcrumb">خانه / {product.categoryTitle} / {product.title}</div>
       <section className="ms-product-detail">
         <div>
-          <ProductVisual visual={product.visual} className="ms-detail-gallery-main" />
+          <ProductVisual visual={product.visual} src={product.imageUrl} alt={product.title} className="ms-detail-gallery-main" />
           <div className="ms-detail-thumbs">
             <ProductVisual visual={product.visual} />
             <ProductVisual visual="coin" />
@@ -56,7 +61,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
           </div>
 
           <div className="ms-purchase-box">
-            <AddToCartButton variantId={product.variantId} />
+            <AddToCartButton variantId={(product.availableQuantity ?? 0) > 0 ? product.variantId : undefined} />
             <button className="ms-outline-button" type="button">افزودن به علاقه‌مندی‌ها <Heart size={18}/></button>
           </div>
 
@@ -67,7 +72,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             <span>۷ روز ضمانت بازگشت</span>
           </div>
           <div className="ms-delivery-box">
-            <span><b>موجود در انبار</b><br />آماده ارسال</span>
+            <span><b>{(product.availableQuantity ?? 0) > 0 ? "موجود در انبار" : "ناموجود"}</b><br />{(product.availableQuantity ?? 0) > 0 ? `${product.availableQuantity} عدد آماده ارسال` : "امکان سفارش وجود ندارد"}</span>
             <span><b>پرداخت امن</b><br />پرداخت آنلاین امن</span>
           </div>
         </div>

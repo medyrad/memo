@@ -2,7 +2,7 @@ import Link from "next/link";
 import { CircleDollarSign, ShoppingCart, UsersRound, WalletCards } from "lucide-react";
 import { PageFrame, StatusBadge } from "../../components/page-frame";
 import { CategoryCharts, SalesChart } from "../../components/dashboard-charts";
-import { getDashboard } from "../../lib/api";
+import { getDashboard } from "../../lib/server-api";
 
 const statusLabel: Record<string, string> = { draft:"پیش‌نویس", pending_payment:"در انتظار پرداخت", paid:"پرداخت‌شده", processing:"در حال پردازش", shipped:"ارسال‌شده", delivered:"تحویل‌شده", cancelled:"لغوشده", refunded:"مرجوع‌شده" };
 const statusTone = (status:string) => status === "delivered" || status === "paid" ? "success" : status === "cancelled" || status === "refunded" ? "danger" : status === "shipped" ? "info" : "warning";

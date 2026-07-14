@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import permissions, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
@@ -6,16 +6,26 @@ from django.db.models import Count, Sum
 from django.db.models.functions import TruncDate
 from django.utils import timezone
 
+from apps.accounts.models import Address
 from apps.cart.models import Cart
 from .models import Order, OrderItem, OrderStatusHistory
-from .serializers import CheckoutSerializer, OrderItemSerializer, OrderSerializer, OrderStatusHistorySerializer
-from .services import CheckoutError, create_pending_order_from_cart
+from .serializers import CheckoutSerializer, OrderItemSerializer, OrderSerializer, OrderStatusHistorySerializer, OrderStatusSerializer
+from .services import CheckoutError, create_pending_order_from_cart, release_expired_orders, release_order_inventory
 
 
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.select_related("user").prefetch_related("items", "status_history").all().order_by("-created_at")
     serializer_class = OrderSerializer
     filterset_fields = ["user", "status"]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset if self.request.user.is_staff else queryset.filter(user=self.request.user)
+
+    def get_permissions(self):
+        if self.action in ["dashboard", "set_status", "create", "update", "partial_update", "destroy"]:
+            return [permissions.IsAdminUser()]
+        return [permissions.IsAuthenticated()]
 
     @action(detail=False, methods=["get"], url_path="dashboard")
     def dashboard(self, request):
@@ -64,22 +74,63 @@ class OrderViewSet(viewsets.ModelViewSet):
         serializer = CheckoutSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         try:
-            cart = Cart.objects.get(id=serializer.validated_data["cart_id"])
-            order = create_pending_order_from_cart(cart, serializer.validated_data.get("coupon_code", ""))
-        except Cart.DoesNotExist:
-            return Response({"code": "cart_not_found", "message": "سبد خرید پیدا نشد."}, status=status.HTTP_404_NOT_FOUND)
+            release_expired_orders()
+            cart = Cart.objects.get(id=serializer.validated_data["cart_id"], user=request.user)
+            address = Address.objects.get(id=serializer.validated_data["address_id"], user=request.user)
+            order = create_pending_order_from_cart(
+                cart,
+                address,
+                serializer.validated_data.get("coupon_code", ""),
+                serializer.validated_data["shipping_method"],
+                serializer.validated_data.get("customer_note", ""),
+            )
+        except (Cart.DoesNotExist, Address.DoesNotExist):
+            return Response({"code": "checkout_resource_not_found", "message": "سبد خرید یا آدرس معتبر نیست."}, status=status.HTTP_404_NOT_FOUND)
         except CheckoutError as exc:
             return Response({"code": "checkout_failed", "message": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(OrderSerializer(order).data, status=status.HTTP_201_CREATED)
+
+    @action(detail=True, methods=["post"], url_path="set-status")
+    def set_status(self, request, pk=None):
+        order = self.get_object()
+        serializer = OrderStatusSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        target = serializer.validated_data["status"]
+        allowed = {
+            # Only server-side gateway verification may mark an order as paid.
+            Order.Status.PENDING_PAYMENT: {Order.Status.CANCELLED},
+            Order.Status.PAID: {Order.Status.PROCESSING, Order.Status.REFUNDED},
+            Order.Status.PROCESSING: {Order.Status.SHIPPED, Order.Status.CANCELLED},
+            Order.Status.SHIPPED: {Order.Status.DELIVERED},
+            Order.Status.DELIVERED: {Order.Status.REFUNDED},
+        }
+        if target not in allowed.get(order.status, set()):
+            return Response({"code": "invalid_status_transition", "message": "تغییر وضعیت سفارش مجاز نیست."}, status=status.HTTP_409_CONFLICT)
+        if target == Order.Status.CANCELLED and order.inventory_reserved:
+            release_order_inventory(order)
+            order.refresh_from_db()
+        previous = order.status
+        order.status = target
+        order.save(update_fields=["status", "updated_at"])
+        OrderStatusHistory.objects.create(
+            order=order,
+            from_status=previous,
+            to_status=order.status,
+            note=serializer.validated_data.get("note", ""),
+            changed_by=request.user,
+        )
+        return Response(OrderSerializer(order).data)
 
 
 class OrderItemViewSet(viewsets.ModelViewSet):
     queryset = OrderItem.objects.select_related("order", "variant").all()
     serializer_class = OrderItemSerializer
     filterset_fields = ["order", "variant"]
+    permission_classes = [permissions.IsAdminUser]
 
 
 class OrderStatusHistoryViewSet(viewsets.ModelViewSet):
     queryset = OrderStatusHistory.objects.select_related("order", "changed_by").all()
     serializer_class = OrderStatusHistorySerializer
     filterset_fields = ["order", "to_status"]
+    permission_classes = [permissions.IsAdminUser]

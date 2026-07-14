@@ -67,6 +67,9 @@ class ProductImage(TimeStampedModel):
 
     class Meta:
         ordering = ["sort_order", "created_at"]
+        constraints = [
+            models.UniqueConstraint(fields=["product"], condition=models.Q(is_primary=True), name="one_primary_image_per_product"),
+        ]
 
 
 class ProductAttribute(TimeStampedModel):

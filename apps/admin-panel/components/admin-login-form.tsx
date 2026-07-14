@@ -1,10 +1,12 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { CSSProperties } from "react";
 import { adminLogin } from "../lib/auth";
 
 export function AdminLoginForm() {
+  const router = useRouter();
   const [status, setStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -20,6 +22,8 @@ export function AdminLoginForm() {
         password: String(formData.get("password") ?? ""),
       });
       setStatus("ورود مدیریت موفق بود.");
+      router.replace("/dashboard");
+      router.refresh();
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "خطای نامشخص رخ داد.");
     } finally {

@@ -1,5 +1,5 @@
 import { PageFrame } from "../../components/page-frame";
-import { getInventory } from "../../lib/api";
+import { getInventory } from "../../lib/server-api";
 
 export default async function InventoryPage() {
   const inventory = await getInventory().catch(() => []);

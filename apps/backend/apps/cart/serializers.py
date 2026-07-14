@@ -25,6 +25,7 @@ class CartItemSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
+        read_only_fields = ["cart", "created_at", "updated_at"]
 
     def get_line_total(self, obj):
         return obj.variant.price * obj.quantity
@@ -37,6 +38,7 @@ class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
         fields = "__all__"
+        read_only_fields = ["user", "session_key", "created_at", "updated_at"]
 
     def get_subtotal(self, obj):
         return sum(item.variant.price * item.quantity for item in obj.items.all())

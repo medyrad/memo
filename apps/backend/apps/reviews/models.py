@@ -35,4 +35,6 @@ class Review(TimeStampedModel):
     class Meta:
         unique_together = ["user", "product"]
         indexes = [models.Index(fields=["product", "status"])]
-
+        constraints = [
+            models.CheckConstraint(check=models.Q(rating__gte=1, rating__lte=5), name="review_rating_between_1_and_5"),
+        ]

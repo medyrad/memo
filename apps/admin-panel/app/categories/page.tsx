@@ -1,5 +1,5 @@
 import { PageFrame } from "../../components/page-frame";
-import { getCategories } from "../../lib/api";
+import { getCategories } from "../../lib/server-api";
 
 export default async function CategoriesPage() {
   const categories = await getCategories().catch(() => []);

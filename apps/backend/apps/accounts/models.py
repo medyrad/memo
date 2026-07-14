@@ -25,13 +25,13 @@ class Role(TimeStampedModel):
 
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    email = models.EmailField(unique=True)
+    email = models.EmailField(unique=True, null=True, blank=True)
     phone = models.CharField(max_length=20, unique=True, null=True, blank=True)
     roles = models.ManyToManyField(Role, blank=True, related_name="users")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    REQUIRED_FIELDS = ["email"]
+    REQUIRED_FIELDS = []
 
 
 class CustomerProfile(TimeStampedModel):
@@ -57,7 +57,9 @@ class Address(TimeStampedModel):
 
     class Meta:
         indexes = [models.Index(fields=["user", "is_default"])]
+        constraints = [
+            models.UniqueConstraint(fields=["user"], condition=models.Q(is_default=True), name="one_default_address_per_user"),
+        ]
 
     def __str__(self) -> str:
         return f"{self.title} - {self.city}"
-

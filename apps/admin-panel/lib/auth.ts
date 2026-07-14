@@ -1,9 +1,10 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000/api";
+import { csrfHeaders } from "./csrf";
 
 export async function adminLogin(payload: { username: string; password: string }) {
   const response = await fetch(`${API_BASE_URL}/users/login/`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: await csrfHeaders(),
     credentials: "include",
     body: JSON.stringify(payload),
   });
@@ -16,4 +17,3 @@ export async function adminLogin(payload: { username: string; password: string }
   }
   return data;
 }
-

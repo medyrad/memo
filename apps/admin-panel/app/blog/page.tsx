@@ -1,5 +1,5 @@
 import { PageFrame } from "../../components/page-frame";
-import { getBlogPosts } from "../../lib/api";
+import { getBlogPosts } from "../../lib/server-api";
 
 export default async function BlogPage() {
   const posts = await getBlogPosts().catch(() => []);
