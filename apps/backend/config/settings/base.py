@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "django_filters",
     "drf_spectacular",
     "corsheaders",
+    "storages",
     "apps.accounts",
     "apps.catalog",
     "apps.inventory",
@@ -84,6 +85,26 @@ STATIC_URL = "static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+if os.getenv("OBJECT_STORAGE_ENABLED", "False").lower() == "true":
+    storage_options = {
+        "bucket_name": os.environ["AWS_STORAGE_BUCKET_NAME"],
+        "access_key": os.environ["AWS_ACCESS_KEY_ID"],
+        "secret_key": os.environ["AWS_SECRET_ACCESS_KEY"],
+        "region_name": os.getenv("AWS_S3_REGION_NAME", "auto"),
+        "endpoint_url": os.getenv("AWS_S3_ENDPOINT_URL") or None,
+        "default_acl": None,
+        "file_overwrite": False,
+        "querystring_auth": os.getenv("AWS_QUERYSTRING_AUTH", "False").lower() == "true",
+        "location": "media",
+    }
+    if os.getenv("AWS_S3_CUSTOM_DOMAIN"):
+        storage_options["custom_domain"] = os.environ["AWS_S3_CUSTOM_DOMAIN"]
+    STORAGES = {
+        "default": {"BACKEND": "storages.backends.s3.S3Storage", "OPTIONS": storage_options},
+        "staticfiles": {"BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"},
+    }
+    MEDIA_URL = f"https://{os.environ['AWS_S3_CUSTOM_DOMAIN']}/media/" if os.getenv("AWS_S3_CUSTOM_DOMAIN") else MEDIA_URL
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "accounts.User"

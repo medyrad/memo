@@ -12,5 +12,5 @@ COPY apps/backend /app/apps/backend
 
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live/', timeout=3)"
+CMD ["gunicorn", "config.asgi:application", "-c", "gunicorn.conf.py"]

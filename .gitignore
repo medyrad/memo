@@ -12,4 +12,7 @@ __pycache__/
 .pytest_cache/
 media/
 staticfiles/
-
+backups/
+test-results/
+playwright-report/
+output/playwright-report/

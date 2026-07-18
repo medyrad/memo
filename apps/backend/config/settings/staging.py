@@ -18,3 +18,16 @@ DATABASES = {  # noqa: F405
         "OPTIONS": {"sslmode": os.getenv("POSTGRES_SSLMODE", "require")},
     }
 }
+CORS_ALLOWED_ORIGINS = os.environ["CORS_ALLOWED_ORIGINS"].split(",")
+CSRF_TRUSTED_ORIGINS = os.environ["CSRF_TRUSTED_ORIGINS"].split(",")
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SAMESITE = "Lax"
+SECURE_HSTS_SECONDS = 3600
+
+if os.getenv("SENTRY_DSN"):
+    import sentry_sdk
+    sentry_sdk.init(dsn=os.environ["SENTRY_DSN"], environment=os.getenv("SENTRY_ENVIRONMENT", "staging"), traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.2")), send_default_pii=False)

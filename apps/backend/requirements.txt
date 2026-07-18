@@ -7,3 +7,7 @@ psycopg[binary]>=3.2,<4
 pytest>=8.2,<9
 pytest-django>=4.8,<5
 factory-boy>=3.3,<4
+gunicorn>=23,<24
+uvicorn-worker>=0.4,<0.5
+django-storages[s3]>=1.14,<1.15
+sentry-sdk[django]>=2.20,<3

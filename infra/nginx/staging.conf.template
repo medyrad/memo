@@ -1,0 +1,24 @@
+upstream storefront { server storefront:3000; }
+upstream admin_panel { server admin-panel:3001; }
+upstream backend { server backend:8000; }
+
+server { listen 80; server_name ${DOMAIN} admin.${DOMAIN} api.${DOMAIN}; return 301 https://$host$request_uri; }
+server {
+  listen 443 ssl http2; server_name ${DOMAIN};
+  ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+  location / { proxy_pass http://storefront; proxy_set_header Host $host; proxy_set_header X-Forwarded-Proto https; proxy_set_header X-Real-IP $remote_addr; }
+}
+server {
+  listen 443 ssl http2; server_name admin.${DOMAIN};
+  ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+  location / { proxy_pass http://admin_panel; proxy_set_header Host $host; proxy_set_header X-Forwarded-Proto https; proxy_set_header X-Real-IP $remote_addr; }
+}
+server {
+  listen 443 ssl http2; server_name api.${DOMAIN}; client_max_body_size 20M;
+  ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+  location /static/ { alias /var/www/static/; expires 7d; add_header Cache-Control "public, immutable"; }
+  location / { proxy_pass http://backend; proxy_set_header Host $host; proxy_set_header X-Forwarded-Proto https; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Real-IP $remote_addr; }
+}

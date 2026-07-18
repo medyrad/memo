@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    env_file: ../../.env.staging
+    volumes: [postgres_staging:/var/lib/postgresql/data]
+    healthcheck: {test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"], interval: 10s, timeout: 5s, retries: 5}
+  backend:
+    build: {context: ../.., dockerfile: infra/docker/backend.Dockerfile}
+    restart: unless-stopped
+    env_file: ../../.env.staging
+    environment: {DJANGO_SETTINGS_MODULE: config.settings.staging, POSTGRES_HOST: postgres}
+    command: sh -c "python manage.py collectstatic --noinput && gunicorn config.asgi:application -c gunicorn.conf.py"
+    volumes: [static_staging:/app/apps/backend/staticfiles]
+    depends_on: {postgres: {condition: service_healthy}}
+  storefront:
+    build: {context: ../.., dockerfile: infra/docker/frontend.Dockerfile}
+    restart: unless-stopped
+    env_file: ../../.env.staging
+    command: sh -c "pnpm --filter @memostyles/storefront build && pnpm --filter @memostyles/storefront start -p 3000"
+  admin-panel:
+    build: {context: ../.., dockerfile: infra/docker/frontend.Dockerfile}
+    restart: unless-stopped
+    env_file: ../../.env.staging
+    command: sh -c "pnpm --filter @memostyles/admin-panel build && pnpm --filter @memostyles/admin-panel start -p 3001"
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    env_file: ../../.env.staging
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ../nginx/staging.conf.template:/etc/nginx/templates/default.conf.template:ro
+      - letsencrypt:/etc/letsencrypt:ro
+      - static_staging:/var/www/static:ro
+    depends_on: [storefront, admin-panel, backend]
+volumes: {postgres_staging: {}, letsencrypt: {}, static_staging: {}}

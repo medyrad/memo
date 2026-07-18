@@ -28,3 +28,7 @@ CSRF_COOKIE_SAMESITE = "Lax"
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
+
+if os.getenv("SENTRY_DSN"):
+    import sentry_sdk
+    sentry_sdk.init(dsn=os.environ["SENTRY_DSN"], environment=os.getenv("SENTRY_ENVIRONMENT", "production"), traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.1")), send_default_pii=False)

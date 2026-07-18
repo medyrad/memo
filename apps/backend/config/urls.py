@@ -15,6 +15,7 @@ from apps.orders.views import OrderItemViewSet, OrderStatusHistoryViewSet, Order
 from apps.payments.views import PaymentViewSet
 from apps.reviews.views import ReviewViewSet, WishlistItemViewSet, WishlistViewSet
 from apps.shipping.views import ShipmentViewSet
+from config.health import live, ready
 
 admin.site.site_header = "مدیریت فروشگاه memostyles"
 admin.site.site_title = "memostyles Admin"
@@ -52,6 +53,8 @@ router.register("notifications", NotificationViewSet)
 router.register("audit-logs", AuditLogViewSet)
 
 urlpatterns = [
+    path("health/live/", live, name="health-live"),
+    path("health/ready/", ready, name="health-ready"),
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
