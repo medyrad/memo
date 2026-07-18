@@ -15,6 +15,13 @@ class PaymentVerificationError(ValueError):
 
 
 def request_gateway_payment(payment: Payment) -> tuple[Payment, str]:
+    if settings.PAYMENT_GATEWAY_TEST_MODE:
+        payment.authority = f"E2E-{payment.id}"
+        payment.status = Payment.Status.PENDING
+        payment.failure_reason = ""
+        payment.raw_response = {"request": {"mode": "e2e"}}
+        payment.save(update_fields=["authority", "status", "failure_reason", "raw_response", "updated_at"])
+        return payment, f"http://localhost:8000/api/payments/{payment.id}/test-gateway/"
     gateway = ZarinpalGateway()
     user = payment.order.user
     result = gateway.request(

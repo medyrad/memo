@@ -1,5 +1,6 @@
 from django.conf import settings
-from django.http import HttpResponseRedirect
+from django.http import Http404, HttpResponse, HttpResponseRedirect
+from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action
@@ -85,6 +86,20 @@ class PaymentViewSet(viewsets.ModelViewSet):
         except PaymentVerificationError as exc:
             return Response({"code": "payment_verify_failed", "message": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
         return Response(PaymentSerializer(payment).data)
+
+    @action(detail=True, methods=["get"], url_path="test-gateway", permission_classes=[permissions.AllowAny], authentication_classes=[])
+    def test_gateway(self, request, pk=None):
+        if not settings.PAYMENT_GATEWAY_TEST_MODE:
+            raise Http404
+        payment = get_object_or_404(Payment.objects.select_related("order"), pk=pk)
+        result = request.query_params.get("result")
+        if not result:
+            return HttpResponse("<html lang='fa' dir='rtl'><body><h1>درگاه تست memostyles</h1><a id='pay-success' href='?result=success'>پرداخت موفق</a><br><a id='pay-failure' href='?result=failure'>پرداخت ناموفق</a></body></html>")
+        if result == "success":
+            payment = mark_payment_succeeded(payment, f"E2E-REF-{str(payment.id)[:8]}", {"mode": "e2e"})
+            return HttpResponseRedirect(f"{settings.STOREFRONT_URL}/checkout/success?payment={payment.id}")
+        payment = mark_payment_failed(payment, "پرداخت در درگاه تست ناموفق شد.", {"mode": "e2e"})
+        return HttpResponseRedirect(f"{settings.STOREFRONT_URL}/checkout/failure?payment={payment.id}")
 
     @action(detail=False, methods=["get"], permission_classes=[permissions.AllowAny], authentication_classes=[])
     def callback(self, request):

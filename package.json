@@ -7,10 +7,12 @@
     "dev:admin": "pnpm --filter @memostyles/admin-panel dev",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "test:e2e": "playwright test"
   },
   "packageManager": "pnpm@9.0.0",
   "devDependencies": {
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "@playwright/test": "^1.61.0"
   }
 }
