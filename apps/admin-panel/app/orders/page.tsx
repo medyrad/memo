@@ -1,21 +1,5 @@
-import { PageFrame } from "../../components/page-frame";
+import Link from "next/link";
+import { PageFrame, StatusBadge } from "../../components/page-frame";
 import { getOrders } from "../../lib/server-api";
-
-export default async function OrdersPage() {
-  const orders = await getOrders().catch(() => []);
-
-  return (
-    <PageFrame title="سفارش‌ها">
-      <div className="table">
-        <div className="row"><strong>شماره</strong><strong>وضعیت</strong><strong>مبلغ</strong></div>
-        {orders.length ? orders.map((order) => (
-          <div className="row" key={order.id}>
-            <span>{order.id}</span>
-            <span>{order.status}</span>
-            <span>{Number(order.grand_total).toLocaleString("fa-IR")} تومان</span>
-          </div>
-        )) : <div className="row"><span>سفارشی ثبت نشده است.</span><span>-</span><span>-</span></div>}
-      </div>
-    </PageFrame>
-  );
-}
+const labels:Record<string,string>={pending_payment:"در انتظار پرداخت",paid:"پرداخت‌شده",processing:"آماده‌سازی",shipped:"ارسال‌شده",delivered:"تحویل‌شده",cancelled:"لغوشده",refunded:"بازپرداخت"};
+export default async function OrdersPage(){const orders=await getOrders().catch(()=>[]);return <PageFrame title="سفارش‌ها"><div className="responsive-table card"><table><thead><tr><th>شماره</th><th>وضعیت</th><th>مبلغ</th><th>اقلام</th><th>تاریخ</th><th></th></tr></thead><tbody>{orders.map(order=><tr key={order.id}><td dir="ltr">{order.id.slice(0,8)}</td><td><StatusBadge tone={["paid","delivered"].includes(order.status)?"success":["cancelled","refunded"].includes(order.status)?"danger":"warning"}>{labels[order.status]??order.status}</StatusBadge></td><td>{Number(order.grand_total).toLocaleString("fa-IR")} تومان</td><td>{order.items.length}</td><td>{order.created_at?new Date(order.created_at).toLocaleDateString("fa-IR"):"—"}</td><td><Link className="outline-small" href={`/orders/${order.id}`}>مدیریت</Link></td></tr>)}</tbody></table>{!orders.length&&<div className="empty-state">سفارشی ثبت نشده است.</div>}</div></PageFrame>}
