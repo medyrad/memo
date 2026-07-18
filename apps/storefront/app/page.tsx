@@ -2,6 +2,10 @@ import Link from "next/link";
 import { ProductCard, ProductVisual } from "../components/product-card";
 import { getBanners, getCategories, getHomepageSections, getProducts } from "../lib/api";
 import { toCatalogProduct } from "../lib/catalog";
+import type { Metadata } from "next";
+import { absoluteUrl, jsonLd } from "../lib/seo";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default async function HomePage() {
   const [apiProducts, categories, banners, sections] = await Promise.all([
@@ -17,6 +21,11 @@ export default async function HomePage() {
 
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd({
+        "@context":"https://schema.org", "@type":"Organization", name:"memostyles", url:absoluteUrl("/"),
+        logo:absoluteUrl("/icon"), contactPoint:{"@type":"ContactPoint",contactType:"customer service",availableLanguage:"fa"},
+        sameAs:["https://instagram.com/memostyles"],
+      })}} />
       <section className="ms-home-hero" style={hero?.image_url ? { backgroundImage: `linear-gradient(90deg, rgba(245,238,230,.12), rgba(245,238,230,.82)), url(${hero.image_url})` } : undefined}>
         <div className="ms-container ms-home-hero-inner"><div className="ms-hero-copy">
           <h1>{hero?.title ?? "زیبایی در جزئیات است"}<br />{hero?.subtitle ?? "استایل تو، امضای تو"}</h1>

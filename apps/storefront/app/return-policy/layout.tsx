@@ -1,0 +1,1 @@
+import type {Metadata} from "next";export const metadata:Metadata={title:"قوانین بازگشت کالا",alternates:{canonical:"/return-policy"}};export default function Layout({children}:{children:React.ReactNode}){return children}

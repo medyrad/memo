@@ -1,26 +1,5 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-
-const posts = [
-  {
-    slug: "how-to-style-minimal-accessories",
-    title: "چطور اکسسوری مینیمال را ست کنیم؟",
-    excerpt: "راهنمای سریع انتخاب گردنبند، گوشواره و دستبند برای استایل روزمره.",
-  },
-];
-
-export default function BlogPage() {
-  return (
-    <main className="section">
-      <h2>بلاگ</h2>
-      <div className="grid">
-        {posts.map((post) => (
-          <Link className="product-card" href={`/blog/${post.slug}`} key={post.slug}>
-            <h3>{post.title}</h3>
-            <p>{post.excerpt}</p>
-          </Link>
-        ))}
-      </div>
-    </main>
-  );
-}
-
+import { getBlogPosts } from "../../lib/api";
+export const metadata:Metadata={title:"مجله",description:"راهنمای خرید، نگهداری و استایل اکسسوری",alternates:{canonical:"/blog"}};
+export default async function BlogPage(){const posts=await getBlogPosts();return <main className="ms-container ms-section"><h1>مجله memostyles</h1><div className="grid">{posts.map(post=><Link className="panel" href={`/blog/${post.slug}`} key={post.id}><h2>{post.title}</h2><p>{post.excerpt}</p></Link>)}</div>{!posts.length?<div className="ms-catalog-empty"><p>هنوز مقاله‌ای منتشر نشده است.</p></div>:null}</main>}

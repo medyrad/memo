@@ -1,0 +1,1 @@
+import type {Metadata} from "next";export const metadata:Metadata={title:"تماس با ما",alternates:{canonical:"/contact"}};export default function Layout({children}:{children:React.ReactNode}){return children}

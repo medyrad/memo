@@ -1,0 +1,1 @@
+import type {Metadata} from "next";import {privatePageMetadata} from "../../lib/seo";export const metadata:Metadata={title:"جستجو",...privatePageMetadata};export default function Layout({children}:{children:React.ReactNode}){return children}

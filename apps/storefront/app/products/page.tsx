@@ -2,7 +2,7 @@ import { Breadcrumbs, CatalogProductCard, MsIcon } from "../../components/storef
 import { getProducts } from "../../lib/api";
 import { toCatalogProduct } from "../../lib/catalog";
 
-export const metadata = { title: "محصولات | memostyles" };
+export const metadata = { title: "محصولات", description: "مشاهده و خرید آنلاین محصولات memostyles.", alternates: { canonical: "/products" } };
 
 export default async function ProductsPage() {
   const apiProducts = await getProducts();

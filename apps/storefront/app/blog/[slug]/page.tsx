@@ -1,11 +1,6 @@
-export default function BlogDetailPage({ params }: { params: { slug: string } }) {
-  return (
-    <main className="section">
-      <h2>مقاله</h2>
-      <div className="panel">
-        <p>محتوای مقاله `{params.slug}` در فاز اتصال CMS از API خوانده می‌شود.</p>
-      </div>
-    </main>
-  );
-}
-
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { getBlogPost } from "../../../lib/api";
+import { absoluteUrl, jsonLd } from "../../../lib/seo";
+export async function generateMetadata({params}:{params:{slug:string}}):Promise<Metadata>{const post=await getBlogPost(params.slug);if(!post)return {title:"مقاله پیدا نشد",robots:{index:false,follow:false}};return {title:post.seo_title||post.title,description:post.seo_description||post.excerpt,alternates:{canonical:`/blog/${post.slug}`},openGraph:{type:"article",url:absoluteUrl(`/blog/${post.slug}`),title:post.title,description:post.excerpt,images:post.cover_image?[{url:post.cover_image}]:undefined}};}
+export default async function BlogDetailPage({params}:{params:{slug:string}}){const post=await getBlogPost(params.slug);if(!post)notFound();const url=absoluteUrl(`/blog/${post.slug}`);const schema={"@context":"https://schema.org","@type":"Article",headline:post.title,description:post.excerpt,datePublished:post.published_at,dateModified:post.updated_at,mainEntityOfPage:url,publisher:{"@type":"Organization",name:"memostyles",url:absoluteUrl("/")}};return <main className="ms-container ms-section"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:jsonLd(schema)}}/><article className="panel"><h1>{post.title}</h1><p className="muted">{post.excerpt}</p><div style={{whiteSpace:"pre-wrap",lineHeight:2}}>{post.body}</div></article></main>}
