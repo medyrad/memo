@@ -166,4 +166,6 @@ def create_pending_order_from_cart(
     Shipment.objects.create(order=order, status=Shipment.Status.PENDING, carrier=shipping_method, address_snapshot=snapshot)
     OrderStatusHistory.objects.create(order=order, from_status=Order.Status.DRAFT, to_status=Order.Status.PENDING_PAYMENT)
     cart.items.all().delete()
+    from apps.notifications.services import send_order_created_sms
+    transaction.on_commit(lambda: send_order_created_sms(order.pk))
     return order

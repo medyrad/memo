@@ -2,6 +2,7 @@ from rest_framework import permissions, viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
+from django.db import transaction
 from django.db.models import Count, Sum
 from django.db.models.functions import TruncDate
 from django.utils import timezone
@@ -119,6 +120,8 @@ class OrderViewSet(viewsets.ModelViewSet):
             note=serializer.validated_data.get("note", ""),
             changed_by=request.user,
         )
+        from apps.notifications.services import send_order_status_sms
+        transaction.on_commit(lambda: send_order_status_sms(order.pk))
         return Response(OrderSerializer(order).data)
 
 

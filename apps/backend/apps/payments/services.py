@@ -91,6 +91,8 @@ def mark_payment_succeeded(payment: Payment, reference_id: str, gateway_response
         subject="سفارش شما ثبت شد",
         body=f"سفارش {order.id} با موفقیت پرداخت شد.",
     )
+    from apps.notifications.services import send_order_status_sms
+    transaction.on_commit(lambda: send_order_status_sms(order.pk))
     return payment
 
 
